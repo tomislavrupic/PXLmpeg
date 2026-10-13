@@ -6,12 +6,17 @@ let package = Package(
   products: [
     .library(name: "PXLMedia", targets: ["PXLMedia"]),
     .library(name: "PXLmpeg", targets: ["PXLmpeg"]),
+    .library(name: "PXLPlayback", targets: ["PXLPlayback"]),
     .executable(name: "pxlmpeg", targets: ["PXLmpegCLI"]),
+    .executable(name: "pxl-player", targets: ["PXLPlayer"]),
     .executable(name: "pxl-validation", targets: ["PXLValidation"]),
   ],
   dependencies: [],
   targets: [
     .target(name: "PXLMedia"),
+    .executableTarget(name: "PXLPlayer", dependencies: ["PXLPlayback", "PXLMedia"]),
+    .target(name: "PXLPlayback", dependencies: ["PXLMedia", "PXLAppleMedia"]),
+    .testTarget(name: "PXLPlaybackTests", dependencies: ["PXLPlayback", "PXLTestSupport"]),
     .executableTarget(
       name: "PXLValidation",
       dependencies: ["PXLmpeg", "PXLMedia", "PXLAppleMedia", "PXLMetal", "PXLTestSupport"],

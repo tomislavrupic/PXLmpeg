@@ -1,0 +1,282 @@
+Building for debugging...
+[0/10] Write sources
+[2/10] Write swift-version--58304C5D6DBC2206.txt
+[3/11] Copying Resources
+[5/13] Emitting module PXLMedia
+[6/13] Compiling PXLMedia PXLVersion.swift
+[7/18] Compiling PXLMedia MediaTime.swift
+[8/18] Compiling PXLMedia RemuxRequest.swift
+[9/18] Compiling PXLMedia MediaDescriptions.swift
+[10/18] Compiling PXLMedia JobEvidence.swift
+[11/18] Compiling PXLMedia JobRequest.swift
+[12/21] Emitting module PXLMediaTests
+[13/21] Emitting module PXLTestSupport
+[14/21] Emitting module PXLAppleMedia
+[15/28] Emitting module PXLMetal
+[16/29] Emitting module PXLmpeg
+[17/29] Emitting module PXLPlayback
+[18/29] Compiling PXLPlayback PlaybackSession.swift
+[19/33] Emitting module PXLValidation
+[19/33] Write Objects.LinkFileList
+[21/33] Emitting module PXLPlayer
+[21/33] Write Objects.LinkFileList
+[23/33] Emitting module PXLmpegCLI
+[24/33] Compiling PXLmpegCLI PXLCommand.swift
+[24/33] Write Objects.LinkFileList
+[25/33] Linking pxl-validation
+[26/33] Applying pxl-validation
+[27/33] Linking pxl-player
+[28/33] Applying pxl-player
+[29/33] Linking pxlmpeg
+[30/33] Applying pxlmpeg
+[32/34] Emitting module PXLmpegCLITests
+[32/34] Write Objects.LinkFileList
+[33/34] Linking PXLmpegPackageTests
+Build complete! (2.35s)
+Test Suite 'All tests' started at 2026-10-13 15:01:51.297.
+Test Suite 'PXLmpegPackageTests.xctest' started at 2026-10-13 15:01:51.298.
+Test Suite 'AssetTests' started at 2026-10-13 15:01:51.298.
+Test Case '-[PXLAppleMediaTests.AssetTests testMissingColourRequiresRecordedExplicitPolicy]' started.
+Test Case '-[PXLAppleMediaTests.AssetTests testMissingColourRequiresRecordedExplicitPolicy]' passed (0.165 seconds).
+Test Case '-[PXLAppleMediaTests.AssetTests testNativeInspectionAndOriginalSamples]' started.
+Test Case '-[PXLAppleMediaTests.AssetTests testNativeInspectionAndOriginalSamples]' passed (0.122 seconds).
+Test Case '-[PXLAppleMediaTests.AssetTests testUnknownChromaAndUnsupportedSPSFail]' started.
+Test Case '-[PXLAppleMediaTests.AssetTests testUnknownChromaAndUnsupportedSPSFail]' passed (0.000 seconds).
+Test Case '-[PXLAppleMediaTests.AssetTests testUnsupportedAndBrokenInputs]' started.
+Test Case '-[PXLAppleMediaTests.AssetTests testUnsupportedAndBrokenInputs]' passed (0.096 seconds).
+Test Suite 'AssetTests' passed at 2026-10-13 15:01:51.681.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.382 (0.383) seconds
+Test Suite 'BFramePipelineTests' started at 2026-10-13 15:01:51.681.
+Test Case '-[PXLmpegTests.BFramePipelineTests testCancellationReleasesNativeReorderWindow]' started.
+Test Case '-[PXLmpegTests.BFramePipelineTests testCancellationReleasesNativeReorderWindow]' passed (0.152 seconds).
+Test Case '-[PXLmpegTests.BFramePipelineTests testDecodedBFramePicturesMatchIndependentDisplayOrderReference]' started.
+Test Case '-[PXLmpegTests.BFramePipelineTests testDecodedBFramePicturesMatchIndependentDisplayOrderReference]' passed (1.356 seconds).
+Test Case '-[PXLmpegTests.BFramePipelineTests testHundredNativeCancellationSchedulesReleaseAllQueuedFrames]' started.
+Test Case '-[PXLmpegTests.BFramePipelineTests testHundredNativeCancellationSchedulesReleaseAllQueuedFrames]' passed (0.810 seconds).
+Test Case '-[PXLmpegTests.BFramePipelineTests testNativeBFramesRetainEveryPresentationTimestampAndAACPacket]' started.
+Test Case '-[PXLmpegTests.BFramePipelineTests testNativeBFramesRetainEveryPresentationTimestampAndAACPacket]' passed (0.435 seconds).
+Test Case '-[PXLmpegTests.BFramePipelineTests testNonzeroStartAndVariableDurationBFrames]' started.
+Test Case '-[PXLmpegTests.BFramePipelineTests testNonzeroStartAndVariableDurationBFrames]' passed (0.903 seconds).
+Test Case '-[PXLmpegTests.BFramePipelineTests testPlannerIncludesReorderWindow]' started.
+Test Case '-[PXLmpegTests.BFramePipelineTests testPlannerIncludesReorderWindow]' passed (0.001 seconds).
+Test Suite 'BFramePipelineTests' passed at 2026-10-13 15:01:55.339.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 3.657 (3.658) seconds
+Test Suite 'BudgetTests' started at 2026-10-13 15:01:55.339.
+Test Case '-[PXLAppleMediaTests.BudgetTests testPoolKeepsItsStorageChargedAndExclusive]' started.
+Test Case '-[PXLAppleMediaTests.BudgetTests testPoolKeepsItsStorageChargedAndExclusive]' passed (0.001 seconds).
+Test Case '-[PXLAppleMediaTests.BudgetTests testReservationsAreBoundedAndReleaseOnce]' started.
+Test Case '-[PXLAppleMediaTests.BudgetTests testReservationsAreBoundedAndReleaseOnce]' passed (0.000 seconds).
+Test Suite 'BudgetTests' passed at 2026-10-13 15:01:55.339.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'CommandLineTests' started at 2026-10-13 15:01:55.339.
+Test Case '-[PXLmpegCLITests.CommandLineTests testExplicitGrammarAndPaths]' started.
+Test Case '-[PXLmpegCLITests.CommandLineTests testExplicitGrammarAndPaths]' passed (0.000 seconds).
+Test Suite 'CommandLineTests' passed at 2026-10-13 15:01:55.340.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'ContainerOutputTests' started at 2026-10-13 15:01:55.340.
+Test Case '-[PXLmpegTests.ContainerOutputTests testContainerMustMatchDestinationAndLegacyRequestsDefaultMOV]' started.
+Test Case '-[PXLmpegTests.ContainerOutputTests testContainerMustMatchDestinationAndLegacyRequestsDefaultMOV]' passed (0.065 seconds).
+Test Case '-[PXLmpegTests.ContainerOutputTests testMP4TranscodePreservesNativeH264AndMain10HLGWithFastStart]' started.
+Test Case '-[PXLmpegTests.ContainerOutputTests testMP4TranscodePreservesNativeH264AndMain10HLGWithFastStart]' passed (0.566 seconds).
+Test Suite 'ContainerOutputTests' passed at 2026-10-13 15:01:55.971.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.631 (0.631) seconds
+Test Suite 'ContainerWriterTests' started at 2026-10-13 15:01:55.971.
+Test Case '-[PXLAppleMediaTests.ContainerWriterTests testNativeWriterRoundTrip]' started.
+Test Case '-[PXLAppleMediaTests.ContainerWriterTests testNativeWriterRoundTrip]' passed (0.139 seconds).
+Test Suite 'ContainerWriterTests' passed at 2026-10-13 15:01:56.110.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.139 (0.139) seconds
+Test Suite 'DisplayTransformTests' started at 2026-10-13 15:01:56.110.
+Test Case '-[PXLAppleMediaTests.DisplayTransformTests testQuarterTurnsAndTranslatedBounds]' started.
+Test Case '-[PXLAppleMediaTests.DisplayTransformTests testQuarterTurnsAndTranslatedBounds]' passed (0.000 seconds).
+Test Suite 'DisplayTransformTests' passed at 2026-10-13 15:01:56.110.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'DolbyVisionTests' started at 2026-10-13 15:01:56.110.
+Test Case '-[PXLAppleMediaTests.DolbyVisionTests testSupportedBaseLayerAndRPUSignallingRequireConsistentColour]' started.
+Test Case '-[PXLAppleMediaTests.DolbyVisionTests testSupportedBaseLayerAndRPUSignallingRequireConsistentColour]' passed (0.000 seconds).
+Test Suite 'DolbyVisionTests' passed at 2026-10-13 15:01:56.110.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'H264StreamTests' started at 2026-10-13 15:01:56.110.
+Test Case '-[PXLAppleMediaTests.H264StreamTests testExplicitAndInferredReorderBounds]' started.
+Test Case '-[PXLAppleMediaTests.H264StreamTests testExplicitAndInferredReorderBounds]' passed (0.000 seconds).
+Test Case '-[PXLAppleMediaTests.H264StreamTests testMalformedUnsupportedAndInconsistentBounds]' started.
+Test Case '-[PXLAppleMediaTests.H264StreamTests testMalformedUnsupportedAndInconsistentBounds]' passed (0.000 seconds).
+Test Case '-[PXLAppleMediaTests.H264StreamTests testNegotiatedCreditsAreBounded]' started.
+Test Case '-[PXLAppleMediaTests.H264StreamTests testNegotiatedCreditsAreBounded]' passed (0.000 seconds).
+Test Suite 'H264StreamTests' passed at 2026-10-13 15:01:56.111.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'HDRPipelineTests' started at 2026-10-13 15:01:56.111.
+Test Case '-[PXLmpegTests.HDRPipelineTests testCancellingRotatedMain10HDRJobLeavesNoOutputOrPartialFile]' started.
+Test Case '-[PXLmpegTests.HDRPipelineTests testCancellingRotatedMain10HDRJobLeavesNoOutputOrPartialFile]' passed (11.753 seconds).
+Test Case '-[PXLmpegTests.HDRPipelineTests testMain10HLGAndPQRemainTenBitHDRThroughRotationAndResize]' started.
+Test Case '-[PXLmpegTests.HDRPipelineTests testMain10HLGAndPQRemainTenBitHDRThroughRotationAndResize]' passed (2.596 seconds).
+Test Suite 'HDRPipelineTests' passed at 2026-10-13 15:02:10.461.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 14.349 (14.349) seconds
+Test Suite 'HDRPlanningTests' started at 2026-10-13 15:02:10.461.
+Test Case '-[PXLmpegTests.HDRPlanningTests testTimedMetadataDiscardIsExplicitAndLegacyDefaultsReject]' started.
+Test Case '-[PXLmpegTests.HDRPlanningTests testTimedMetadataDiscardIsExplicitAndLegacyDefaultsReject]' passed (0.068 seconds).
+Test Suite 'HDRPlanningTests' passed at 2026-10-13 15:02:10.528.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.068 (0.068) seconds
+Test Suite 'HDRStaticMetadataTests' started at 2026-10-13 15:02:10.529.
+Test Case '-[PXLmpegTests.HDRStaticMetadataTests testSuppliedStaticPQMetadataSurvivesNewEncodeAndProcessing]' started.
+Test Case '-[PXLmpegTests.HDRStaticMetadataTests testSuppliedStaticPQMetadataSurvivesNewEncodeAndProcessing]' passed (0.186 seconds).
+Test Suite 'HDRStaticMetadataTests' passed at 2026-10-13 15:02:10.714.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.186 (0.186) seconds
+Test Suite 'HEVCFormatTests' started at 2026-10-13 15:02:10.714.
+Test Case '-[PXLAppleMediaTests.HEVCFormatTests testMainEightBitGeometryAndSublayerBound]' started.
+Test Case '-[PXLAppleMediaTests.HEVCFormatTests testMainEightBitGeometryAndSublayerBound]' passed (0.001 seconds).
+Test Case '-[PXLAppleMediaTests.HEVCFormatTests testSublayerProfileSkippingAndMonotonicPictureBounds]' started.
+Test Case '-[PXLAppleMediaTests.HEVCFormatTests testSublayerProfileSkippingAndMonotonicPictureBounds]' passed (0.001 seconds).
+Test Suite 'HEVCFormatTests' passed at 2026-10-13 15:02:10.716.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'HEVCPipelineTests' started at 2026-10-13 15:02:10.716.
+Test Case '-[PXLmpegTests.HEVCPipelineTests testCancellingRotatedHEVCJobLeavesNoOutputOrPartialFile]' started.
+Test Case '-[PXLmpegTests.HEVCPipelineTests testCancellingRotatedHEVCJobLeavesNoOutputOrPartialFile]' passed (0.267 seconds).
+Test Case '-[PXLmpegTests.HEVCPipelineTests testExplicitHEVCOutputAndDefaultH264RemainCompatible]' started.
+Test Case '-[PXLmpegTests.HEVCPipelineTests testExplicitHEVCOutputAndDefaultH264RemainCompatible]' passed (0.391 seconds).
+Test Case '-[PXLmpegTests.HEVCPipelineTests testNativeHEVCInputMatchesDisplayReference]' started.
+Test Case '-[PXLmpegTests.HEVCPipelineTests testNativeHEVCInputMatchesDisplayReference]' passed (0.897 seconds).
+Test Case '-[PXLmpegTests.HEVCPipelineTests testRotatedH264AndHEVCBecomeUprightPortraitOrLandscape]' started.
+Test Case '-[PXLmpegTests.HEVCPipelineTests testRotatedH264AndHEVCBecomeUprightPortraitOrLandscape]' passed (2.482 seconds).
+Test Case '-[PXLmpegTests.HEVCPipelineTests testRotationSurfaceIsIncludedInMinimumBudget]' started.
+Test Case '-[PXLmpegTests.HEVCPipelineTests testRotationSurfaceIsIncludedInMinimumBudget]' passed (0.001 seconds).
+Test Suite 'HEVCPipelineTests' passed at 2026-10-13 15:02:14.755.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 4.039 (4.039) seconds
+Test Suite 'MediaTests' started at 2026-10-13 15:02:14.756.
+Test Case '-[PXLMediaTests.MediaTests testExplicitColourPolicyRoundTripsAndDefaultRemainsStrict]' started.
+Test Case '-[PXLMediaTests.MediaTests testExplicitColourPolicyRoundTripsAndDefaultRemainsStrict]' passed (0.000 seconds).
+Test Case '-[PXLMediaTests.MediaTests testRationalComparisonAndValidation]' started.
+Test Case '-[PXLMediaTests.MediaTests testRationalComparisonAndValidation]' passed (0.000 seconds).
+Test Case '-[PXLMediaTests.MediaTests testResizeGeometry]' started.
+Test Case '-[PXLMediaTests.MediaTests testResizeGeometry]' passed (0.000 seconds).
+Test Case '-[PXLMediaTests.MediaTests testStrictRequestAndNormalization]' started.
+Test Case '-[PXLMediaTests.MediaTests testStrictRequestAndNormalization]' passed (0.000 seconds).
+Test Suite 'MediaTests' passed at 2026-10-13 15:02:14.756.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'MetalContextTests' started at 2026-10-13 15:02:14.757.
+Test Case '-[PXLMetalTests.MetalContextTests testBundledShaderDispatches]' started.
+Test Case '-[PXLMetalTests.MetalContextTests testBundledShaderDispatches]' passed (0.008 seconds).
+Test Case '-[PXLMetalTests.MetalContextTests testMissingLibraryIsFailure]' started.
+Test Case '-[PXLMetalTests.MetalContextTests testMissingLibraryIsFailure]' passed (0.000 seconds).
+Test Suite 'MetalContextTests' passed at 2026-10-13 15:02:14.765.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'NativePipelineTests' started at 2026-10-13 15:02:14.765.
+Test Case '-[PXLmpegTests.NativePipelineTests testAACPacketsAndTimingSurviveNativePipeline]' started.
+Test Case '-[PXLmpegTests.NativePipelineTests testAACPacketsAndTimingSurviveNativePipeline]' passed (0.295 seconds).
+Test Case '-[PXLmpegTests.NativePipelineTests testCancelAndBusyAreSafe]' started.
+Test Case '-[PXLmpegTests.NativePipelineTests testCancelAndBusyAreSafe]' passed (0.177 seconds).
+Test Case '-[PXLmpegTests.NativePipelineTests testChangedSourceDoesNotPublish]' started.
+Test Case '-[PXLmpegTests.NativePipelineTests testChangedSourceDoesNotPublish]' passed (0.085 seconds).
+Test Case '-[PXLmpegTests.NativePipelineTests testTenSecondNativePipeline]' started.
+Test Case '-[PXLmpegTests.NativePipelineTests testTenSecondNativePipeline]' passed (0.899 seconds).
+Test Case '-[PXLmpegTests.NativePipelineTests testUnequalTrackDurationsCopyAndDrop]' started.
+Test Case '-[PXLmpegTests.NativePipelineTests testUnequalTrackDurationsCopyAndDrop]' passed (0.916 seconds).
+Test Case '-[PXLmpegTests.NativePipelineTests testWatchdogDiagnosesWithoutWorkerCheck]' started.
+Test Case '-[PXLmpegTests.NativePipelineTests testWatchdogDiagnosesWithoutWorkerCheck]' passed (0.081 seconds).
+Test Suite 'NativePipelineTests' passed at 2026-10-13 15:02:17.218.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 2.453 (2.453) seconds
+Test Suite 'OutputTransactionTests' started at 2026-10-13 15:02:17.218.
+Test Case '-[PXLmpegTests.OutputTransactionTests testAbortRemovesWriterSafeSaveScratchAndPreservesUnknownFiles]' started.
+Test Case '-[PXLmpegTests.OutputTransactionTests testAbortRemovesWriterSafeSaveScratchAndPreservesUnknownFiles]' passed (0.004 seconds).
+Test Case '-[PXLmpegTests.OutputTransactionTests testAtomicNoReplaceAndCleanup]' started.
+Test Case '-[PXLmpegTests.OutputTransactionTests testAtomicNoReplaceAndCleanup]' passed (0.002 seconds).
+Test Case '-[PXLmpegTests.OutputTransactionTests testSuccessfulPublicationAndFingerprintChange]' started.
+Test Case '-[PXLmpegTests.OutputTransactionTests testSuccessfulPublicationAndFingerprintChange]' passed (0.002 seconds).
+Test Suite 'OutputTransactionTests' passed at 2026-10-13 15:02:17.226.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Suite 'PixelContractTests' started at 2026-10-13 15:02:17.226.
+Test Case '-[PXLAppleMediaTests.PixelContractTests testReusedSurfaceClearsAbsentMetadataAndCopiesOnlyWhitelistedAttachments]' started.
+Test Case '-[PXLAppleMediaTests.PixelContractTests testReusedSurfaceClearsAbsentMetadataAndCopiesOnlyWhitelistedAttachments]' passed (0.001 seconds).
+Test Suite 'PixelContractTests' passed at 2026-10-13 15:02:17.227.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'PlaneOrientationTests' started at 2026-10-13 15:02:17.227.
+Test Case '-[PXLMetalTests.PlaneOrientationTests testEveryRotatedPixelAgainstPhysicalLatticeReference]' started.
+Test Case '-[PXLMetalTests.PlaneOrientationTests testEveryRotatedPixelAgainstPhysicalLatticeReference]' passed (0.051 seconds).
+Test Suite 'PlaneOrientationTests' passed at 2026-10-13 15:02:17.278.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.051 (0.051) seconds
+Test Suite 'PlaneScalerTests' started at 2026-10-13 15:02:17.278.
+Test Case '-[PXLMetalTests.PlaneScalerTests testRealGPUAgainstScalarAreaAndBilinear]' started.
+Test Case '-[PXLMetalTests.PlaneScalerTests testRealGPUAgainstScalarAreaAndBilinear]' passed (0.029 seconds).
+Test Suite 'PlaneScalerTests' passed at 2026-10-13 15:02:17.307.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.029 (0.029) seconds
+Test Suite 'PlaybackTests' started at 2026-10-13 15:02:17.307.
+Test Case '-[PXLPlaybackTests.PlaybackTests testAudioLongerThanVideoUsesWholeTimelineAndUntaggedNeedsPolicy]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testAudioLongerThanVideoUsesWholeTimelineAndUntaggedNeedsPolicy]' passed (0.696 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testCancellingFromLoadingAndSeekingCallbacksCleansUp]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testCancellingFromLoadingAndSeekingCallbacksCleansUp]' passed (0.337 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testHEVCMain10EndAndReplay]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testHEVCMain10EndAndReplay]' passed (0.964 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testInvalidSourceSeekAndReentrantClose]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testInvalidSourceSeekAndReentrantClose]' passed (0.138 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testLatestSeekWinsAndPauseDuringSeekStaysPaused]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testLatestSeekWinsAndPauseDuringSeekStaysPaused]' passed (0.158 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testNativePlayPauseSeekDecodedFrameAndClose]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testNativePlayPauseSeekDecodedFrameAndClose]' passed (0.769 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testOptionalCameraOriginalReadOnly]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testOptionalCameraOriginalReadOnly]' passed (0.123 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testReentrantControlsDoNotRecursivelyNotifyAndCloseCancelsCompletingSeek]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testReentrantControlsDoNotRecursivelyNotifyAndCloseCancelsCompletingSeek]' passed (0.294 seconds).
+Test Case '-[PXLPlaybackTests.PlaybackTests testReplacementCloseAndCancellationCannotResurrectOldOpen]' started.
+Test Case '-[PXLPlaybackTests.PlaybackTests testReplacementCloseAndCancellationCannotResurrectOldOpen]' passed (0.197 seconds).
+Test Suite 'PlaybackTests' passed at 2026-10-13 15:02:20.984.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 3.675 (3.677) seconds
+Test Suite 'PresentationBufferTests' started at 2026-10-13 15:02:20.984.
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testBoundedPermutationAndEOFDrain]' started.
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testBoundedPermutationAndEOFDrain]' passed (0.000 seconds).
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testDuplicateLateAndExcessiveAdmissionFail]' started.
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testDuplicateLateAndExcessiveAdmissionFail]' passed (0.000 seconds).
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testEncodedSampleUsesTrackOutputTimeRatherThanMediaTime]' started.
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testEncodedSampleUsesTrackOutputTimeRatherThanMediaTime]' passed (0.000 seconds).
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testQueuedOwnersReleaseOnCancellation]' started.
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testQueuedOwnersReleaseOnCancellation]' passed (0.000 seconds).
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testThousandSeededBoundedPermutations]' started.
+Test Case '-[PXLAppleMediaTests.PresentationBufferTests testThousandSeededBoundedPermutations]' passed (0.148 seconds).
+Test Suite 'PresentationBufferTests' passed at 2026-10-13 15:02:21.133.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.149 (0.149) seconds
+Test Suite 'ProcessTests' started at 2026-10-13 15:02:21.133.
+Test Case '-[PXLmpegCLITests.ProcessTests testSIGINTAndBrokenPipeCleanNativeJob]' started.
+Test Case '-[PXLmpegCLITests.ProcessTests testSIGINTAndBrokenPipeCleanNativeJob]' passed (1.698 seconds).
+Test Suite 'ProcessTests' passed at 2026-10-13 15:02:22.832.
+	 Executed 1 test, with 0 failures (0 unexpected) in 1.698 (1.699) seconds
+Test Suite 'RemuxRequestTests' started at 2026-10-13 15:02:22.832.
+Test Case '-[PXLMediaTests.RemuxRequestTests testStrictCopySchemaDoesNotAcceptTranscodeOptions]' started.
+Test Case '-[PXLMediaTests.RemuxRequestTests testStrictCopySchemaDoesNotAcceptTranscodeOptions]' passed (0.001 seconds).
+Test Suite 'RemuxRequestTests' passed at 2026-10-13 15:02:22.833.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'RemuxTests' started at 2026-10-13 15:02:22.833.
+Test Case '-[PXLmpegTests.RemuxTests testAudioDropUsesVideoEndAndSourceChangeWrongEngineDoNotPublish]' started.
+Test Case '-[PXLmpegTests.RemuxTests testAudioDropUsesVideoEndAndSourceChangeWrongEngineDoNotPublish]' passed (0.104 seconds).
+Test Case '-[PXLmpegTests.RemuxTests testCancellingActiveCopyRemovesPartialMP4]' started.
+Test Case '-[PXLmpegTests.RemuxTests testCancellingActiveCopyRemovesPartialMP4]' passed (0.990 seconds).
+Test Case '-[PXLmpegTests.RemuxTests testNativeCopyRoundTripPreservesBFramesVFRRotationHDRAndAAC]' started.
+Test Case '-[PXLmpegTests.RemuxTests testNativeCopyRoundTripPreserwarning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+vesBFramesVFRRotationHDRAndAAC]' passed (3.196 seconds).
+Test Suite 'RemuxTests' passed at 2026-10-13 15:02:27.124.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 4.290 (4.290) seconds
+Test Suite 'TenBitOrientationTests' started at 2026-10-13 15:02:27.124.
+Test Case '-[PXLMetalTests.TenBitOrientationTests testTenBitPixelsAndChromaRemainPreciseAcrossRotations]' started.
+Test Case '-[PXLMetalTests.TenBitOrientationTests testTenBitPixelsAndChromaRemainPreciseAcrossRotations]' passed (0.031 seconds).
+Test Suite 'TenBitOrientationTests' passed at 2026-10-13 15:02:27.155.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.031 (0.031) seconds
+Test Suite 'TenBitScaleTests' started at 2026-10-13 15:02:27.155.
+Test Case '-[PXLMetalTests.TenBitScaleTests testSubEightBitCodePrecisionAndPackingSurviveAllScalePaths]' started.
+Test Case '-[PXLMetalTests.TenBitScaleTests testSubEightBitCodePrecisionAndPackingSurviveAllScalePaths]' passed (0.014 seconds).
+Test Suite 'TenBitScaleTests' passed at 2026-10-13 15:02:27.169.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.014 (0.014) seconds
+Test Suite 'TenBitVaryingScaleTests' started at 2026-10-13 15:02:27.169.
+Test Case '-[PXLMetalTests.TenBitVaryingScaleTests testTenBitGPUAgainstScalarAreaAndBilinear]' started.
+Test Case '-[PXLMetalTests.TenBitVaryingScaleTests testTenBitGPUAgainstScalarAreaAndBilinear]' passed (0.019 seconds).
+Test Suite 'TenBitVaryingScaleTests' passed at 2026-10-13 15:02:27.189.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.019 (0.019) seconds
+Test Suite 'VideoCodecTests' started at 2026-10-13 15:02:27.189.
+Test Case '-[PXLAppleMediaTests.VideoCodecTests testActualHardwareRoundTrip]' started.
+Test Case '-[PXLAppleMediaTests.VideoCodecTests testActualHardwareRoundTrip]' passed (0.142 seconds).
+Test Suite 'VideoCodecTests' passed at 2026-10-13 15:02:27.331.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.142 (0.142) seconds
+Test Suite 'PXLmpegPackageTests.xctest' passed at 2026-10-13 15:02:27.331.
+	 Executed 73 tests, with 0 failures (0 unexpected) in 36.024 (36.033) seconds
+Test Suite 'All tests' passed at 2026-10-13 15:02:27.331.
+	 Executed 73 tests, with 0 failures (0 unexpected) in 36.024 (36.034) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

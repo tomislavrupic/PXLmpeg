@@ -27,10 +27,13 @@ let receipt = try await engine.execute(plan)
 
 `timedMetadataPolicy=.discard` must be a deliberate host policy. It drops camera timed-metadata tracks, not video HDR colour/ambient metadata. Original files stay untouched. Requests with missing colour tags require an explicit supported transcode interpretation; remux currently admits the tagged native subset only.
 
-## Playback and remote boundary
+## Optional native playback
 
-The engine currently produces completed files. It does not expose a player view, pull-frame playback session, seek/flush generations, PCM clock/audio renderer, thumbnail API, or authenticated Mac endpoint. Those are next capabilities to design and verify separately. A future playback API should provide bounded retained-frame leases, exact timestamps, generation-safe seek/flush/cancel and PCM audio while the host owns its UI and clock policy.
+The optional `PXLPlayback` library now provides `@MainActor PlaybackSession` and an AppKit `PlaybackView` backed directly by AVPlayerLayer. Hosts can open completed supported local files, play/pause, seek, set volume/mute and close. `onChange` supplies coalesced main-actor snapshots. New opens and seeks invalidate older logical operations; replacing or closing a session prevents stale completions from changing its state. Cancelled/superseded operations throw `CancellationError`. Open and seek have a 15-second logical deadline; underlying native cancellation is advisory, not a hard OS teardown guarantee.
 
+Use one retained session per active attachment surface, retain security-scoped access for its lifetime, and call `close()` when the attachment is removed or reused. Construct `PlaybackView(session:)` on the main actor. After `.ended`, explicitly seek to zero before replay. `open(_:colourPolicy:)` accepts a deliberate missing-colour interpretation for known ALi SDR clips; the default remains strict. Playback neither copies nor discards timed metadata tracks.
+
+This first backend uses **AVPlayer** for decoding, clock/audio synchronization, buffers and native colour presentation. It does not promise required hardware decoding, bounded decoded-frame memory, custom Metal playback, PCM/audio-clock access, frame stepping or pull-frame leases. A future custom playback worker will need generation-safe frame leases and explicit PCM/clock policy. HDR source recognition and decoded output are not reference-display approval. No authenticated Mac endpoint or thumbnail API is exposed.
 Authenticated transport, reconnect, project storage, chat state and generation remain host responsibilities. No network listener, account credentials or model runtime belongs in the processing core.
 
 The supplied Sirius screenshot reports a SwiftUI player-view bridge crash. It is context for the intended workflow, not a verified crash diagnosis in this repository. Producing a valid media file does not establish that a host view, HDR display path or playback session is stable; integration requires an actual open/play/seek/close/cancel test in the owning app.

@@ -1,1 +1,1 @@
-public enum PXLVersion { public static let current = "0.5.0-remux-mp4" }
+public enum PXLVersion { public static let current = "0.6.0-native-playback" }

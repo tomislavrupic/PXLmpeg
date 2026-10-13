@@ -8,7 +8,9 @@ A native Swift + Metal media engine for Apple Silicon, with **zero third-party d
 
 The native pipeline reads H.264/HEVC MOV/MP4 with AVFoundation, decodes on required hardware with VideoToolbox, rotates/resizes NV12 or 10-bit P010 planes with our Metal kernels, encodes on required hardware, and writes a new MOV or MP4. AAC can be copied unchanged or explicitly dropped. Both codec sessions report actual hardware use.
 
-Version **0.5.0-remux-mp4** adds MP4 output and native compressed stream copying. MOV/MP4 round trips preserve encoded pictures, AAC samples, presentation timing, display transforms and HDR metadata; the copy path initializes no decoder, GPU or encoder. Main10 SDR and BT.2020 HLG/PQ remain supported. See [remux/MP4 validation](docs/validation/remux-mp4.md) and [Sirius preview integration contract](docs/integrations/sirius-preview.md). See [HDR/iPhone validation](docs/validation/hdr.md), [HEVC/rotation results](docs/validation/hevc-rotation.md), and [Pixel Deck fit](docs/validation/pixel-deck-fit.md). Earlier [B-frame results](docs/validation/bframes.md) and [initial benchmarks](docs/validation/m1-native-pipeline.md) remain historical evidence.
+Version **0.6.0-native-playback** adds an optional native playback library and Mac demo with play/pause, seeking, audio and generation-safe replacement. See [playback validation](docs/validation/playback.md).
+
+The **0.5 remux/MP4 milestone** added MP4 output and native compressed stream copying. MOV/MP4 round trips preserve encoded pictures, AAC samples, presentation timing, display transforms and HDR metadata; the copy path initializes no decoder, GPU or encoder. Main10 SDR and BT.2020 HLG/PQ remain supported. See [remux/MP4 validation](docs/validation/remux-mp4.md) and [Sirius preview integration contract](docs/integrations/sirius-preview.md). See [HDR/iPhone validation](docs/validation/hdr.md), [HEVC/rotation results](docs/validation/hevc-rotation.md), and [Pixel Deck fit](docs/validation/pixel-deck-fit.md). Earlier [B-frame results](docs/validation/bframes.md) and [initial benchmarks](docs/validation/m1-native-pipeline.md) remain historical evidence.
 
 ## Build and run
 
@@ -57,6 +59,39 @@ When relocating the CLI for transcoding, copy **both** `.build/release/pxlmpeg` 
 The narrow Dolby input subset is single-layer profile 8 with an HLG/PQ-compatible base layer and v1.0 configuration (8.4/8.1). ProRes, 4:2:2/4:4:4, full-range, arbitrary transforms, broader containers, editing, PCM/audio DSP, tone mapping and model processing remain future work. Native VFR, nonzero-start and simple container edit-offset cases pass; general trim/preroll/speed changes and AAC priming need broader validation. HDR reference-display approval and minimum-OS validation remain unperformed.
 
 ALi files with missing colour tags require an explicit `"inputColourPolicy": "assumeBT709Limited"` in the job request. The default is `requireTagged`. This interpretation is recorded in receipts; conflicting tagged colour is rejected. `plan` applies the request policy, while `inspect` remains strict.
+
+## Interactive playback
+
+The optional `PXLPlayback` library provides a main-actor `PlaybackSession` and a direct AppKit `PlaybackView`. Open, play/pause, zero-tolerance native seeking, volume/mute, clip replacement and close are available in the first research backend. A small Mac demo uses the same API:
+
+```sh
+./Scripts/build.sh -c release
+./.build/release/pxl-player /absolute/path/input.mov
+# Explicit interpretation for untagged SDR ALi clips:
+./.build/release/pxl-player --assume-bt709 /absolute/path/input.mp4
+```
+
+To build a local development app bundle, run `./Scripts/build-player.sh`, then open `.build/PXLPlayer.app`. It is ad hoc signed for local use, not a notarized release.
+
+The demo also has an Open dialog. Use the optional interpretation checkbox only for untagged SDR sources known to be Rec.709 limited. Playback reads the original; it does not discard or rewrite metadata tracks.
+
+```swift
+import PXLPlayback
+
+// On the main actor; retain session and host security-scoped access.
+let session = PlaybackSession()
+let view = PlaybackView(session: session)
+session.onChange = { snapshot in /* update host controls */ }
+try await session.open(sourceURL)
+session.play()
+try await session.seek(to: 1.5)
+session.pause()
+session.close() // on attachment/window teardown
+```
+
+This backend uses **AVPlayer** for decoding, audio synchronization and presentation. It does not enforce the transcode worker's hardware selection or owned-memory budget, expose PCM/frame leases, or use our Metal kernels for playback. Native zero-tolerance seeking remains constrained by source sample timing. After `.ended`, seek to zero before replaying. The host owns UI, access lifetimes and cache state. See [playback validation](docs/validation/playback.md).
+
+For AI integration, the selected direction is [semantic footage indexing](docs/architecture/semantic-analysis.md): optional Core ML models, Neural Engine profiling, timestamped observations and embeddings for Pixel Deck search. This is a research design; no model or semantic analyzer has been implemented or bundled.
 
 ## Copy without re-encoding
 
@@ -108,6 +143,8 @@ Build scripts currently select SwiftPM's native build system for predictable res
 
 ## Design and scope
 
+- [Interactive playback results](docs/validation/playback.md)
+- [Semantic analysis research design](docs/architecture/semantic-analysis.md)
 - [Remux and MP4 results](docs/validation/remux-mp4.md)
 - [Sirius preview integration contract](docs/integrations/sirius-preview.md)
 - [Architecture](docs/superpowers/specs/2026-10-13-pxlmpeg-architecture.md)
