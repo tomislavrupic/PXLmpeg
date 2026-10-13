@@ -5,3 +5,4 @@ Sources/PXLMetal/Resources/*.metallib
 Artifacts/
 .swiftpm/
 *.xcresult
+.playwright-mcp/

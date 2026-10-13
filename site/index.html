@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="PXLmpeg is an experimental native media engine for Apple Silicon, written in Swift and Metal. Follow the project in its early research phase.">
+  <meta property="og:title" content="PXLmpeg — closer to the metal">
+  <meta property="og:description" content="A native Swift + Metal media engine for Apple Silicon. Early research phase. Real code, carefully tested boundaries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tomislavrupic.github.io/PXLmpeg/">
+  <meta property="og:image" content="https://tomislavrupic.github.io/PXLmpeg/assets/pxlmpeg-banner-v1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://tomislavrupic.github.io/PXLmpeg/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+  <title>PXLmpeg — native media, closer to the metal</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav wrap">
+    <a class="wordmark" href="#" aria-label="PXLmpeg home"><span class="pixel-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><strong>PXL</strong><span>mpeg</span></a>
+    <nav aria-label="Main navigation"><a href="#engine">The engine</a><a href="#research">Research</a><a class="nav-github" href="https://github.com/tomislavrupic/PXLmpeg">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-top"><p class="eyebrow">Native media engine / Apple Silicon</p><span class="research-badge"><span aria-hidden="true"></span>Early research phase</span></div>
+      <div class="hero-heading"><h1 id="hero-title">A new engine.<br><span>Closer to the metal.</span></h1><p>Reimagining media processing<br>with Swift, Metal, and the hardware<br>already in your Mac.</p></div>
+      <div class="hero-actions"><a class="button primary" href="https://github.com/tomislavrupic/PXLmpeg">Explore the code <span aria-hidden="true">↗</span></a><a class="text-link" href="#engine">Meet PXLmpeg <span aria-hidden="true">↓</span></a></div>
+      <figure class="hero-image"><img src="assets/pxlmpeg-banner-v1.png" alt="PXLmpeg: video frames become ordered pixels and spectral light as they pass through a glass media engine." width="2172" height="724" fetchpriority="high"><figcaption><span>Swift + Metal</span><span>Zero third-party dependencies in the core</span><span>Apple Silicon first</span></figcaption></figure>
+    </section>
+    <section class="intro wrap section" id="engine" aria-labelledby="engine-title">
+      <div class="section-label"><span class="tiny-square" aria-hidden="true"></span>01 / The idea</div>
+      <div><h2 id="engine-title">A smaller foundation.<br>A wider possibility.</h2><p class="lead">PXLmpeg is a native media-processing engine for M-series Macs. It brings hardware video engines, original Metal kernels, and explicit media contracts into one reusable Swift package.</p><p class="muted">The long-term ambition is a modern alternative to everyday FFmpeg workflows, with room for future AI processing. Today, we’re proving a focused set of native paths—one useful capability at a time.</p></div>
+    </section>
+    <section class="pipeline-section wrap section" aria-labelledby="pipeline-title">
+      <div class="pipeline-header"><div><p class="eyebrow">Architecture explorer / illustrative</p><h2 id="pipeline-title">Work with the hardware.<br>Skip work you don’t need.</h2></div><div class="mode-switch" role="group" aria-label="Explore processing modes"><button type="button" data-mode="transcode" aria-pressed="true">Transcode</button><button type="button" data-mode="remux" aria-pressed="false">Copy</button></div></div>
+      <div class="pipeline" data-current-mode="transcode">
+        <div class="stage"><span class="stage-number">01</span><span class="stage-icon" aria-hidden="true">▧</span><h3>Read</h3><p>Compressed samples</p><small>AVFoundation</small></div>
+        <div class="stage processing"><span class="stage-number">02</span><span class="stage-icon" aria-hidden="true">↓</span><h3>Decode</h3><p class="stage-description" data-active="Hardware video engine">Hardware video engine</p><small>VideoToolbox</small></div>
+        <div class="stage processing metal"><span class="stage-number">03</span><span class="stage-icon" aria-hidden="true">✳</span><h3>Transform</h3><p class="stage-description" data-active="Rotate and resize">Rotate and resize</p><small>Original Metal kernels</small></div>
+        <div class="stage processing"><span class="stage-number">04</span><span class="stage-icon" aria-hidden="true">↑</span><h3>Encode</h3><p class="stage-description" data-active="Hardware video engine">Hardware video engine</p><small>VideoToolbox</small></div>
+        <div class="stage"><span class="stage-number">05</span><span class="stage-icon" aria-hidden="true">▣</span><h3>Write</h3><p>A new MOV or MP4</p><small>Verify, then publish</small></div>
+      </div>
+      <div class="pipeline-caption"><p id="mode-description" aria-live="polite">Decode on hardware, rotate or resize pixels on the GPU, then encode on hardware. Original footage stays untouched.</p><code id="mode-command">pxlmpeg run job.json</code></div>
+    </section>
+    <section class="capabilities wrap section" aria-labelledby="capabilities-title">
+      <div class="section-label"><span class="tiny-square" aria-hidden="true"></span>02 / Working today</div>
+      <div><h2 id="capabilities-title">Small scope.<br>Real, working paths.</h2>
+        <article class="capability"><span class="row-number">01</span><div><h3>Native video, including HDR.</h3><p>H.264 and HEVC. Main10, HLG and PQ. Supported MOV/MP4 files, with AAC copy or explicit audio drop.</p></div><span class="row-tag">VIDEO</span></article>
+        <article class="capability"><span class="row-number">02</span><div><h3>Pixels on the GPU.</h3><p>Original kernels rotate and resize NV12 or P010 planes, with colour metadata carried through the pipeline.</p></div><span class="row-tag">METAL</span></article>
+        <article class="capability"><span class="row-number">03</span><div><h3>Copy without re-encoding.</h3><p>Move supported media between MOV and MP4. Retain compressed video, audio, display transforms and HDR metadata.</p></div><span class="row-tag">REMUX</span></article>
+        <article class="capability"><span class="row-number">04</span><div><h3>Explicit by design.</h3><p>Bounded owned memory, cancellation, new-file output and execution receipts. A Swift library and JSON-lines CLI.</p></div><span class="row-tag">ENGINE</span></article>
+      </div>
+    </section>
+    <section class="research wrap section" id="research" aria-labelledby="research-title">
+      <div class="research-copy"><span class="research-badge"><span aria-hidden="true"></span>Early research phase</span><h2 id="research-title">Early days.<br><em>Deliberate steps.</em></h2><p class="lead">This is a research project in active development. The API is evolving, the format matrix is focused, and each new capability needs evidence.</p><p class="muted">We’re testing real footage and native hardware paths. Full FFmpeg compatibility, broad production readiness, and calibrated HDR display validation are still ahead.</p><a class="text-link" href="https://github.com/tomislavrupic/PXLmpeg/tree/main/docs/validation">Read the validation notes <span aria-hidden="true">↗</span></a></div>
+      <div class="evidence"><p class="eyebrow">v0.5 checkpoint / 13 Oct 2026</p><div><strong>64</strong><span>Passing native tests</span></div><div><strong>22</strong><span>Verified remux jobs</span></div><div><strong>M3 Ultra</strong><span>Tested hardware · macOS 27.0.1</span></div><p>Includes genuine iPhone Main10 HLG footage and offline CLI checks. These are functional results, not a comparative speed benchmark.</p></div>
+    </section>
+    <section class="next wrap section" aria-labelledby="next-title"><div class="section-label"><span class="tiny-square" aria-hidden="true"></span>03 / On the workbench</div><div><h2 id="next-title">Made to become useful.</h2><p class="lead">Creative apps need more than a successful transcode. The next work brings PXLmpeg closer to the moment you press Play.</p><ul class="roadmap"><li><span>Up next</span><strong>Interactive native playback</strong><p>Reusable sessions, seeking, controls and audio for Mac applications.</p></li><li><span>Exploring</span><strong>Frames, thumbnails and timelines</strong><p>Useful media access with clear timing and ownership contracts.</p></li><li><span>Longer term</span><strong>Wider formats. AI-ready workflows.</strong><p>More everyday media operations and optional model integration outside the core.</p></li></ul></div></section>
+    <section class="get-started wrap section" aria-labelledby="start-title"><div><p class="eyebrow">Follow the research</p><h2 id="start-title">See what’s taking shape.</h2><p class="muted">Explore the source, read the architecture, or help test a supported workflow. Apple Silicon and full Xcode are required to build the engine.</p><a class="button primary" href="https://github.com/tomislavrupic/PXLmpeg">PXLmpeg on GitHub <span aria-hidden="true">↗</span></a></div><div class="terminal"><div class="terminal-bar"><span><i></i><i></i><i></i></span><span>Start here</span><button type="button" id="copy-command" aria-label="Copy clone and build commands">Copy</button></div><pre><code id="clone-command">git clone https://github.com/tomislavrupic/PXLmpeg.git
+cd PXLmpeg
+./Scripts/build.sh -c release</code></pre><p id="copy-status" role="status" aria-live="polite">Swift + Metal. A first-party core.</p></div></section>
+  </main>
+  <footer class="wrap"><a class="wordmark" href="#"><strong>PXL</strong><span>mpeg</span></a><p>Built by <a href="https://github.com/tomislavrupic">Tomislav Rupic</a>.<br>Early research, in the open.</p><a class="text-link" href="https://github.com/tomislavrupic/PXLmpeg/issues">Ideas &amp; issues <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

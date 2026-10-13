@@ -4,6 +4,8 @@
 
 A native Swift + Metal media engine for Apple Silicon, with **zero third-party dependencies in the core**.
 
+**Early research phase.** PXLmpeg is experimental and actively evolving; it is not yet a complete FFmpeg replacement. [Visit the project site](https://tomislavrupic.github.io/PXLmpeg/).
+
 The native pipeline reads H.264/HEVC MOV/MP4 with AVFoundation, decodes on required hardware with VideoToolbox, rotates/resizes NV12 or 10-bit P010 planes with our Metal kernels, encodes on required hardware, and writes a new MOV or MP4. AAC can be copied unchanged or explicitly dropped. Both codec sessions report actual hardware use.
 
 Version **0.5.0-remux-mp4** adds MP4 output and native compressed stream copying. MOV/MP4 round trips preserve encoded pictures, AAC samples, presentation timing, display transforms and HDR metadata; the copy path initializes no decoder, GPU or encoder. Main10 SDR and BT.2020 HLG/PQ remain supported. See [remux/MP4 validation](docs/validation/remux-mp4.md) and [Sirius preview integration contract](docs/integrations/sirius-preview.md). See [HDR/iPhone validation](docs/validation/hdr.md), [HEVC/rotation results](docs/validation/hevc-rotation.md), and [Pixel Deck fit](docs/validation/pixel-deck-fit.md). Earlier [B-frame results](docs/validation/bframes.md) and [initial benchmarks](docs/validation/m1-native-pipeline.md) remain historical evidence.
@@ -118,3 +120,8 @@ Build scripts currently select SwiftPM's native build system for predictable res
 - [B-frame results and real ALi tests](docs/validation/bframes.md)
 
 PXLmpeg owns processing within one media job. Applications own their projects and creative decisions; Sirius retains orchestration across jobs and models. No existing application workflow has been switched over. Source is published at [tomislavrupic/PXLmpeg](https://github.com/tomislavrupic/PXLmpeg). Generated media, local build output and working ledgers remain excluded. This is an early native subset rather than complete FFmpeg format/feature parity.
+
+
+## Project site
+
+The static landing page lives in `site/`, independent of the native engine. `Scripts/build-site.sh` prepares `.build/site` using the canonical banner asset; no npm packages or web framework are required. GitHub Pages publishes it through `.github/workflows/pages.yml`. To preview locally, run the build script and serve `.build/site` with a static HTTP server.
