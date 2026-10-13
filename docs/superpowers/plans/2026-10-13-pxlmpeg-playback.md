@@ -35,4 +35,6 @@ Files: Sources/PXLPlayer/*, README.md, docs/integrations/sirius-preview.md, site
 - [x] Implement open-file, play/pause, timeline and audio controls using Task cancellation on replacement.
 - [x] Build release, run full suite and dependency audit; validate iPhone original read-only.
 - [x] Update truthful docs/site; fresh whole-change review and address important findings.
-- [ ] Commit, push and verify Pages deployment under existing user authorization.
+- [x] Commit, push and verify Pages deployment under existing user authorization.
+
+Implementation published in `cc29af9`; Pages workflow `38402178555` succeeded, and the live site returned the v0.6 playback/research content.
