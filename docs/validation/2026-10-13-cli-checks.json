@@ -1,0 +1,87 @@
+[
+  {
+    "check": "Unicode/spaced request path",
+    "passed": true,
+    "detail": 0
+  },
+  {
+    "check": "invalid command",
+    "passed": true,
+    "detail": 2
+  },
+  {
+    "check": "unknown JSON key",
+    "passed": true,
+    "detail": 2
+  },
+  {
+    "check": "oversized JSON bounded read",
+    "passed": true,
+    "detail": 2
+  },
+  {
+    "check": "SIGINT cleanup and terminal ordering",
+    "passed": true,
+    "detail": {
+      "exit": 130,
+      "events": [
+        "progress",
+        "cancelled"
+      ],
+      "stderr": "running: Job cancelled\n"
+    }
+  },
+  {
+    "check": "broken pipe cancels and cleans",
+    "passed": true,
+    "detail": 130
+  },
+  {
+    "check": "no partial files after cancellation",
+    "passed": true,
+    "detail": 0
+  },
+  {
+    "check": "missing resource bundle typed failure",
+    "passed": true,
+    "detail": {
+      "exit": 3,
+      "error": {
+        "payload": {
+          "code": "gpuFailure",
+          "message": "Bundled PXLKernels.metallib is missing; use Scripts/build.sh and ship PXLmpeg_PXLMetal.bundle beside the executable",
+          "stage": "metal"
+        },
+        "schemaVersion": 1,
+        "type": "error"
+      }
+    }
+  },
+  {
+    "check": "existing output is preserved",
+    "passed": true,
+    "detail": 3
+  },
+  {
+    "check": "stalled stdout bounded deadline",
+    "passed": true,
+    "detail": {
+      "exit": 130,
+      "seconds": 4.116544166987296
+    }
+  },
+  {
+    "check": "native execution without network",
+    "passed": true,
+    "detail": {
+      "exit": 0,
+      "events": [
+        "progress",
+        "progress",
+        "progress",
+        "progress",
+        "completed"
+      ]
+    }
+  }
+]

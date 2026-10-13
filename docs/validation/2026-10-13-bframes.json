@@ -1,0 +1,256 @@
+[
+  {
+    "compressedPTSReordered" : true,
+    "decodedFrames" : 240,
+    "decodedPicturesMatchReference" : true,
+    "ownedDecodePeak" : 11896046,
+    "presentationTimelineMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 4000000,
+      "audioPackets" : 17,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.6679366250173189,
+      "encoderHardware" : true,
+      "engineVersion" : "0.2.0-bframes",
+      "frames" : 240,
+      "jobID" : "A65B2DA8-3B16-49B2-817D-6BE5DDEEE39A",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 5, peak retained 6 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 6000
+        },
+        "hasAudio" : true,
+        "height" : 384,
+        "maxReorderFrames" : 8,
+        "width" : 640
+      },
+      "ownedMemoryPeak" : 17423396,
+      "processFootprintPeakBytes" : 300549104,
+      "requestDigest" : "6ccb39a079479fb0f0925bf5848a2acd70333149af2398e416ac38394396146f",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "reorderDepth" : 5,
+    "retainedFramesPeak" : 6,
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/bframes.xUetNK\/native-bframes-aac.mov",
+    "sourceSHA256" : "c1a2071c428f8fa4d91701e83e7c23f4e5dc77cadf0be457d1cd7a984740c6b4",
+    "sourceUnchanged" : true,
+    "status" : "completed"
+  },
+  {
+    "compressedPTSReordered" : true,
+    "decodedFrames" : 9,
+    "decodedPicturesMatchReference" : true,
+    "ownedDecodePeak" : 444999,
+    "presentationTimelineMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 4000000,
+      "audioPackets" : 8,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.10608504165429622,
+      "encoderHardware" : true,
+      "engineVersion" : "0.2.0-bframes",
+      "frames" : 9,
+      "jobID" : "7FA1C32F-DD87-48DE-80A6-CF3CDD8FAE50",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 225
+        },
+        "hasAudio" : true,
+        "height" : 640,
+        "maxReorderFrames" : 11,
+        "width" : 640
+      },
+      "ownedMemoryPeak" : 3080494,
+      "processFootprintPeakBytes" : 298157040,
+      "requestDigest" : "21dc2156cbcc9642f850759958ecfe5dcdd8f15914e3e9cbc39331201af4952a",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "reorderDepth" : 2,
+    "retainedFramesPeak" : 3,
+    "source" : "\/Volumes\/Samsung T5\/2026\/HAOS\/Software\/ali-imagine-remote-render\/output\/ltx-pixel-upscale-20261011\/generation-4step.mp4",
+    "sourceSHA256" : "cbe0e690cf60eb25375fac844fd0224640b903e24fd491657c55b5aa623e52bd",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "strictInspectionError" : "MediaError(code: PXLMedia.ErrorCode.unsupportedMedia, stage: \"inspect\", message: \"Explicit SDR BT.709 colour tags required (CVImageBufferColorPrimaries); untagged input requires inputColourPolicy=assumeBT709Limited\", underlyingCode: nil, receipt: nil)"
+  },
+  {
+    "compressedPTSReordered" : true,
+    "decodedFrames" : 9,
+    "decodedPicturesMatchReference" : true,
+    "ownedDecodePeak" : 446999,
+    "presentationTimelineMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 4000000,
+      "audioPackets" : 8,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.11746054165996611,
+      "encoderHardware" : true,
+      "engineVersion" : "0.2.0-bframes",
+      "frames" : 9,
+      "jobID" : "0247D9A9-1310-40B7-B6F7-2AEBC6863B11",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 225
+        },
+        "hasAudio" : true,
+        "height" : 640,
+        "maxReorderFrames" : 11,
+        "width" : 640
+      },
+      "ownedMemoryPeak" : 3080477,
+      "processFootprintPeakBytes" : 298370032,
+      "requestDigest" : "7045b72d53079b648f465d02a41e8dd6a03551252f6ce82c4d5a7851d205b972",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "reorderDepth" : 2,
+    "retainedFramesPeak" : 3,
+    "source" : "\/Volumes\/Samsung T5\/2026\/HAOS\/Software\/ali-imagine-remote-render\/output\/quality-speed-20261012\/candidate-generation-warm.mp4",
+    "sourceSHA256" : "d80f95dabddcdc7f33ba8095c01715193e3ab65c740273211f1fa17fd7b1a29c",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "strictInspectionError" : "MediaError(code: PXLMedia.ErrorCode.unsupportedMedia, stage: \"inspect\", message: \"Explicit SDR BT.709 colour tags required (CVImageBufferColorPrimaries); untagged input requires inputColourPolicy=assumeBT709Limited\", underlyingCode: nil, receipt: nil)"
+  },
+  {
+    "compressedPTSReordered" : true,
+    "decodedFrames" : 121,
+    "decodedPicturesMatchReference" : true,
+    "ownedDecodePeak" : 22626876,
+    "presentationTimelineMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 4000000,
+      "audioPackets" : 120,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 1.0749969166936353,
+      "encoderHardware" : true,
+      "engineVersion" : "0.2.0-bframes",
+      "frames" : 121,
+      "jobID" : "1E085480-A408-4454-9342-806996D2089F",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 3025
+        },
+        "hasAudio" : true,
+        "height" : 352,
+        "maxReorderFrames" : 9,
+        "width" : 640
+      },
+      "ownedMemoryPeak" : 31245700,
+      "processFootprintPeakBytes" : 387695624,
+      "requestDigest" : "211d5a07e75c9d9ae4d7d1c993f3f56fb79f14deed423d3bc8374cb3f2d976ee",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "reorderDepth" : 2,
+    "retainedFramesPeak" : 3,
+    "source" : "\/Volumes\/Samsung T5\/2026\/HAOS\/Software\/ali-imagine-remote-render\/output\/upscale-frame-audit-20261012\/continuous-121f\/continuous-121f.mp4",
+    "sourceSHA256" : "ee923c49b3a63f89cbfd40867a5a3fe4d7cda6ced3d1e0dbc0f62388f7bd3e3b",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "strictInspectionError" : "MediaError(code: PXLMedia.ErrorCode.unsupportedMedia, stage: \"inspect\", message: \"Explicit SDR BT.709 colour tags required (CVImageBufferColorPrimaries); untagged input requires inputColourPolicy=assumeBT709Limited\", underlyingCode: nil, receipt: nil)"
+  },
+  {
+    "compressedPTSReordered" : true,
+    "decodedFrames" : 30,
+    "decodedPicturesMatchReference" : true,
+    "ownedDecodePeak" : 849483,
+    "presentationTimelineMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 4000000,
+      "audioPackets" : 29,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.19311516667949036,
+      "encoderHardware" : true,
+      "engineVersion" : "0.2.0-bframes",
+      "frames" : 30,
+      "jobID" : "3048A167-D2CD-4986-B4C1-DBAF17A2C2F8",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 1,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 720
+        },
+        "hasAudio" : true,
+        "height" : 612,
+        "maxReorderFrames" : 11,
+        "width" : 640
+      },
+      "ownedMemoryPeak" : 3682828,
+      "processFootprintPeakBytes" : 334169120,
+      "requestDigest" : "6ab7d6e114de6f5cba369e31e109f68923f4d372b50264012ace881656a4045a",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "reorderDepth" : 2,
+    "retainedFramesPeak" : 3,
+    "source" : "\/Volumes\/Samsung T5\/2026\/HAOS\/Software\/ali-imagine-remote-render\/output\/ltx-pixel-upscale-20261011\/import-25fps-audio.mp4",
+    "sourceSHA256" : "bab010df9a5256c702fddfc056676b622c2f8a3d0d46e00e641d79206ec82d7a",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "strictInspectionError" : "MediaError(code: PXLMedia.ErrorCode.unsupportedMedia, stage: \"inspect\", message: \"Explicit SDR BT.709 colour tags required (CVImageBufferColorPrimaries); untagged input requires inputColourPolicy=assumeBT709Limited\", underlyingCode: nil, receipt: nil)"
+  }
+]

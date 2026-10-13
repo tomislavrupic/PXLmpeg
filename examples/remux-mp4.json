@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "22222222-2222-2222-2222-222222222222",
+  "source": "file:///absolute/path/source.mov",
+  "destination": "file:///absolute/path/copy.mp4",
+  "outputContainer": "mp4",
+  "audioPolicy": "copy",
+  "timedMetadataPolicy": "discard",
+  "memoryBudgetBytes": 67108864
+}

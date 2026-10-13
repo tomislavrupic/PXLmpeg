@@ -1,0 +1,837 @@
+{
+  "cases" : [
+    {
+      "frames" : 240,
+      "name" : "1080p-copy-size",
+      "runs" : [
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 17,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.1873414583387785,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "4F63C116-4AC3-429E-8CBC-4EA1B210D0BB",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "audioChannels" : 2,
+            "audioSampleRate" : 48000,
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : true,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 8892368,
+          "processFootprintPeakBytes" : 294913032,
+          "requestDigest" : "6041f1001a63e88f1b17812952a1fd0c983e9b4747f5cbc017247f45dd32c093",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 17,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.1946702916175127,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "98A6C0E0-C789-4A6D-925B-19117AED7175",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "audioChannels" : 2,
+            "audioSampleRate" : 48000,
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : true,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 8892368,
+          "processFootprintPeakBytes" : 295027720,
+          "requestDigest" : "6ade08373866f997db019515858e65a0ff59f9b0012d49e744d75b448713d27c",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 17,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.2460790000041015,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "04DBA31B-A945-49C4-94F5-CFF309B75B89",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "audioChannels" : 2,
+            "audioSampleRate" : 48000,
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : true,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 8892368,
+          "processFootprintPeakBytes" : 295109640,
+          "requestDigest" : "d685b8d11cc6c8182bff04ef5f21ae65adb282f92ee3130d221a71e730b65b75",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 17,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.181716041697655,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "92AB1585-D058-4393-8519-2B1E211FA777",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "audioChannels" : 2,
+            "audioSampleRate" : 48000,
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : true,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 8892368,
+          "processFootprintPeakBytes" : 295142408,
+          "requestDigest" : "72abc113225bd1067f3dbefc73a4901f7b82767e0b1cd54a34c84f1ad4446bdb",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 17,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.346704291703645,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "2E25F08F-4A50-48EC-BD45-2978DA20A03C",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "audioChannels" : 2,
+            "audioSampleRate" : 48000,
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : true,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 8892368,
+          "processFootprintPeakBytes" : 295175176,
+          "requestDigest" : "550a3dff09e71a551affb4d7e7c47559722da37d3aea2d1aecd914f70fc12409",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        }
+      ],
+      "warmup" : {
+        "acceptedBitrate" : 12000000,
+        "audioPackets" : 17,
+        "decoderHardware" : true,
+        "elapsedSeconds" : 2.3289377499604598,
+        "encoderHardware" : true,
+        "engineVersion" : "0.1.0-proof",
+        "frames" : 240,
+        "jobID" : "05199D45-13FA-4071-9C22-5308AF9A7051",
+        "metalDevice" : "Apple M3 Ultra",
+        "notes" : [
+          "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+          "Owned budget excludes opaque macOS\/codec allocations.",
+          "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+        ],
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "codec" : "h264",
+          "colour" : "BT.709 limited, left chroma",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 6000
+          },
+          "hasAudio" : true,
+          "height" : 1080,
+          "width" : 1920
+        },
+        "ownedMemoryPeak" : 8890159,
+        "processFootprintPeakBytes" : 294732808,
+        "requestDigest" : "2caa3b6ee9bc9f2e2175cb36a7999fb11439b0ca02f76c967df4017494340f80",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    },
+    {
+      "frames" : 240,
+      "name" : "4k-copy-size",
+      "runs" : [
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 10.40587670833338,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "8ACB09EA-A738-4841-96BD-0DBFD36687EC",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 2160,
+            "width" : 3840
+          },
+          "ownedMemoryPeak" : 33229704,
+          "processFootprintPeakBytes" : 305218616,
+          "requestDigest" : "0407e19569ad5bae4ebb01582fe0e57209348dd0745f5a200651220a6882a35a",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 10.398419833334628,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "41AF4464-BFE3-4AA6-A7C9-3CD939F6332A",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 2160,
+            "width" : 3840
+          },
+          "ownedMemoryPeak" : 33229704,
+          "processFootprintPeakBytes" : 305333304,
+          "requestDigest" : "7e50f4864f8e916c27fb610de72eeac972e68f017e7332a304722d7d3f6974fb",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 10.446102124988101,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "33F4D3B5-2EBF-434D-ABD5-2896253077A3",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 2160,
+            "width" : 3840
+          },
+          "ownedMemoryPeak" : 33229704,
+          "processFootprintPeakBytes" : 305349664,
+          "requestDigest" : "56ccee91de133a6caa563c16fca04b9622102a771e6c2cceb482f0e25bcd1fff",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 10.330307833326515,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "6875E651-E7A5-47F9-B223-ABCA9BE70B9E",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 2160,
+            "width" : 3840
+          },
+          "ownedMemoryPeak" : 33229704,
+          "processFootprintPeakBytes" : 305349664,
+          "requestDigest" : "49ac3a85656ee671352223e04cc6688a9da16f06622014a1f6e4c735b00ae3d8",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 8.751443583343644,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "6D084E74-B8AE-489B-872C-62FB3BD57ECC",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 2160,
+            "width" : 3840
+          },
+          "ownedMemoryPeak" : 33229702,
+          "processFootprintPeakBytes" : 305333280,
+          "requestDigest" : "c96db8ef521540e77f26b6108c7cd152f21773a8660d67b24914917848e4bad5",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        }
+      ],
+      "warmup" : {
+        "acceptedBitrate" : 12000000,
+        "audioPackets" : 0,
+        "decoderHardware" : true,
+        "elapsedSeconds" : 10.402103416621685,
+        "encoderHardware" : true,
+        "engineVersion" : "0.1.0-proof",
+        "frames" : 240,
+        "jobID" : "89D28E22-8071-4D8E-B4C4-FCF4F06C124D",
+        "metalDevice" : "Apple M3 Ultra",
+        "notes" : [
+          "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+          "Owned budget excludes opaque macOS\/codec allocations.",
+          "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+        ],
+        "output" : {
+          "codec" : "h264",
+          "colour" : "BT.709 limited, left chroma",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 6000
+          },
+          "hasAudio" : false,
+          "height" : 2160,
+          "width" : 3840
+        },
+        "ownedMemoryPeak" : 33229704,
+        "processFootprintPeakBytes" : 304563208,
+        "requestDigest" : "a87ada47461a27e370ccc041099d12b184ff127d1bf4261567fa336228bfaf13",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    },
+    {
+      "frames" : 240,
+      "name" : "4k-to-1080p",
+      "runs" : [
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.7977525833412074,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "8EF9335C-AA04-42C1-A345-1D43A31ACACA",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 379667488,
+          "requestDigest" : "1f611d56fabf61b949c17a1c07af774cfcd144618983d5465a66ad92e3a09960",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.882623083307408,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "35B74A37-E7BE-4737-AE2A-479A1FABF842",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 337921056,
+          "requestDigest" : "4445c74b8d430d4879d862cfd8a2472b4c06de38fa9658cee633d750724d4704",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 3.019430958374869,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "705AD86C-D271-404B-9E80-D6140ED07A03",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 337953824,
+          "requestDigest" : "927dbb36973f1e9a231151d819cce4103da6e1c4d0da81a8b47bad55343b10ac",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.982594083296135,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "58622FE9-6A4C-4925-960D-C2DCB7BC458D",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 379733024,
+          "requestDigest" : "16812e0096b106f64cb2e24cc9e13ed9eb523e4dbe33ce6bdcddadcc0e5172b3",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 2.9500162916374393,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 240,
+          "jobID" : "EF9BDE03-72E2-401E-89DB-E837665E7918",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 6000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 337953824,
+          "requestDigest" : "a20eb74c659d4ced010b1851f96be13f06ba7b2176cd1c387411db1f9fa68511",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        }
+      ],
+      "warmup" : {
+        "acceptedBitrate" : 12000000,
+        "audioPackets" : 0,
+        "decoderHardware" : true,
+        "elapsedSeconds" : 2.9418687083525583,
+        "encoderHardware" : true,
+        "engineVersion" : "0.1.0-proof",
+        "frames" : 240,
+        "jobID" : "28AACD83-4CC6-4838-8623-E143912DA6FC",
+        "metalDevice" : "Apple M3 Ultra",
+        "notes" : [
+          "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+          "Owned budget excludes opaque macOS\/codec allocations.",
+          "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+        ],
+        "output" : {
+          "codec" : "h264",
+          "colour" : "BT.709 limited, left chroma",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 6000
+          },
+          "hasAudio" : false,
+          "height" : 1080,
+          "width" : 1920
+        },
+        "ownedMemoryPeak" : 62834116,
+        "processFootprintPeakBytes" : 337822752,
+        "requestDigest" : "1f240ba1acddd23afdc074becc6207aabce3a10d7b888ed4b37cb42d1e9ac80a",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    },
+    {
+      "frames" : 2880,
+      "name" : "4k-120s-to-1080p",
+      "runs" : [
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 34.392667791689746,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 2880,
+          "jobID" : "F6C2AA75-FF15-4415-806D-3788902E93A8",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 72000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 380044320,
+          "requestDigest" : "8eb256e3f359e2cd97a343ce2bdc3832072b5984bda345fb592320a0699378e2",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 33.117256083351094,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 2880,
+          "jobID" : "B7AABFDC-3CA1-4BB6-B81D-9CAE8EBB97E1",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 72000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 380027936,
+          "requestDigest" : "7293d5f44fec529847b0799656ef4cada4cb7e321e223733656ea24c3ac07097",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 33.86301079165423,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 2880,
+          "jobID" : "A86210F6-DE8D-43EF-B9E4-DDE1D1B7E1E6",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 72000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 380159008,
+          "requestDigest" : "fe53f1013b7f70f36964f730d88461659fa52c13d2a536a0229606431dd44f2f",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 34.74098200001754,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 2880,
+          "jobID" : "91E4F263-5AD4-4D67-9356-ECB8FEB58F41",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 72000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 379978784,
+          "requestDigest" : "0538a40500977d6f08f7265120c535753c4c0c463130040fc47926d771270377",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        },
+        {
+          "acceptedBitrate" : 12000000,
+          "audioPackets" : 0,
+          "decoderHardware" : true,
+          "elapsedSeconds" : 33.270494708325714,
+          "encoderHardware" : true,
+          "engineVersion" : "0.1.0-proof",
+          "frames" : 2880,
+          "jobID" : "27C0352B-E645-48FA-A51A-0FD57623BD72",
+          "metalDevice" : "Apple M3 Ultra",
+          "notes" : [
+            "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+            "Owned budget excludes opaque macOS\/codec allocations.",
+            "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+          ],
+          "output" : {
+            "codec" : "h264",
+            "colour" : "BT.709 limited, left chroma",
+            "duration" : {
+              "timescale" : 600,
+              "value" : 72000
+            },
+            "hasAudio" : false,
+            "height" : 1080,
+            "width" : 1920
+          },
+          "ownedMemoryPeak" : 62834116,
+          "processFootprintPeakBytes" : 380093472,
+          "requestDigest" : "bc457ce85c9239c32ee1e0451c0b411d6cb700956fc3dd22225e6769d33ffaef",
+          "schemaVersion" : 1,
+          "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+          "state" : "completed"
+        }
+      ],
+      "warmup" : {
+        "acceptedBitrate" : 12000000,
+        "audioPackets" : 0,
+        "decoderHardware" : true,
+        "elapsedSeconds" : 34.59060649998719,
+        "encoderHardware" : true,
+        "engineVersion" : "0.1.0-proof",
+        "frames" : 2880,
+        "jobID" : "C2C7A2F1-560C-4779-99D6-714F21B315F9",
+        "metalDevice" : "Apple M3 Ultra",
+        "notes" : [
+          "Single frame in flight; codec\/GPU work runs on a dedicated worker.",
+          "Owned budget excludes opaque macOS\/codec allocations.",
+          "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+        ],
+        "output" : {
+          "codec" : "h264",
+          "colour" : "BT.709 limited, left chroma",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 72000
+          },
+          "hasAudio" : false,
+          "height" : 1080,
+          "width" : 1920
+        },
+        "ownedMemoryPeak" : 62834116,
+        "processFootprintPeakBytes" : 379896864,
+        "requestDigest" : "8fc9ec6ce7799fb7f788493d6b850c191ea1d2041cd1357ba303393ab4b64fa3",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    }
+  ],
+  "generatedAt" : "2026-10-13T07:11:37Z",
+  "os" : "Version 27.0.1 (Build 26A434)",
+  "physicalMemory" : 103079215104,
+  "processorCount" : 28,
+  "thermalState" : "nominal"
+}

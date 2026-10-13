@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "33333333-3333-3333-3333-333333333333",
+  "source": "file:///absolute/path/source.mov",
+  "destination": "file:///absolute/path/preview.mp4",
+  "outputContainer": "mp4",
+  "outputCodec": "hevc",
+  "resizeWidth": 1280,
+  "videoBitrate": 8000000,
+  "audioPolicy": "copy",
+  "timedMetadataPolicy": "discard",
+  "memoryBudgetBytes": 268435456
+}

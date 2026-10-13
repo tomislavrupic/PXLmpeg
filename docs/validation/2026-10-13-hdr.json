@@ -1,0 +1,1102 @@
+[
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "hlg2020 limited, left chroma",
+      "colourSpace" : "hlg2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 0,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.14756595832295716,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "53C6ED19-3E02-4B53-93E0-B76C2AC00763",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit hlg2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 0 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; hlg2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "hlg2020 limited, left chroma",
+        "colourSpace" : "hlg2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : true,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 1743076,
+      "processFootprintPeakBytes" : 292209576,
+      "requestDigest" : "94c38434cf9b5f63444fe29052afafa4e521a8e6f834723adfc41ecad2f42639",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-hlg2020-0.mov",
+    "sourceSHA256" : "37da7cdb60e6e5a81569db1fd48acd15d8b853050258d99ae51165ed19341486",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "hlg2020 limited, left chroma",
+      "colourSpace" : "hlg2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 90,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.2084308332996443,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "FB46CD25-D58A-4551-9798-026BE5D11396",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit hlg2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 90 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; hlg2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "hlg2020 limited, left chroma",
+        "colourSpace" : "hlg2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : true,
+        "height" : 266,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2523364,
+      "processFootprintPeakBytes" : 293209000,
+      "requestDigest" : "e45720fe6e49ca7f4846724fa86dfa17de3fde16defb2c2d483e3b7392ce6d40",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-hlg2020-90.mov",
+    "sourceSHA256" : "0a4a693219dd7ccd04e404389b366e477c4616849a628f54d4d53c06c6be5c07",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "hlg2020 limited, left chroma",
+      "colourSpace" : "hlg2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 180,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.2153777499916032,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "AF04C4E1-2969-4FBD-B049-04EC1154C4C9",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit hlg2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 180 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; hlg2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "hlg2020 limited, left chroma",
+        "colourSpace" : "hlg2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : true,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2152676,
+      "processFootprintPeakBytes" : 292783016,
+      "requestDigest" : "dbaba0e4d040fc1a11d468cef427a6abd4ddfcf3cc5ca04c2986ead044dc88aa",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-hlg2020-180.mov",
+    "sourceSHA256" : "6ae80894e9950f99af516d1abbc14f9ff1df93fb161aea2eac5e62407925ccfc",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "hlg2020 limited, left chroma",
+      "colourSpace" : "hlg2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 270,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.22343249997356907,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "97BD9E38-6984-498F-B74C-840B95053764",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit hlg2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 270 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; hlg2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "hlg2020 limited, left chroma",
+        "colourSpace" : "hlg2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : true,
+        "height" : 266,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2523364,
+      "processFootprintPeakBytes" : 293290920,
+      "requestDigest" : "e01b37bdcf50309029dc96488719a0f253aa994df60ce038983c611d933b13c5",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-hlg2020-270.mov",
+    "sourceSHA256" : "6f4fd80e6d0cf4aa3d7a437d5bcb30a831763bbae8139b669015aaaae46037ff",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "pq2020 limited, left chroma",
+      "colourSpace" : "pq2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 0,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.15440050000324845,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "77E94B74-8EF3-422E-985F-FBB520F90C65",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit pq2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 0 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; pq2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "pq2020 limited, left chroma",
+        "colourSpace" : "pq2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI=",
+          "ContentLightLevelInfo" : "A+gBkA==",
+          "MasteringDisplayColorVolume" : "M8KGxB1MC7iE0D6APRNAQgCYloAAAAAF"
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 1743076,
+      "processFootprintPeakBytes" : 292717480,
+      "requestDigest" : "ca44ae70c1c3f0e39f43f8853e1ee24430ef42a8d0eb04bb3f4c710d1f89275b",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-pq2020-0.mov",
+    "sourceSHA256" : "eff9258f732ea160922298f2e5a9ffc91a2b321166878512176bc411d538bff4",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "pq2020 limited, left chroma",
+      "colourSpace" : "pq2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 90,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.18524345831247047,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "7F3407FA-364B-40E4-892E-8E036EAF1B1C",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit pq2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 90 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; pq2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "pq2020 limited, left chroma",
+        "colourSpace" : "pq2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 266,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI=",
+          "ContentLightLevelInfo" : "A+gBkA==",
+          "MasteringDisplayColorVolume" : "M8KGxB1MC7iE0D6APRNAQgCYloAAAAAF"
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2523364,
+      "processFootprintPeakBytes" : 293340072,
+      "requestDigest" : "8e1ae09dd064062382f04299aa9382bf5d07a98f5716dd2bc674855ea5a92776",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-pq2020-90.mov",
+    "sourceSHA256" : "ab68d97d24fa3fba88ba03cefce2319b9938134950fa10a53af0a8d0406ba5e7",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "pq2020 limited, left chroma",
+      "colourSpace" : "pq2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 180,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.18155712500447407,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "B4E3055C-A888-4B5D-8DEC-D60AE72653D8",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit pq2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 180 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; pq2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "pq2020 limited, left chroma",
+        "colourSpace" : "pq2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI=",
+          "ContentLightLevelInfo" : "A+gBkA==",
+          "MasteringDisplayColorVolume" : "M8KGxB1MC7iE0D6APRNAQgCYloAAAAAF"
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2152676,
+      "processFootprintPeakBytes" : 292963240,
+      "requestDigest" : "5c23b0281fc2ff3978d5d0a8a9fe29cef95de505d0f6a74d71a89bb8d80f2c49",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-pq2020-180.mov",
+    "sourceSHA256" : "34021f076cfeb36400c31cd5c0f15807cf9eed008f9f4149e67b48aac434a3f7",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "pq2020 limited, left chroma",
+      "colourSpace" : "pq2020",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 270,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.18359808332752436,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "28DE3CA6-1661-4EDC-B5AF-87C91F73CF3E",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit pq2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 270 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; pq2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "pq2020 limited, left chroma",
+        "colourSpace" : "pq2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 266,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI=",
+          "ContentLightLevelInfo" : "A+gBkA==",
+          "MasteringDisplayColorVolume" : "M8KGxB1MC7iE0D6APRNAQgCYloAAAAAF"
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2523364,
+      "processFootprintPeakBytes" : 293421992,
+      "requestDigest" : "363f02a720d9f82d4807ad52a9ec54eaa1b8dd9a1c3a8a1863537f2ab64ead2a",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-pq2020-270.mov",
+    "sourceSHA256" : "495457ad07d9590ca5b3e3c3d87b8e6e3970cbd885b06bc1309f2996f877beb7",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "bt709 limited, left chroma",
+      "colourSpace" : "bt709",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 0,
+      "staticHDRMetadata" : {
+
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.16594833333510906,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "2DB6335D-6C23-4DAB-9860-DE9B4C6AA5FE",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit bt709; supplied static\/ambient metadata verified before publication.",
+        "SDR pipeline; no HDR conversion requested.",
+        "Display rotation baked into pixels: 0 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; bt709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "bt709 limited, left chroma",
+        "colourSpace" : "bt709",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 1743076,
+      "processFootprintPeakBytes" : 292881320,
+      "requestDigest" : "5a515fa6209b43029ed6feb440d8326c32cbb325acf4af1eae1709514ec943df",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-bt709-0.mov",
+    "sourceSHA256" : "9df08bac9b7bdf2a260b2ed0d9c44ee679620c0a248eb204bbe42b24df0b1103",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "bt709 limited, left chroma",
+      "colourSpace" : "bt709",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 90,
+      "staticHDRMetadata" : {
+
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.18039675004547462,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "AFAA76A5-4A31-4FDE-9427-7B331B0D733B",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit bt709; supplied static\/ambient metadata verified before publication.",
+        "SDR pipeline; no HDR conversion requested.",
+        "Display rotation baked into pixels: 90 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; bt709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "bt709 limited, left chroma",
+        "colourSpace" : "bt709",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 266,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2523364,
+      "processFootprintPeakBytes" : 293536680,
+      "requestDigest" : "b71537afcdb2f95a87824e85e2340e95a3225b752771a8bc6c0c12050064ebe5",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-bt709-90.mov",
+    "sourceSHA256" : "e8f351f36abe183d1573e4e86682de59e6a03b48da7ab2e5e2a59a88b7578de3",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "bt709 limited, left chroma",
+      "colourSpace" : "bt709",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 180,
+      "staticHDRMetadata" : {
+
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.17093320831190795,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "E575B10E-0871-4EAF-A77F-455B32C94AFD",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit bt709; supplied static\/ambient metadata verified before publication.",
+        "SDR pipeline; no HDR conversion requested.",
+        "Display rotation baked into pixels: 180 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; bt709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "bt709 limited, left chroma",
+        "colourSpace" : "bt709",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2152676,
+      "processFootprintPeakBytes" : 293192616,
+      "requestDigest" : "c5c9eaa2839f15debc5b976306c62189df9baf72763df0f374be57edc7d03746",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-bt709-180.mov",
+    "sourceSHA256" : "83334a77736b2c33304b26d8e616674e6f51be31ea638a902e23f805ab3e1e9f",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "bt709 limited, left chroma",
+      "colourSpace" : "bt709",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : false,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 270,
+      "staticHDRMetadata" : {
+
+      },
+      "timedMetadataTracks" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native Main10",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.18469974998151883,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 48,
+      "jobID" : "C639CEC9-002F-4F9C-8685-EF92C34758AF",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 0, policy=discard.",
+        "Preserved 10-bit bt709; supplied static\/ambient metadata verified before publication.",
+        "SDR pipeline; no HDR conversion requested.",
+        "Display rotation baked into pixels: 270 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; bt709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "bt709 limited, left chroma",
+        "colourSpace" : "bt709",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : false,
+        "height" : 266,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 2523364,
+      "processFootprintPeakBytes" : 293585832,
+      "requestDigest" : "42a1dc70bd5645945da10c53e94fa64b211b23af9064faa8eaed23667ee29c7c",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/hdr.znJdWB\/native-bt709-270.mov",
+    "sourceSHA256" : "e17f610220c7c6f37b53534c02e8799c17970910eeb6390a13344285a01443f3",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "decodedPicturesMatch" : true,
+    "frames" : 91,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "bitDepth" : 10,
+      "codec" : "hevc",
+      "colour" : "hlg2020 limited, left chroma",
+      "colourSpace" : "hlg2020",
+      "duration" : {
+        "timescale" : 600,
+        "value" : 2275
+      },
+      "hasAudio" : true,
+      "hasDynamicHDR" : true,
+      "height" : 2160,
+      "maxReorderFrames" : 2,
+      "rotation" : 180,
+      "staticHDRMetadata" : {
+        "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+      },
+      "timedMetadataTracks" : 5,
+      "width" : 3840
+    },
+    "kind" : "read-only iPhone original",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 8000000,
+      "audioPackets" : 8,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 2.2669450832763687,
+      "encoderHardware" : true,
+      "engineVersion" : "0.4.0-main10-hdr",
+      "frames" : 91,
+      "jobID" : "C8796257-ED33-404B-A8C2-D053CF21E735",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Timed metadata tracks discarded: 5, policy=discard.",
+        "Preserved 10-bit hlg2020; supplied static\/ambient metadata verified before publication.",
+        "HDR encoder policy: Auto metadata insertion, PreserveDynamicHDRMetadata=false; source RPU not copied. Output.hasDynamicHDR reports encoder RPU signalling, not Dolby certification.",
+        "Display rotation baked into pixels: 180 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; hlg2020 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12\/P010 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "bitDepth" : 10,
+        "codec" : "hevc",
+        "colour" : "hlg2020 limited, left chroma",
+        "colourSpace" : "hlg2020",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 2275
+        },
+        "hasAudio" : true,
+        "hasDynamicHDR" : true,
+        "height" : 540,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "staticHDRMetadata" : {
+          "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+        },
+        "timedMetadataTracks" : 0,
+        "width" : 960
+      },
+      "ownedMemoryPeak" : 156182770,
+      "processFootprintPeakBytes" : 385926224,
+      "requestDigest" : "e4bb869294a2b7f93a963c22319f6f8b3d04aedab03ec7d54826eefa20edf50e",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Downloads\/IMG_6703.MOV",
+    "sourceSHA256" : "869d328924d5a3df27163822c0f69c104e900c9c2ae102face9906a8ca11ccc6",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "suppliedHDRMetadataPreserved" : true,
+    "timelineMatches" : true
+  }
+]

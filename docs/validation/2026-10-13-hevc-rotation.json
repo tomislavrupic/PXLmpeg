@@ -1,0 +1,770 @@
+[
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "h264",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 16,
+      "rotation" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.15698691667057574,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "05AB2F12-4C7D-453F-9DD3-820B65338D3E",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 0 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 16, peak retained 17 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "hevc",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 4085988,
+      "processFootprintPeakBytes" : 287359888,
+      "requestDigest" : "825666303f1ca0ad717ebb71070f7b371f53b4a35ea07f89b337936c85cb8a47",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-avc1-0.mov",
+    "sourceSHA256" : "e474565be6c3f57afc4daef8f10a5dc64d6054d565838900406a55e8d5efe6d6",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "h264",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 16,
+      "rotation" : 90,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.16109812504146248,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "8831A5EE-8BA2-459D-9643-A518707B9B88",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 90 degrees; output codec: h264.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 16, peak retained 17 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 266,
+        "maxReorderFrames" : 11,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 4615396,
+      "processFootprintPeakBytes" : 287802256,
+      "requestDigest" : "a03b8af3c82b67886a5f3f9e80448fef517221a9b5991b5ba77c602bb8cde5dd",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-avc1-90.mov",
+    "sourceSHA256" : "f56cfcc652c0a081c4afc378850cc37afc711b218c1efa1ae00f6cd020db9a10",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "h264",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 16,
+      "rotation" : 180,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.17030766664538532,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "AD258B9F-1C91-4927-8424-1A61ACA612CD",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 180 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 16, peak retained 17 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "hevc",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 4298980,
+      "processFootprintPeakBytes" : 287589264,
+      "requestDigest" : "5d08046eff8f66b01d47b362b3c68b18a8a24ac291df6b317f76197354d0d7cb",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-avc1-180.mov",
+    "sourceSHA256" : "ce87ac5a986008efc899a4e7eed1da254bbc47b3b70ba354b06382d376c6cf7d",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "h264",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 16,
+      "rotation" : 270,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.1610768333193846,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "31C5A2F8-78CB-461F-A97F-E3C3EA010EC1",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 270 degrees; output codec: h264.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 16, peak retained 17 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 266,
+        "maxReorderFrames" : 11,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 4615396,
+      "processFootprintPeakBytes" : 287949712,
+      "requestDigest" : "b2d0b94081fb954c7115cbac3414fb09b461a12d39480b0dc9153dab28897844",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-avc1-270.mov",
+    "sourceSHA256" : "3d96ee8e0b450b7d87856c181dfb64d7a53f4cb668328d255ab7d6cb9e0b6666",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "hevc",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 0,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.14942820830037817,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "B2E6A1BA-E74D-4DA0-A129-741244C5B508",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 0 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "hevc",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 1104100,
+      "processFootprintPeakBytes" : 287622032,
+      "requestDigest" : "ed963fb23fbd1266f6662821349cc05d246623015ee618e198794b6fa4094b4f",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-hvc1-0.mov",
+    "sourceSHA256" : "381446bb0ae9c957c49bf1a047ea456ba3d5209eb6470a8fce664fab4eb8969d",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "hevc",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 90,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.16754954162752256,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "BDD35F78-84F1-4D58-9C37-2058135EEA4D",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 90 degrees; output codec: h264.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 266,
+        "maxReorderFrames" : 11,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 1633508,
+      "processFootprintPeakBytes" : 288523200,
+      "requestDigest" : "b7fee0056018b7bc7611f78134235fd3c1be18f1ba998006b37f6b1d9c943adf",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-hvc1-90.mov",
+    "sourceSHA256" : "9d25013cff30437ff5e6ab3ab387ea608b42d7c5a26f416e0d7176bb4dc7d7e2",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "hevc",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 180,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.14704954164335504,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "6C8CB7C3-A713-481F-B0E9-D3A6D4E314E8",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 180 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "hevc",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 96,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 1317092,
+      "processFootprintPeakBytes" : 288637936,
+      "requestDigest" : "adcf06fc2b173fe2b80afdf2e6b018347cb473478a36cdaa3c6562098bcb3d92",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-hvc1-180.mov",
+    "sourceSHA256" : "7249429bce3890f8ae4c7c8a523bab4146298348f58014dc53f4731f57c7bcb4",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 48,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "hevc",
+      "colour" : "BT.709 limited, left chroma",
+      "duration" : {
+        "timescale" : 48000,
+        "value" : 96000
+      },
+      "hasAudio" : true,
+      "height" : 192,
+      "maxReorderFrames" : 2,
+      "rotation" : 270,
+      "width" : 320
+    },
+    "kind" : "generated native",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 1,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.15089666668791324,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 48,
+      "jobID" : "0B0C0A63-2B5C-406D-9F94-BC9A5271A85E",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 270 degrees; output codec: h264.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma.",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 1200
+        },
+        "hasAudio" : true,
+        "height" : 266,
+        "maxReorderFrames" : 11,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 1633508,
+      "processFootprintPeakBytes" : 289457160,
+      "requestDigest" : "7a255f5aa3efe212075f8a279bb94b66d2017c23b120ded46286e719ceb49d47",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/native-hvc1-270.mov",
+    "sourceSHA256" : "d6639f0ce30030096f529d9f4ee859e95985199f824a5eacf3461c618dc69727",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 121,
+    "input" : {
+      "codec" : "hevc",
+      "colour" : "BT.709 limited, left chroma (missing colour tags explicitly assumed)",
+      "duration" : {
+        "timescale" : 1000,
+        "value" : 5042
+      },
+      "hasAudio" : false,
+      "height" : 576,
+      "maxReorderFrames" : 2,
+      "rotation" : 0,
+      "width" : 1024
+    },
+    "kind" : "read-only original",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 0,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.31913883332163095,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 121,
+      "jobID" : "E846E55F-6EF7-4765-854D-EA29615D3531",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 0 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "codec" : "hevc",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 3025
+        },
+        "hasAudio" : false,
+        "height" : 90,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 4830208,
+      "processFootprintPeakBytes" : 293995528,
+      "requestDigest" : "005e81a6d8d15ed93ee1471005f49c1d96fbc0e0de57b26dd51e72f8ebdb55b0",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Desktop\/ALGO\/80s Sci-Fi Horror — Random Shots\/clips-quality\/05-moth-oracle.mp4",
+    "sourceSHA256" : "e054ca77d3b0aeb331b3b4f3f3c97ba1f8f4f7a9765a1905f28e8ed3950d2957",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 121,
+    "input" : {
+      "codec" : "hevc",
+      "colour" : "BT.709 limited, left chroma (missing colour tags explicitly assumed)",
+      "duration" : {
+        "timescale" : 1000,
+        "value" : 5042
+      },
+      "hasAudio" : false,
+      "height" : 576,
+      "maxReorderFrames" : 2,
+      "rotation" : 0,
+      "width" : 1024
+    },
+    "kind" : "read-only original",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 0,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.304090499994345,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 121,
+      "jobID" : "8565C573-914B-49FF-89F8-9A0ABDC02106",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 0 degrees; output codec: h264.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 3025
+        },
+        "hasAudio" : false,
+        "height" : 90,
+        "maxReorderFrames" : 16,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 4830208,
+      "processFootprintPeakBytes" : 297419784,
+      "requestDigest" : "2f873b9b0c8394492fa90a76a9f18ac3a60154b547fff4c07a48f09ac9def221",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Desktop\/ALGO\/80s Sci-Fi Horror — Random Shots\/clips-quality\/14-slime-corridor.mp4",
+    "sourceSHA256" : "2f37113efe06e949a051ef50e126aafcc7518ef40f231aa01283efc08046a804",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 121,
+    "input" : {
+      "audioChannels" : 2,
+      "audioSampleRate" : 48000,
+      "codec" : "h264",
+      "colour" : "BT.709 limited, left chroma (missing colour tags explicitly assumed)",
+      "duration" : {
+        "timescale" : 1000,
+        "value" : 5042
+      },
+      "hasAudio" : true,
+      "height" : 1408,
+      "maxReorderFrames" : 2,
+      "rotation" : 0,
+      "width" : 2560
+    },
+    "kind" : "read-only original",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 120,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.9295805000001565,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 121,
+      "jobID" : "8B918172-447C-4E2D-BDFF-0500567861E4",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 0 degrees; output codec: hevc.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "audioChannels" : 2,
+        "audioSampleRate" : 48000,
+        "codec" : "hevc",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 3025
+        },
+        "hasAudio" : true,
+        "height" : 88,
+        "maxReorderFrames" : 0,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 24622470,
+      "processFootprintPeakBytes" : 364708896,
+      "requestDigest" : "61b996c2b6d00112d0e506c02955f857c13ce64076f0a28d9589e04a76a69653",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Volumes\/Samsung T5\/2026\/HAOS\/Software\/ali-imagine-remote-render\/output\/upscale-frame-audit-20261012\/continuous-121f\/continuous-121f.mp4",
+    "sourceSHA256" : "ee923c49b3a63f89cbfd40867a5a3fe4d7cda6ced3d1e0dbc0f62388f7bd3e3b",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  },
+  {
+    "decodedPicturesMatch" : true,
+    "frames" : 121,
+    "input" : {
+      "codec" : "hevc",
+      "colour" : "BT.709 limited, left chroma (missing colour tags explicitly assumed)",
+      "duration" : {
+        "timescale" : 12288,
+        "value" : 61956
+      },
+      "hasAudio" : false,
+      "height" : 576,
+      "maxReorderFrames" : 2,
+      "rotation" : 90,
+      "width" : 1024
+    },
+    "kind" : "controlled passthrough rotation of real source",
+    "orientedLumaMatches" : true,
+    "receipt" : {
+      "acceptedBitrate" : 1000000,
+      "audioPackets" : 0,
+      "decoderHardware" : true,
+      "elapsedSeconds" : 0.34909575001802295,
+      "encoderHardware" : true,
+      "engineVersion" : "0.3.0-hevc-rotation",
+      "frames" : 121,
+      "jobID" : "E9D60DDA-55D8-44FC-AC6E-1575F65F8BF9",
+      "metalDevice" : "Apple M3 Ultra",
+      "notes" : [
+        "Display rotation baked into pixels: 90 degrees; output codec: h264.",
+        "Input colour policy: assumeBT709Limited; BT.709 limited, left chroma (missing colour tags explicitly assumed).",
+        "Synchronous hardware decode in decode order; SPS-bounded display window 2, peak retained 3 frames.",
+        "Owned budget excludes opaque macOS\/codec allocations.",
+        "NV12 shared surface mapping; new output and floating-point intermediate textures for resizing."
+      ],
+      "output" : {
+        "codec" : "h264",
+        "colour" : "BT.709 limited, left chroma",
+        "duration" : {
+          "timescale" : 600,
+          "value" : 3025
+        },
+        "hasAudio" : false,
+        "height" : 284,
+        "maxReorderFrames" : 11,
+        "rotation" : 0,
+        "width" : 160
+      },
+      "ownedMemoryPeak" : 7436288,
+      "processFootprintPeakBytes" : 358810680,
+      "requestDigest" : "5b1c5b249e9fe9bfea9315e506b297bfae8a91d2da7f465dfeb75865a9a3e0e3",
+      "schemaVersion" : 1,
+      "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+      "state" : "completed"
+    },
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/wide.cazBlf\/real-passthrough-rotated90.mov",
+    "sourceSHA256" : "4985375fd53d6334c72f6321f5b21f6b25baaf63079f8cf062a26eb28711dc89",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "timelineMatches" : true
+  }
+]

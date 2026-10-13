@@ -1,0 +1,1300 @@
+[
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007702166680246592,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : -6000
+        },
+        "frames" : 48,
+        "jobID" : "3A15C3A8-D40A-4F3D-868C-4A81BEB35B0C",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: -6000\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "h264",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 16,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 6285,
+        "processFootprintPeakBytes" : 25691024,
+        "requestDigest" : "3835662064b89103ee49bb0a456e0d5e8242acdbd2a4b3433843a858bf7a4111",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.008013958344236016,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "E3828681-46D2-4405-8E16-BBFE0B34D9C6",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "h264",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 16,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 6285,
+        "processFootprintPeakBytes" : 25723792,
+        "requestDigest" : "921b32c9f741f98982a5e34fdd85ca7d13a65d8fb4b677cf3ac7edaeff277b56",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-0-0.mov",
+    "sourceSHA256" : "7196142def518e7cf02bdfe61121ff11818579b70a63c41875688ee5113278ff",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.011389791674446315,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : -6000
+        },
+        "frames" : 48,
+        "jobID" : "8D1FB56B-EC38-4A4F-A9CA-A91AD4A7C8E5",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: -6000\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "h264",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 16,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 3427,
+        "processFootprintPeakBytes" : 25854864,
+        "requestDigest" : "353a8aac152dd408cb97cb680f22264e0442f0e8951dbd264fc74617c403f9e3",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.006903458328451961,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "81963037-5D07-47DD-967C-C92042038BDC",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "h264",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 16,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 3427,
+        "processFootprintPeakBytes" : 25543568,
+        "requestDigest" : "6b1e757a9c6101035b9d1a2bd9d0b09da61b4948c2ad26bca2c914665dc4546f",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-0-90.mov",
+    "sourceSHA256" : "684707d69d8bcac9000b3959aa886506e34184f622d79cd3755c79c75da2b326",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007691583363339305,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "DD2EB199-27FA-4D03-95E3-629BB295B3C0",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 6278,
+        "processFootprintPeakBytes" : 25641872,
+        "requestDigest" : "8d152b452185a3374585fef8543247fde5b01b5d57388f553e28781f5045909b",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.00724274996900931,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "C2105A1C-2A5A-4A6D-A11C-F582E847EEF3",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 6278,
+        "processFootprintPeakBytes" : 25592720,
+        "requestDigest" : "97280d75815d5c0dad96a649e3eb505a5cdaa81a9ed34cd462ec0bb32ed7bfdf",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-1-0.mov",
+    "sourceSHA256" : "3a650ef367941600848daf1909776e091110e499f754dd8d3ab1cf59d9e71682",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007099166687112302,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "41396D58-A8CA-42C9-8990-773DC5EA69AF",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 3420,
+        "processFootprintPeakBytes" : 25609104,
+        "requestDigest" : "2f445ddeca90f39a6cff5d924b79c96af86047b8a03fac99e94687678a33a134",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.006828083365689963,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "438F4D23-AED4-4AF1-984C-87FDEE7D3C11",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 8,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 3420,
+        "processFootprintPeakBytes" : 25641872,
+        "requestDigest" : "460482e6e7c1e237522f60ab26be9878b6f39795a779deba70c7aa4a081ea42d",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-1-90.mov",
+    "sourceSHA256" : "80ad655f9ece21da217aaba61b09e0afa45577a3ef70473608739364325995ef",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007899416668806225,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "4C590382-9086-4D42-BB04-F8B6C631086C",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 7090,
+        "processFootprintPeakBytes" : 25707408,
+        "requestDigest" : "a71607c920a535074971a683d9582f90abb8aeaebc26d9ea72ce1a2e7bb9bc21",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.006660583312623203,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "5737A6D7-1AF6-4AEC-A0FF-287A9F4597E5",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 7090,
+        "processFootprintPeakBytes" : 25740176,
+        "requestDigest" : "900ba92c7e150652a68e42f9c533d2342c557cdceb30d6441e98484159a6d97b",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-2-0.mov",
+    "sourceSHA256" : "499a6dd17a9b0adb1a598e469a80cc1dde153208ffddfc8a070987643af9c616",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.0066603749874047935,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "7F4A7F89-8FE6-408F-A829-50B564DC5ABF",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 4232,
+        "processFootprintPeakBytes" : 25740176,
+        "requestDigest" : "ed44e725105229d98bf5be349a3208fa38f7fa122e3643a048038a289e9433ff",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.006686208304017782,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "10C78FD0-5C33-45A3-9D3C-8F941ED67CA3",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "bt709 limited, left chroma",
+          "colourSpace" : "bt709",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 4232,
+        "processFootprintPeakBytes" : 25772944,
+        "requestDigest" : "d00b9523a983ff5c5bc7e0afe3f7f2e93b6e9875ecd92db01941ab994204c336",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-2-90.mov",
+    "sourceSHA256" : "a5f5004f4c7d19ede47c290c954df5e8684c2d25cec143c51074737dd446f0aa",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007400125032290816,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "99357F62-B386-40D0-9BCC-FDE2BD2925A2",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "hlg2020 limited, left chroma",
+          "colourSpace" : "hlg2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : true,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 7547,
+        "processFootprintPeakBytes" : 25854864,
+        "requestDigest" : "88696e3697a2e81fac3fd9e569a426e59c58a0971dd101439801584b62b8d680",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007853000017348677,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "119CFE39-93C8-4FC4-A840-4F6D9B9E9292",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "hlg2020 limited, left chroma",
+          "colourSpace" : "hlg2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : true,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 7547,
+        "processFootprintPeakBytes" : 25953168,
+        "requestDigest" : "c92ef9b17894681ff3066b48c1ba407f32bb5c227fa312db6fa11064a812a3f3",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-3-0.mov",
+    "sourceSHA256" : "e54e5e5c6b8681d552e5a044926acc2961839848ddf4aad27bd6b777ebe7fb3c",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.00697829166892916,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "9C393DB7-CE52-4064-85B0-355BB14C6FB9",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "hlg2020 limited, left chroma",
+          "colourSpace" : "hlg2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : true,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 4689,
+        "processFootprintPeakBytes" : 25871248,
+        "requestDigest" : "4ea6e321f27695c67de65dbfd1669677f13b07d7f8aaeffb6477d98dc06b5ac1",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007846124994102865,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "86A93665-7EE4-4B0F-A194-307F4D277560",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "hlg2020 limited, left chroma",
+          "colourSpace" : "hlg2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : true,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 4689,
+        "processFootprintPeakBytes" : 25887632,
+        "requestDigest" : "f1fed1e075cfc7ad398b2faafd1ec24f29c862811e1507b23da08a5eca1a85a0",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-3-90.mov",
+    "sourceSHA256" : "6de8f47dd162495a2365dfd8d34d8e1fc7395efc9dc7d4ff7aae0b753ee23583",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.006779666699003428,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "E0B8663C-E229-46DF-9B38-C68397E6A9C5",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "pq2020 limited, left chroma",
+          "colourSpace" : "pq2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 7107,
+        "processFootprintPeakBytes" : 25904016,
+        "requestDigest" : "8130ce513b19bc93f3edfb541d9bbc111a451123614feaef578613bf2ff113a2",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 3,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.0069614999811165035,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "8E3C8D27-D18F-4F54-B01E-E2E873155865",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "pq2020 limited, left chroma",
+          "colourSpace" : "pq2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1800
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 0,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 7107,
+        "processFootprintPeakBytes" : 25969552,
+        "requestDigest" : "388c800db10e06cfd4e1d03b944b76c4b23f8ea8f6861a800b5575daf922e741",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-4-0.mov",
+    "sourceSHA256" : "a9457d0be648612161e3c11ac66ceb8e8fae150adb5c302dfa1405a7a6588b4e",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007308833301067352,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 48000,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "7B36609E-BA42-494A-9EB2-85489DFD9431",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/48000. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "pq2020 limited, left chroma",
+          "colourSpace" : "pq2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 4249,
+        "processFootprintPeakBytes" : 25985936,
+        "requestDigest" : "46613ca81f16ae722d01b8e6374754119585e0aaeb7584ecbc89788f5c50375c",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 1,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.007026083359960467,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 48,
+        "jobID" : "5309EEE3-3B5C-4D82-A000-943B19B7EF40",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "pq2020 limited, left chroma",
+          "colourSpace" : "pq2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 1675
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : false,
+          "height" : 96,
+          "maxReorderFrames" : 2,
+          "rotation" : 90,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 160
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 4249,
+        "processFootprintPeakBytes" : 26051472,
+        "requestDigest" : "3d5767eb04feab1f318d7e744dc25fa31fb0915dfca44d209ed3073f4aef26f0",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Documents\/00 Pixel Records Studio\/PXLmpeg\/Artifacts\/remux.DLzPnK\/native-4-90.mov",
+    "sourceSHA256" : "85cb0f2d4c6ee767755834661b92de78c4cc659f56e5aef31f6ed59b8a85b98f",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  },
+  {
+    "audioMatches" : true,
+    "metadataMatches" : true,
+    "picturesMatch" : true,
+    "receipts" : [
+      {
+        "audioPackets" : 8,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.03413629165152088,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 91,
+        "jobID" : "990EB19B-8667-4860-B92E-E1CCA9D4D830",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 5, policy=discard.",
+          "Container: mp4; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "hlg2020 limited, left chroma",
+          "colourSpace" : "hlg2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 2275
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : true,
+          "height" : 2160,
+          "maxReorderFrames" : 2,
+          "rotation" : 180,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 3840
+        },
+        "outputContainer" : "mp4",
+        "ownedMemoryPeak" : 645950,
+        "processFootprintPeakBytes" : 44860304,
+        "requestDigest" : "ec7be64efdf04814c6fc7fb2cc51e65663696b1500ca04ec0151017c6b935c35",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      },
+      {
+        "audioPackets" : 5,
+        "decoderHardware" : false,
+        "elapsedSeconds" : 0.012423250009305775,
+        "encoderHardware" : false,
+        "engineVersion" : "0.5.0-remux-mp4",
+        "firstVideoDecodeTimeOffset" : {
+          "timescale" : 600,
+          "value" : 0
+        },
+        "frames" : 91,
+        "jobID" : "1C6AB27D-BF36-44DC-8B9A-82E95EF5711A",
+        "metalDevice" : "",
+        "notes" : [
+          "Compressed video copied in decode order without re-encoding; decoder, GPU and encoder not used.",
+          "Source coded dimensions and display transform retained; HDR\/RPU compressed data is copied, not regenerated.",
+          "AAC policy: copy; audioPackets counts sample-buffer groups, not individual access units.",
+          "Timed metadata tracks discarded: 0, policy=discard.",
+          "Container: mov; MP4 fast-start enabled when selected.",
+          "Owned peak counts bounded compressed buffers; opaque reader\/writer allocations excluded.",
+          "First video DTS offset introduced by container mux: 0\/600. Presentation timing is retained; corpus validation checks constant decode-clock rebasing."
+        ],
+        "operation" : "remux",
+        "output" : {
+          "audioChannels" : 2,
+          "audioSampleRate" : 48000,
+          "bitDepth" : 10,
+          "codec" : "hevc",
+          "colour" : "hlg2020 limited, left chroma",
+          "colourSpace" : "hlg2020",
+          "duration" : {
+            "timescale" : 600,
+            "value" : 2275
+          },
+          "hasAudio" : true,
+          "hasDynamicHDR" : true,
+          "height" : 2160,
+          "maxReorderFrames" : 2,
+          "rotation" : 180,
+          "staticHDRMetadata" : {
+            "AmbientViewingEnvironment" : "AC\/poD0TQEI="
+          },
+          "timedMetadataTracks" : 0,
+          "width" : 3840
+        },
+        "outputContainer" : "mov",
+        "ownedMemoryPeak" : 645950,
+        "processFootprintPeakBytes" : 46777232,
+        "requestDigest" : "6eb5ba0503874cc0a87a50946010cf169939cff070ac8559f4a108ed863d73c0",
+        "schemaVersion" : 1,
+        "sourceFingerprintKind" : "file identity + size + mtime; not content hash",
+        "state" : "completed"
+      }
+    ],
+    "source" : "\/Users\/thecore\/Downloads\/IMG_6703.MOV",
+    "sourceSHA256" : "869d328924d5a3df27163822c0f69c104e900c9c2ae102face9906a8ca11ccc6",
+    "sourceUnchanged" : true,
+    "status" : "completed",
+    "videoMatches" : true
+  }
+]

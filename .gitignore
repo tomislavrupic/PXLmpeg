@@ -1,0 +1,7 @@
+.build/
+.work/
+.DS_Store
+Sources/PXLMetal/Resources/*.metallib
+Artifacts/
+.swiftpm/
+*.xcresult
