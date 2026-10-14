@@ -44,6 +44,8 @@ Files: docs/validation/semantic-search.md, docs/architecture/semantic-analysis.m
 - [x] Compare S0/S2 and CPU/ANE/all timings on real samples; capture runtime trace and audit its schema/evidence.
 - [x] Run full regression/release/dependency checks; independent review and address important issues.
 - [x] Sanitize evidence and update truthful docs/site.
-- [ ] Commit/push and verify deployment.
+- [x] Commit/push and verify deployment.
 
 Verification: 86 tests passed with real models/camera, zero failures/skips; release build and three-product dependency audit passed. Independent review addressed and cleared important issues. Public evidence excludes paths/media/weights/raw traces.
+
+Publication: feature commit `bac8426c25c4083b1cd4979f31177c8a1759a1b4` pushed to public main. [Pages run 38571205797](https://github.com/tomislavrupic/PXLmpeg/actions/runs/38571205797) succeeded. Live v0.7 site verified at 390/1440 px, assets HTTP 200, no horizontal overflow or console errors.
