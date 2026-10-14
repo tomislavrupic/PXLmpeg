@@ -2,7 +2,7 @@
 # Derive the macOS icon family from the checked-in artwork; no third-party tools.
 set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
-output="${1:-$root/assets/app-icon/v3}"
+output="${1:-$root/assets/app-icon/v4}"
 mkdir -p "$root/.build"
 work="$(mktemp -d "$root/.build/PXLIcon.XXXXXX")"
 trap 'rm -rf "$work"' EXIT

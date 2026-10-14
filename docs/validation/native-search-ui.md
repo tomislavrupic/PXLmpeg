@@ -119,3 +119,9 @@ The user compared PXLmpeg with their existing app family, liked a blue/violet sc
 The installed legacy-only icon initially resolved with a white backing plate on this Mac. Native Icon Composer assets now declare an explicit dark base, are compiled with Apple's `actool`, and are bundled as `Assets.car` alongside the legacy ICNS. Both `CFBundleIconName` and `CFBundleIconFile` identify PXLmpeg. Build number 4 distinguishes the corrected packaging. A fresh NSWorkspace icon-resolution capture of the installed app was visually inspected and shows the intended dark housing; this is an OS-resolved icon check, not a live Dock screenshot. The 64-pixel derivative was also inspected.
 
 The no-model UI suite passed **5 checks, 8 skipped, 0 failures**. Release build, icon asset compilation, shell syntax, strict staged/installed signature verification, installed executable/plist/icon/catalog SHA-256 comparisons and the zero-third-party package/runtime audit passed. The app-only text fallback now reads PXL for unbundled launches. No media engine, inference or playback behavior changed. No model/footage operation or app launch was performed; the earlier stability investigation remains open.
+
+## PL-only icon — 14 October 2026
+
+The user's final refinement removes X and keeps P/L sharing their vertical spine. V4 preserves the glass material, dark housing and native Icon Composer packaging; build number 5 identifies this refinement. V1–v3 remain unchanged. The installed OS-resolved icon was inspected and shows PL on its intended dark base.
+
+The no-model UI suite passed **5 checks, 8 skipped, 0 failures**. Release build, native asset compilation, shell syntax, strict staged/installed signatures, installed executable/plist/icon/catalog SHA-256 comparisons and dependency audit passed. Installation preserved the preceding bundle and did not launch the app or perform any model/footage operation.

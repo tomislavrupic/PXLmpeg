@@ -17,12 +17,12 @@ cleanup() {
 trap cleanup EXIT
 mkdir -p "$staged_app/Contents/MacOS" "$staged_app/Contents/Resources"
 # Modern icon assets specify the dark base explicitly; keep ICNS for older macOS/header use.
-xcrun actool "$root/assets/app-icon/v3/PXLmpeg.icon" \
+xcrun actool "$root/assets/app-icon/v4/PXLmpeg.icon" \
   --compile "$staged_app/Contents/Resources" --platform macosx --target-device mac \
   --minimum-deployment-target 15.0 --app-icon PXLmpeg \
   --output-partial-info-plist "$staging_root/icon-info.plist" \
   --output-format human-readable-text --notices --warnings
-cp "$root/assets/app-icon/v3/PXLmpeg.icns" "$staged_app/Contents/Resources/PXLmpeg.icns"
+cp "$root/assets/app-icon/v4/PXLmpeg.icns" "$staged_app/Contents/Resources/PXLmpeg.icns"
 cp "$binary_dir/pxl-search-app" "$staged_app/Contents/MacOS/pxl-search-app"
 cat > "$staged_app/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -37,7 +37,7 @@ cat > "$staged_app/Contents/Info.plist" <<'PLIST'
   <key>CFBundleName</key><string>PXLmpeg Search</string>
   <key>CFBundlePackageType</key><string>APPL</string>
   <key>CFBundleShortVersionString</key><string>0.8.0</string>
-  <key>CFBundleVersion</key><string>4</string>
+  <key>CFBundleVersion</key><string>5</string>
   <key>LSMinimumSystemVersion</key><string>15.0</string>
   <key>NSHighResolutionCapable</key><true/>
 </dict></plist>
