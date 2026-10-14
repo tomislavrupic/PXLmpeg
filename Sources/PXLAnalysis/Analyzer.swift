@@ -1,4 +1,5 @@
 import Foundation
+import PXLAppleMedia
 import PXLMedia
 
 public actor SemanticAnalyzer {
@@ -46,6 +47,10 @@ public actor SemanticAnalyzer {
       }
       let handle = try regularFile(source)
       try handle.close()
+      // Fail metadata admission for every selected clip before compiling/loading models.
+      // Discard these handles: retaining samplers here would retain each clip's decoder later.
+      _ = try await AssetInput.open(source, colourPolicy: colourPolicy, trackPolicy: .readOnly)
+      try Task.checkCancellation()
     }
     let start = ContinuousClock.now
     let m = try models()

@@ -1,0 +1,29 @@
+{
+  "fill": {
+    "linear-gradient": [
+      "display-p3:0.01200,0.01800,0.02600,1.00000",
+      "display-p3:0.00000,0.00000,0.00000,1.00000"
+    ]
+  },
+  "groups": [
+    {
+      "layers": [
+        {
+          "image-name": "Monogram.png",
+          "name": "PL monogram"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.0
+      },
+      "translucency": {
+        "enabled": false,
+        "value": 0.0
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": "shared"
+  }
+}

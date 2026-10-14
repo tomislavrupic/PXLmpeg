@@ -15,6 +15,8 @@ public struct AssetDescriptor: Codable, Sendable {
   public let colourSpace: VideoColourSpace?
   public let hasDynamicHDR: Bool?
   public let timedMetadataTracks: Int?
+  /// Editor timecode tracks retained in a read-only source, not converted to source PTS.
+  public let timecodeTracks: Int?
   public let staticHDRMetadata: [String: Data]?
   public var effectiveBitDepth: Int { bitDepth ?? 8 }
   public var effectiveColourSpace: VideoColourSpace { colourSpace ?? .bt709 }
@@ -25,7 +27,7 @@ public struct AssetDescriptor: Codable, Sendable {
     audioSampleRate: Double? = nil, audioChannels: Int? = nil,
     colour: String = "BT.709 limited, left chroma", maxReorderFrames: Int? = nil,
     rotation: DisplayRotation? = nil, bitDepth: Int? = nil, colourSpace: VideoColourSpace? = nil,
-    hasDynamicHDR: Bool? = nil, timedMetadataTracks: Int? = nil,
+    hasDynamicHDR: Bool? = nil, timedMetadataTracks: Int? = nil, timecodeTracks: Int? = nil,
     staticHDRMetadata: [String: Data]? = nil
   ) {
     self.width = width
@@ -42,6 +44,7 @@ public struct AssetDescriptor: Codable, Sendable {
     self.colourSpace = colourSpace
     self.hasDynamicHDR = hasDynamicHDR
     self.timedMetadataTracks = timedMetadataTracks
+    self.timecodeTracks = timecodeTracks
     self.staticHDRMetadata = staticHDRMetadata
   }
 }

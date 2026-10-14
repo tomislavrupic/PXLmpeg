@@ -6,9 +6,11 @@ A native Swift + Metal media engine for Apple Silicon, with **zero third-party d
 
 **Early research phase.** PXLmpeg is experimental and actively evolving; it is not yet a complete FFmpeg replacement. [Visit the project site](https://tomislavrupic.github.io/PXLmpeg/).
 
+**Current priority:** professional media support and the native frame/audio engine needed by Pixel Deck. ProRes MOV + PCM is the proposed first slice; Sony MXF/XAVC feasibility follows early. These are roadmap targets, not current codec-support claims. See the [Pixel Deck engine roadmap](docs/architecture/pixel-deck-engine-roadmap.md). Semantic search remains optional.
+
 The native pipeline reads H.264/HEVC MOV/MP4 with AVFoundation, decodes on required hardware with VideoToolbox, rotates/resizes NV12 or 10-bit P010 planes with our Metal kernels, encodes on required hardware, and writes a new MOV or MP4. AAC can be copied unchanged or explicitly dropped. Both codec sessions report actual hardware use.
 
-Version **0.7.0-semantic-prototype** adds optional local semantic footage search with Core ML MobileCLIP-S2, timestamped sidecar indexes and Neural Engine profiling. See [semantic validation](docs/validation/semantic-search.md). The optional native playback library and Mac demo support play/pause, seeking, audio and generation-safe replacement; see [playback validation](docs/validation/playback.md).
+The **0.7.0-semantic-prototype** milestone added optional local semantic footage search with Core ML MobileCLIP-S2, timestamped sidecar indexes and Neural Engine profiling. See [semantic validation](docs/validation/semantic-search.md). The optional native playback library and Mac demo support play/pause, seeking, audio and generation-safe replacement; see [playback validation](docs/validation/playback.md).
 
 The **0.5 remux/MP4 milestone** added MP4 output and native compressed stream copying. MOV/MP4 round trips preserve encoded pictures, AAC samples, presentation timing, display transforms and HDR metadata; the copy path initializes no decoder, GPU or encoder. Main10 SDR and BT.2020 HLG/PQ remain supported. See [remux/MP4 validation](docs/validation/remux-mp4.md) and [Sirius preview integration contract](docs/integrations/sirius-preview.md). See [HDR/iPhone validation](docs/validation/hdr.md), [HEVC/rotation results](docs/validation/hevc-rotation.md), and [Pixel Deck fit](docs/validation/pixel-deck-fit.md). Earlier [B-frame results](docs/validation/bframes.md) and [initial benchmarks](docs/validation/m1-native-pipeline.md) remain historical evidence.
 
@@ -91,6 +93,10 @@ session.close() // on attachment/window teardown
 
 This backend uses **AVPlayer** for decoding, audio synchronization and presentation. It does not enforce the transcode worker's hardware selection or owned-memory budget, expose PCM/frame leases, or use our Metal kernels for playback. Native zero-tolerance seeking remains constrained by source sample timing. After `.ended`, seek to zero before replaying. The host owns UI, access lifetimes and cache state. See [playback validation](docs/validation/playback.md).
 
+Read-only semantic search and playback accept editor timecode tracks alongside supported video/audio; export/remux still rejects those tracks. Result timestamps remain source presentation times, without SMPTE timecode mapping.
+
+The draft native search app also has a [Pixel Records app identity](assets/app-icon/README.md), including a packaged macOS icon and matching dark interface. See [native search UI validation](docs/validation/native-search-ui.md) for the open stability investigation and current verification limits.
+
 ## Semantic footage search
 
 The optional `PXLAnalysis` library and `pxl-search` CLI encode sampled frames and text into a shared 512-dimensional embedding space. Search returns ranked **actual source timestamps**, source hashes and cosine similarity scores. MobileCLIP-S2 is the default; S0 is available for comparison. This is an early visual retrieval prototype, not verified captions, identity recognition or temporal action understanding.
@@ -119,7 +125,7 @@ let hits = try await analyzer.query("a guitar beside a plant", index: index, lim
 // hits contain source, sourceSHA256, actualTime and score.
 ```
 
-Retain the actor to reuse loaded models for warm searches. Each CLI invocation verifies raw model assets and asks Core ML to compile them; startup takes seconds on the tested Mac. Warm prediction times are not CLI startup or indexing throughput. Indexes bind model, tokenizer, preprocessing and source SHA-256 identities. Hosts must revalidate source contents before reusing an index after file changes; querying does not reopen or rehash the footage.
+Retain the actor to reuse loaded models for warm searches. Each CLI invocation verifies raw model assets and asks Core ML to compile them; repeated analyzer loads in one process reuse a bounded compiler-owned pool. Startup takes seconds on the tested Mac. Warm prediction times are not CLI startup or indexing throughput. Indexes bind model, tokenizer, preprocessing and source SHA-256 identities. Hosts must revalidate source contents before reusing an index after file changes; querying does not reopen or rehash the footage.
 
 Sampling defaults to one frame per second, capped at 256 requests per source; limits are 32 sources, 4096 aggregate embeddings and a 32 MiB serialized sidecar. Only one operation runs per analyzer. Cancellation is cooperative around native calls. The SDR decoder has a 256 MiB owned-media budget; Core ML, Core Image and OS allocations are outside that budget.
 
@@ -132,6 +138,31 @@ Sampling defaults to one frame per second, capped at 256 requests per source; li
 ```
 
 `.cpuAndNeuralEngine` permits CPU fallbacks and excludes GPU inference; image preprocessing can still use the GPU. `plan` reports preferred devices and estimated cost weights. `profile` reports native prediction latency; the Instruments script correlates actual ANE hardware intervals with PID-scoped benchmark batches. None of these metrics is an exact percentage of operations running on ANE. See the [measured results and attribution limits](docs/validation/semantic-search.md) and [architecture](docs/architecture/semantic-analysis.md).
+
+## Native search app — research build
+
+`PXLSearch.app` adds footage/model-folder pickers, indexing, text search, thumbnail results and native preview. Click a result to open its source and seek to the indexed source PTS. Playback starts muted. File → Open Index / Save Index As reuses sidecars; existing files are never overwritten.
+
+**Stability investigation remains open:** a whole-Mac stall and forced restart were reported during the first interactive trial. The initial 11 UI tests passed, including actual Search/result button actions and advancing playback, but that does not establish system stability. Resource fixes subsequently passed lightweight tests; full hardware revalidation has been paused. See [incident and verification boundaries](docs/validation/native-search-ui.md). This is a development build, not a notarized release.
+
+```sh
+python3 Scripts/fetch-semantic-model.py --variant s2
+./Scripts/build-search-app.sh
+open .build/PXLSearch.app
+# Explicit CPU compatibility for a controlled future test:
+./.build/release/pxl-search-app --compute cpuOnly --models .work/semantic/models
+# Reuse an existing index; --query only prefills, it does not start inference:
+./.build/release/pxl-search-app --models .work/semantic/models \
+  --index /absolute/path/index.json --query "a guitar beside a plant"
+```
+
+Add Footage can accumulate files from different folders. Select the explicit Rec.709 assumption only for known untagged SDR, then Index Footage. Sampling is one second with per-source caps; partial indexing is displayed. Search shows at most 12 candidates, at most three per source with one-second separation, plus actual timestamps and similarity scores. Source contents are checked before search and selected playback. Thumbnail previews use Apple's display-oriented SDR extraction and may differ from the analyzer's explicit BT.709 conversion.
+
+The device selector exposes Neural Engine + CPU and CPU compatibility; CPU compatibility excludes ANE/GPU **inference**, while decoding, thumbnails, preprocessing and playback still use native system hardware. There is no silent fallback. Models remain external; the development bundle records a local cache folder only. Choose Models if the folder moves. The app is unsandboxed for local development; sandbox/bookmark support remains future work.
+
+Thumbnail/HDR image waits have an eight-second logical deadline and native cancellation forwarding. At most two unfinished native image requests may remain; timed-out requests retain admission permits until native callbacks finish, preventing unbounded replacements. This cannot force a hung driver or native call to stop. Compiler artifacts are reused within one process for at most two identities, validated before cache admission, and cleaned on final lease release/normal exit when no compilation lock is busy. A forced kill or stalled compilation at exit can leave temporary artifacts for OS cleanup. No arbitrary host compiled cache is loaded.
+
+The packaging script signs/verifies a fresh staged bundle before replacing it, preserving the previous bundle and any running executable inode. It does not restart a running app. Real-model tests refuse to start while the search app is running.
 
 ## Copy without re-encoding
 
@@ -186,6 +217,7 @@ Build scripts currently select SwiftPM's native build system for predictable res
 
 ## Design and scope
 
+- [Native search UI and stability investigation](docs/validation/native-search-ui.md)
 - [Interactive playback results](docs/validation/playback.md)
 - [Semantic search results and ANE evidence](docs/validation/semantic-search.md)
 - [Semantic analysis architecture](docs/architecture/semantic-analysis.md)
@@ -205,4 +237,4 @@ PXLmpeg owns processing within one media job. Applications own their projects an
 
 ## Project site
 
-The static landing page lives in `site/`, independent of the native engine. `Scripts/build-site.sh` prepares `.build/site` using the canonical banner asset; no npm packages or web framework are required. GitHub Pages publishes it through `.github/workflows/pages.yml`. To preview locally, run the build script and serve `.build/site` with a static HTTP server.
+The static landing page lives in `site/`, independent of the native engine. `Scripts/build-site.sh` prepares `.build/site` using the selected PL icon and current signal-flow infographic; no npm packages or web framework are required. GitHub Pages publishes it through `.github/workflows/pages.yml`. To preview locally, run the build script and serve `.build/site` with a static HTTP server.

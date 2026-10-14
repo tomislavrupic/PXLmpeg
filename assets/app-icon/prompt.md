@@ -1,0 +1,7 @@
+# Generation record
+
+Tool: built-in imagegen. Output: single opaque square raster. Reference images: Pixel Deck, Sirius and Zogg app icons, used only as style references. Original result retained as `PXLmpeg-master.png`; macOS size derivatives produced with Apple packaging tools.
+
+## Prompt
+
+Create one finished macOS app icon for PXLmpeg, a native media engine, square composition. Use the attached/local reference images as style references only: Pixel Deck, Sirius, Zogg share a near-black rounded square housing, thin luminous rim, refined cyan blue glass and restrained sci-fi instrument details. PXLmpeg must have its own mint/cyan identity. Center a very clear geometric symbol: four small thick translucent glass pixels arranged in a 2 by 2 grid, subtly separated, with a single crisp triangular play aperture formed as negative space across the center. Strong readable silhouette even at 32px. Front view with very slight physical depth, polished frosted emerald/cyan glass, crisp highlights and gentle light spill on a charcoal inset surface. Elegant thin double bezel around a rounded square, tiny understated corner ticks, no busy circuitry, no stars, no sparks. Premium native creative-tool family aesthetic matching references, restrained not neon gaming. Rounded square occupies about 88 percent of canvas with clean solid black outer margin, no drop shadow outside canvas. No text, letters, watermark, labels, extra symbols. Output a single icon, not a mockup or multiple alternatives.

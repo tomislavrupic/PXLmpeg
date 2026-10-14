@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-14",
+  "version": "0.8.0-native-search-research",
+  "state": "draft; system stability investigation open",
+  "initialNativeFlow": {
+    "advancedSeconds": 3.1937935,
+    "landedSeconds": 3,
+    "muted": true,
+    "nativeResultButtonAction": true,
+    "query": "a frightened woman in a white spacesuit",
+    "requestedSeconds": 3,
+    "selectedSourceSHA256": "15cab67cd81f72e5f53ca5e506936564ace981147388867ca3ff43440fc9ad93",
+    "thumbnails": 12,
+    "visibleResults": 12
+  },
+  "initialUiWorkspaceTestsPassed": 11,
+  "postIncidentLightTestsPassed": 12,
+  "postIncidentLightTestsFailed": 0,
+  "fullNativeRegressionAfterMitigations": "not run",
+  "realModelOrMediaRuntimeAfterMitigations": "not run",
+  "revisedAppRelaunched": false,
+  "sources": [
+    {
+      "alias": "iphone-original",
+      "sha256": "869d328924d5a3df27163822c0f69c104e900c9c2ae102face9906a8ca11ccc6",
+      "unchanged": true
+    },
+    {
+      "alias": "ali-01",
+      "sha256": "e054ca77d3b0aeb331b3b4f3f3c97ba1f8f4f7a9765a1905f28e8ed3950d2957",
+      "unchanged": true
+    },
+    {
+      "alias": "ali-02",
+      "sha256": "2f37113efe06e949a051ef50e126aafcc7518ef40f231aa01283efc08046a804",
+      "unchanged": true
+    },
+    {
+      "alias": "ali-03",
+      "sha256": "96273b630d43281050a14d018da46d0e67fe379632a2e7a8a5cebffbb3419163",
+      "unchanged": true
+    },
+    {
+      "alias": "ali-04",
+      "sha256": "15cab67cd81f72e5f53ca5e506936564ace981147388867ca3ff43440fc9ad93",
+      "unchanged": true
+    },
+    {
+      "alias": "ali-05",
+      "sha256": "70c868b129eada80ddaa2bf29b8347c672d70d54758d41f3cc3cbef6a4c52de1",
+      "unchanged": true
+    },
+    {
+      "alias": "ali-06",
+      "sha256": "149873b73066f01e67f2fba6b19459c11b859eda49902469cbabad8ab8baf560",
+      "unchanged": true
+    }
+  ],
+  "incident": {
+    "reported": "Whole-Mac unresponsiveness during initial interactive trial",
+    "restartLocalTime": "2026-10-14 15:59 Europe/Zagreb",
+    "resetRecord": "button-triggered restart",
+    "matchingPanicReportFound": false,
+    "preRestartLogLastLocalTime": "15:57:24",
+    "compilerDiagnostic": {
+      "fileBackedMemoryDirtiedMB": 8589.94,
+      "durationSeconds": 4015,
+      "attribution": "mainly repeated native tests and pxl-search; some search-app activity",
+      "causation": "not established"
+    },
+    "triggeringUserAction": "unconfirmed",
+    "resolution": "not established"
+  },
+  "review": "No remaining Important/Critical findings in final static follow-up; no runtime/system-stability claim",
+  "build": {
+    "release": true,
+    "developmentBundleAdHocSignedAndVerified": true,
+    "externalPackages": 0,
+    "binaryTargets": 0,
+    "systemRuntimeLibrariesOnly": [
+      "pxlmpeg",
+      "pxl-player",
+      "pxl-search",
+      "pxl-search-app"
+    ]
+  },
+  "privacy": "No original pixels, private paths, raw system logs or model assets included."
+}

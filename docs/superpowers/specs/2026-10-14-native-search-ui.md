@@ -1,0 +1,16 @@
+# Native footage search UI
+
+User intent: a simple native Mac app to search real footage, see thumbnails and click a result to jump to that source moment in playback. This composes the shipped analyzer and player; it does not change the core engine or another application.
+
+Use a separate AppKit executable/app bundle, `pxl-search-app` / `PXLSearch.app`, backed by an optional UI target. A window has footage/model-folder pickers, explicit untagged Rec.709 interpretation, Index/Cancel, a text query, a scrollable result list and AVPlayer-backed preview with play/pause, timeline and mute. File-menu Open/Save Index reuses existing sidecars. Native models stay external; no runtime download. A model-directory preference and development-bundle default find the explicitly fetched assets.
+
+One serial analysis task per window; cancel and await old work before starting replacement. Generation tokens suppress stale index/query/thumbnail updates. Playback has an independent generation-safe task. Source hashes are checked off the main actor before searching and again for the selected file before playback. A changed/missing source fails visibly; originals are never modified. Closing cancels work and closes the player.
+
+Display at most 12 ranked candidates, with up to three per source and at least one second between candidates from the same source. This is display de-duplication, not temporal event inference. Actual index PTS drives the click target. Thumbnails use native display-oriented, force-SDR image extraction, bounded to 320×180 and one in flight; they are preview derivatives, not model inputs or reference colour approval. Failures leave a playable placeholder rather than removing the result. Similarity is labelled as similarity, not probability.
+
+Indexing uses one-second sampling and a per-source cap of min(256, floor(4096/sourceCount)), max32 sources. Truncation is visible. No progress percentage is invented; show the active phase/spinner and cancellation. Persistent indexes are new files only. A persistent analyzer amortizes startup. Controls and errors remain visible and compact. Playback begins muted, with an explicit Mute control.
+
+Acceptance: real original/ALi sidecar loaded, native query returns thumbnail-bearing results, actual result button opens the right source, seeks within source sample tolerance, and playback advances. Test source changes, missing models, cancellation/replacement and invalid result handling; run the full existing suite with models/camera. Build an ad hoc development app, verify system-only dependencies, launch it for the user. No notarization/production release or manual listening/HDR approval claim.
+
+## Stability steering after first trial
+User reported whole-Mac unresponsiveness and forced restart. Pause hardware-heavy tests/relaunches; preserve diagnostic evidence and distinguish confirmed resource defects from unknown freeze cause. Add bounded compiler-origin process reuse/cleanup, validated admission, nonblocking shutdown, native-image cancellation/deadline/admission limits, explicit CPU compatibility and staged signed bundle publication. --query onlyprefills. Keep public change draft until revised hardware acceptance; do not imply the system freeze is resolved.
