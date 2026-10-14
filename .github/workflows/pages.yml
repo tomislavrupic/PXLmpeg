@@ -4,7 +4,8 @@ on:
     branches: [main]
     paths:
       - 'site/**'
-      - 'assets/pxlmpeg-banner-v1.png'
+      - 'assets/pxlmpeg-signal-flow-v2.png'
+      - 'assets/app-icon/v5/PXLmpeg.png'
       - 'Scripts/build-site.sh'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
