@@ -125,3 +125,7 @@ The no-model UI suite passed **5 checks, 8 skipped, 0 failures**. Release build,
 The user's final refinement removes X and keeps P/L sharing their vertical spine. V4 preserves the glass material, dark housing and native Icon Composer packaging; build number 5 identifies this refinement. V1–v3 remain unchanged. The installed OS-resolved icon was inspected and shows PL on its intended dark base.
 
 The no-model UI suite passed **5 checks, 8 skipped, 0 failures**. Release build, native asset compilation, shell syntax, strict staged/installed signatures, installed executable/plist/icon/catalog SHA-256 comparisons and dependency audit passed. Installation preserved the preceding bundle and did not launch the app or perform any model/footage operation.
+
+## Selected proportional PL identity — 14 October 2026
+
+The user selected v5: a shorter, lighter L and more compact shared-spine PL. Build number 6 packages the selected original through native Icon Composer assets and legacy ICNS. The preceding installed bundle is preserved. Fresh strict signature checks and installed executable/plist/icon/catalog SHA-256 comparisons passed; NSWorkspace resolved the installed v5 artwork on its intended dark backing. Release build, shell syntax and dependency audit passed. No app launch, model loading, inference or footage playback was performed. These packaging checks do not close the earlier system-stability investigation.

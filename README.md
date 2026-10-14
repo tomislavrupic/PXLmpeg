@@ -237,4 +237,4 @@ PXLmpeg owns processing within one media job. Applications own their projects an
 
 ## Project site
 
-The static landing page lives in `site/`, independent of the native engine. `Scripts/build-site.sh` prepares `.build/site` using the canonical banner asset; no npm packages or web framework are required. GitHub Pages publishes it through `.github/workflows/pages.yml`. To preview locally, run the build script and serve `.build/site` with a static HTTP server.
+The static landing page lives in `site/`, independent of the native engine. `Scripts/build-site.sh` prepares `.build/site` using the selected PL icon and current signal-flow infographic; no npm packages or web framework are required. GitHub Pages publishes it through `.github/workflows/pages.yml`. To preview locally, run the build script and serve `.build/site` with a static HTTP server.

@@ -3,9 +3,9 @@
 Date: 2026-10-14
 Status: product direction and proposed milestone order; not an implemented codec-support claim.
 
-![Planned PXLmpeg to Pixel Deck signal flow](../../assets/pxlmpeg-signal-flow-v1.png)
+![Planned PXLmpeg to Pixel Deck signal flow](../../assets/pxlmpeg-signal-flow-v2.png)
 
-Target architecture illustration generated with imagegen; [generation prompt](../../assets/pxlmpeg-signal-flow-v1.prompt.md). Current and planned input formats are labelled separately. The diagram does not establish implemented ProRes/PCM delivery or Pixel Deck integration.
+Target architecture illustration generated with imagegen; [generation prompt](../../assets/pxlmpeg-signal-flow-v2.prompt.md). Current and planned input formats are labelled separately. The diagram does not establish implemented ProRes/PCM delivery or Pixel Deck integration.
 
 ## Direction
 

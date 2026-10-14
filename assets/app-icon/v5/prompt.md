@@ -1,6 +1,6 @@
-# PXLmpeg icon v5 — proportion study
+# PXLmpeg icon v5 — selected PL identity
 
-Built-in imagegen edit, 14 October 2026. User direction: improve symmetry and harmony; the L is too large. Target: v4 PL icon. This is a visual proportion study, with a shorter/lighter L, consistent stroke weights, aligned right edges and a more compact footprint. Packaging still references v4; this visual study does not change the installed app.
+Built-in imagegen edit, 14 October 2026. User direction: improve symmetry and harmony; the L is too large. Target: v4 PL icon. This is a visual proportion study, with a shorter/lighter L, consistent stroke weights, aligned right edges and a more compact footprint. The user selected this variant. Native packaging now references v5, with bundle build number 6.
 
 ## Prompt
 
