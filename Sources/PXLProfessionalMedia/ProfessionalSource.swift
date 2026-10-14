@@ -114,10 +114,7 @@ final class ProfessionalSource: @unchecked Sendable {
         let formats = try await audio.load(.formatDescriptions)
         guard formats.count == 1, let af = formats.first,
           let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(af)?.pointee,
-          asbd.mFormatID == kAudioFormatLinearPCM, asbd.mSampleRate == 48000,
-          [1, 2].contains(asbd.mChannelsPerFrame),
-          [16, 24, 32].contains(asbd.mBitsPerChannel),
-          asbd.mFormatFlags & kAudioFormatFlagIsFloat == 0 || asbd.mBitsPerChannel == 32
+          acceptsPCM(asbd)
         else {
           throw unsupported(
             "Only mono/stereo 48 kHz integer 16/24/32-bit or float32 PCM is admitted")
@@ -164,6 +161,13 @@ final class ProfessionalSource: @unchecked Sendable {
       throw MediaError(
         .ioFailure, stage: "professional-inspect", "Cannot read MOV metadata: \(error)")
     }
+  }
+  static func acceptsPCM(_ asbd: AudioStreamBasicDescription) -> Bool {
+    asbd.mFormatID == kAudioFormatLinearPCM && asbd.mSampleRate == 48000
+      && [1, 2].contains(asbd.mChannelsPerFrame) && [16, 24, 32].contains(asbd.mBitsPerChannel)
+      && (asbd.mFormatFlags & kAudioFormatFlagIsFloat != 0
+        ? asbd.mBitsPerChannel == 32
+        : asbd.mFormatFlags & kAudioFormatFlagIsSignedInteger != 0)
   }
   func checkIdentity() throws {
     guard try ProfessionalSourceIdentity.read(url) == identity else {

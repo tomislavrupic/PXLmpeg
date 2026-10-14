@@ -59,6 +59,19 @@ public final class ProfessionalMediaSession: @unchecked Sendable {
     try Task.checkCancellation()
     let source = try await ProfessionalSource.open(url)
     try Task.checkCancellation()
+    let audioBytes =
+      source.descriptor.audioChannels.map {
+        ProfessionalLimits.pendingPCMBytes + ProfessionalLimits.maximumAudioFrames * $0 * 4
+      } ?? 0
+    let minimum =
+      ProResDecoder.frameReservationBytes(
+        width: source.descriptor.width, height: source.descriptor.height)
+      + ProfessionalLimits.packetBytes + audioBytes
+    guard options.memoryBudgetBytes >= minimum else {
+      throw MediaError(
+        .invalidRequest, stage: "professional-options",
+        "Configured budget cannot deliver this source; requires at least \(minimum) owned bytes")
+    }
     let session = ProfessionalMediaSession(source: source, options: options)
     try await session.perform { worker, _ in try worker.start(at: .zero) }
     return session
@@ -69,7 +82,7 @@ public final class ProfessionalMediaSession: @unchecked Sendable {
     }
   }
   public func nextAudioChunk(maximumFrames: Int = 1024) async throws -> ProfessionalAudioChunk? {
-    guard (1...8192).contains(maximumFrames) else {
+    guard (1...ProfessionalLimits.maximumAudioFrames).contains(maximumFrames) else {
       throw MediaError(.invalidRequest, stage: "pcm-read", "Chunk size must be 1–8192 frames")
     }
     return try await perform { [fence] worker, generation in

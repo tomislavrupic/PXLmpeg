@@ -3,9 +3,10 @@ import AudioToolbox
 import CoreVideo
 import PXLAppleMedia
 import PXLMedia
-import PXLProfessionalMedia
 import PXLTestSupport
 import XCTest
+
+@testable import PXLProfessionalMedia
 
 final class ProfessionalMediaTests: XCTestCase {
   func testHQAndLTAdmissionPreservesProfessionalContract() async throws {
@@ -84,6 +85,16 @@ final class ProfessionalMediaTests: XCTestCase {
       _ = try await ProfessionalMedia.inspect(url)
       XCTFail("ambiguous channel identity admitted")
     } catch let error as MediaError { XCTAssertEqual(error.code, .unsupportedMedia) }
+  }
+
+  func testUnsignedIntegerPCMIsNotAdmitted() {
+    var format = AudioStreamBasicDescription(
+      mSampleRate: 48000, mFormatID: kAudioFormatLinearPCM,
+      mFormatFlags: kAudioFormatFlagIsPacked, mBytesPerPacket: 4, mFramesPerPacket: 1,
+      mBytesPerFrame: 4, mChannelsPerFrame: 2, mBitsPerChannel: 16, mReserved: 0)
+    XCTAssertFalse(ProfessionalSource.acceptsPCM(format))
+    format.mFormatFlags |= kAudioFormatFlagIsSignedInteger
+    XCTAssertTrue(ProfessionalSource.acceptsPCM(format))
   }
 
 }

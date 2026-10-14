@@ -18,7 +18,7 @@ final class ProfessionalWorker: @unchecked Sendable {
   private var failed: Error?
   private var hardware = false
   private var videoCount = 0, audioCount = 0
-  private let packetLimit = 32 * 1024 * 1024
+  private let packetLimit = ProfessionalLimits.packetBytes
 
   init(source: ProfessionalSource, options: ProfessionalMediaOptions) {
     self.source = source

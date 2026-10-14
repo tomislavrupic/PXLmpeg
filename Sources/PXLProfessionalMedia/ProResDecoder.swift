@@ -23,7 +23,7 @@ final class ProResDecoder {
     width = source.descriptor.width
     height = source.descriptor.height
     // Conservative aligned storage allowance for two full-height 16-bit planes.
-    reservedFrameBytes = ((width * 2 + 255) / 256 * 256) * height * 2 + 65536
+    reservedFrameBytes = Self.frameReservationBytes(width: width, height: height)
     var callback = VTDecompressionOutputCallbackRecord(
       decompressionOutputCallback: {
         _, ref, status, flags, image, _, _ in
@@ -73,6 +73,9 @@ final class ProResDecoder {
       throw error
     }
     session = created
+  }
+  static func frameReservationBytes(width: Int, height: Int) -> Int {
+    ((width * 2 + 255) / 256 * 256) * height * 2 + 65536
   }
   func decode(_ sample: CMSampleBuffer) throws -> CVPixelBuffer {
     let result = ProResResult()

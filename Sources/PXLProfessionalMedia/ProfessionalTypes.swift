@@ -116,3 +116,10 @@ public struct ProfessionalMediaMetrics: Codable, Sendable {
   public let deliveredVideoFrames: Int
   public let deliveredAudioFrames: Int
 }
+
+// Shared admission limits, used both before native setup and by worker reservations.
+enum ProfessionalLimits {
+  static let packetBytes = 32 * 1024 * 1024
+  static let pendingPCMBytes = 1024 * 1024
+  static let maximumAudioFrames = 8192
+}

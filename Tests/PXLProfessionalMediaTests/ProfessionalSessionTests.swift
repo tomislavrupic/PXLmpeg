@@ -222,4 +222,14 @@ final class ProfessionalSessionTests: XCTestCase {
     await session.close()
   }
 
+  func testImpossibleVideoBudgetRejectsAtOpen() async throws {
+    let (dir, url) = try fixture()
+    defer { try? FileManager.default.removeItem(at: dir) }
+    do {
+      _ = try await ProfessionalMediaSession.open(
+        url, options: ProfessionalMediaOptions(memoryBudgetBytes: 4 * 1024 * 1024))
+      XCTFail("session opened with a budget that can never deliver a frame")
+    } catch let error as MediaError { XCTAssertEqual(error.code, .invalidRequest) }
+  }
+
 }

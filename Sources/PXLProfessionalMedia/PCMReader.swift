@@ -15,7 +15,7 @@ final class PCMReader {
   private var pendingReservation: Reservation?
   private var offset = 0
   private var previousEnd: CMTime?
-  private let pendingLimit = 1024 * 1024
+  private let pendingLimit = ProfessionalLimits.pendingPCMBytes
 
   init(source: ProfessionalSource, budget: MediaBudget, target: CMTime) throws {
     guard let track = source.audio, let count = source.descriptor.audioChannels else {
