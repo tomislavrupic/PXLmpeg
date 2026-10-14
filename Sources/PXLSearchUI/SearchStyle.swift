@@ -31,7 +31,7 @@ import AppKit
   }
 }
 
-/// Lightweight vector identity for unbundled CLI launches; no image loading or model work.
+/// Bundled artwork with a lightweight text identity for unbundled CLI launches.
 @MainActor final class SearchBrandMark: NSView {
   private let artwork = Bundle.main.url(forResource: "PXLmpeg", withExtension: "icns")
     .flatMap { NSImage(contentsOf: $0) }
@@ -43,15 +43,16 @@ import AppKit
     }
     SearchStyle.raised.setFill()
     NSBezierPath(roundedRect: bounds, xRadius: 10, yRadius: 10).fill()
-    for (x, y, alpha) in [
-      (10.0, 24.0, 1.0), (24.0, 24.0, 0.4),
-      (10.0, 10.0, 0.7), (24.0, 10.0, 1.0),
-    ] {
-      SearchStyle.accent.withAlphaComponent(alpha).setFill()
-      NSBezierPath(
-        roundedRect: NSRect(x: x, y: y, width: 10, height: 10),
-        xRadius: 2, yRadius: 2
-      ).fill()
-    }
+    let wordmark = NSAttributedString(
+      string: "PXL",
+      attributes: [
+        .font: NSFont.monospacedSystemFont(ofSize: 12, weight: .semibold),
+        .foregroundColor: SearchStyle.accent,
+      ])
+    let size = wordmark.size()
+    wordmark.draw(
+      at: NSPoint(
+        x: (bounds.width - size.width) / 2,
+        y: (bounds.height - size.height) / 2))
   }
 }
