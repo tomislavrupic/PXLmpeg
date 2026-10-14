@@ -1,6 +1,10 @@
 # PXLmpeg app identity
 
-## Current: v4 shared-spine PL
+## Proportion study: v5
+
+The user's next refinement asks for more harmony and a smaller L. [V5 preview](v5/PXLmpeg.png) shortens and lightens the L and brings its right edge closer to the P bowl. [Imagegen edit prompt](v5/prompt.md). This is a visual candidate; packaging still references v4.
+
+## Current packaged asset: v4 shared-spine PL
 
 The active icon combines P and L into one sculpted glass sign with a shared vertical spine, open P counter and strong L baseline. The user explicitly removed X from the previous PXL exploration. Ice-blue faces, violet depth, a quiet dark housing and the family resemblance to Pixel Deck and Zogg remain.
 
