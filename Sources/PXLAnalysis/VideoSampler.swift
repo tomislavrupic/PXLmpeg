@@ -17,12 +17,9 @@ actor VideoSampler {
   private var active = false
   init(source: URL, colourPolicy: InputColourPolicy) async throws {
     try Task.checkCancellation()
-    let input = try await AssetInput.open(source, colourPolicy: colourPolicy)
-    let range = try await input.video.load(.timeRange)
-    guard range.start.isNumeric, range.end.isNumeric, range.start >= .zero, range.end > range.start
-    else {
-      throw analysisError("Invalid video time range")
-    }
+    let input = try await AssetInput.open(
+      source, colourPolicy: colourPolicy, trackPolicy: .readOnly)
+    let range = input.videoTimeRange
     if input.descriptor.effectiveColourSpace == .bt709 {
       assumed = AssumedColourSampler(input: input)
       backend =

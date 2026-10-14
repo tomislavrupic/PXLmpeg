@@ -91,6 +91,8 @@ session.close() // on attachment/window teardown
 
 This backend uses **AVPlayer** for decoding, audio synchronization and presentation. It does not enforce the transcode worker's hardware selection or owned-memory budget, expose PCM/frame leases, or use our Metal kernels for playback. Native zero-tolerance seeking remains constrained by source sample timing. After `.ended`, seek to zero before replaying. The host owns UI, access lifetimes and cache state. See [playback validation](docs/validation/playback.md).
 
+Read-only semantic search and playback accept editor timecode tracks alongside supported video/audio; export/remux still rejects those tracks. Result timestamps remain source presentation times, without SMPTE timecode mapping.
+
 The draft native search app also has a [Pixel Records app identity](assets/app-icon/README.md), including a packaged macOS icon and matching dark interface. See [native search UI validation](docs/validation/native-search-ui.md) for the open stability investigation and current verification limits.
 
 ## Semantic footage search

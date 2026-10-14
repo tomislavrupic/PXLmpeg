@@ -290,10 +290,16 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     resultsHeading.stringValue =
       workspace.results.isEmpty ? "MATCHES" : "MATCHES · \(workspace.results.count)"
     statusLabel.stringValue = workspace.error ?? workspace.status
+    statusLabel.toolTip = statusLabel.stringValue
     statusLabel.textColor = workspace.error == nil ? .secondaryLabelColor : .systemRed
     if workspace.isBusy { spinner.startAnimation(nil) } else { spinner.stopAnimation(nil) }
-    let revision = workspace.results.map {
+    var revision = workspace.results.map {
       "\($0.id)-\($0.thumbnail != nil)-\($0.thumbnailError != nil)-\($0.id == workspace.selectedID)"
+    }
+    if workspace.results.isEmpty {
+      revision =
+        ["empty-\(workspace.index != nil)-\(workspace.phase)"]
+        + workspace.sources.map(\.absoluteString)
     }
     if revision != rowRevision || resultsStack.arrangedSubviews.isEmpty {
       rowRevision = revision
@@ -303,12 +309,27 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
       }
       resultButtons = []
       if workspace.results.isEmpty {
-        let empty = NSTextField(
-          wrappingLabelWithString: workspace.index == nil
-            ? "Add footage and index it, or open a saved index from the File menu."
-            : "Try a visual description, such as “a guitar beside a plant”.")
-        let emptyTitle = NSTextField(
-          labelWithString: workspace.index == nil ? "Start with your footage" : "Find a scene")
+        let hasSelection = !workspace.sources.isEmpty
+        let guidance: String
+        let heading: String
+        if workspace.index != nil {
+          heading = "Find a scene"
+          guidance = "Try a visual description, such as “a guitar beside a plant”."
+        } else if hasSelection {
+          heading =
+            "\(workspace.sources.count) \(workspace.sources.count == 1 ? "clip" : "clips") selected"
+          guidance =
+            workspace.sources.map(\.lastPathComponent).joined(separator: "\n")
+            + (workspace.phase == .indexing
+              ? "\n\nIndexing your footage…" : "\n\nIndex footage to search its moments.")
+        } else {
+          heading = "Start with your footage"
+          guidance = "Add footage and index it, or open a saved index from the File menu."
+        }
+        let empty = NSTextField(wrappingLabelWithString: guidance)
+        empty.maximumNumberOfLines = 10
+        empty.toolTip = workspace.sources.map(\.path).joined(separator: "\n")
+        let emptyTitle = NSTextField(labelWithString: heading)
         emptyTitle.font = .systemFont(ofSize: 15, weight: .medium)
         emptyTitle.textColor = SearchStyle.text
         let symbol = SearchStyle.symbol("rectangle.stack", description: "Footage library")

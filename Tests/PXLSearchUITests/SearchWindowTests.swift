@@ -59,6 +59,24 @@ import XCTest
       video.convert(video.bounds, to: content).maxX,
       content.bounds.maxX - 24, accuracy: 2)
   }
+  func testSelectedFootageNamesReplaceInitialEmptyGuidance() throws {
+    _ = NSApplication.shared
+    let workspace = SearchWorkspace()
+    let controller = SearchWindowController(workspace: workspace)
+    defer {
+      workspace.close()
+      controller.close()
+    }
+    workspace.chooseSources(
+      [URL(fileURLWithPath: "/test/editor-export.mov")], colourPolicy: .requireTagged)
+    let content = try XCTUnwrap(controller.window?.contentView)
+    func labels(_ view: NSView) -> [String] {
+      (view as? NSTextField).map { [$0.stringValue] } ?? view.subviews.flatMap(labels)
+    }
+    XCTAssertTrue(labels(content).contains { $0.contains("editor-export.mov") })
+    XCTAssertFalse(labels(content).contains("Start with your footage"))
+  }
+
   // Catch disconnected native buttons, wrong thumbnail identity and rank-based seeks.
   func testRealResultButtonSeeksToIndexedMomentAndPlaybackAdvances() async throws {
     _ = NSApplication.shared

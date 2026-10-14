@@ -4,6 +4,10 @@ import CoreMedia
 import Foundation
 import PXLMedia
 
+/// Read-only consumers may retain an editor timecode track in the original asset.
+/// Export/remux admission stays strict until preserving or discarding timecode is implemented.
+package enum AssetTrackPolicy: Sendable { case processing, readOnly }
+
 // Immutable loaded metadata/handles. After open returns, reader use is transferred
 // to one worker; no AVAssetReader or mutable codec state crosses that boundary.
 package final class AssetInput: @unchecked Sendable {
@@ -15,13 +19,14 @@ package final class AssetInput: @unchecked Sendable {
   package let contract: PixelContract
   package let videoTimeScale: CMTimeScale
   package let displayTransform: CGAffineTransform
+  package let videoTimeRange: CMTimeRange
   package let videoEnd: CMTime
   package let descriptor: AssetDescriptor
   private init(
     asset: AVURLAsset, video: AVAssetTrack, audio: AVAssetTrack?,
     videoFormat: CMVideoFormatDescription,
     audioFormat: CMAudioFormatDescription?, contract: PixelContract,
-    displayTransform: CGAffineTransform, videoTimeScale: CMTimeScale, videoEnd: CMTime,
+    displayTransform: CGAffineTransform, videoTimeScale: CMTimeScale, videoTimeRange: CMTimeRange,
     descriptor: AssetDescriptor
   ) {
     self.asset = asset
@@ -30,14 +35,16 @@ package final class AssetInput: @unchecked Sendable {
     self.videoFormat = videoFormat
     self.audioFormat = audioFormat
     self.descriptor = descriptor
-    self.videoEnd = videoEnd
+    self.videoTimeRange = videoTimeRange
+    self.videoEnd = videoTimeRange.end
     self.contract = contract
     self.displayTransform = displayTransform
     self.videoTimeScale = videoTimeScale
   }
-  package static func open(_ url: URL, colourPolicy: InputColourPolicy = .requireTagged)
-    async throws -> AssetInput
-  {
+  package static func open(
+    _ url: URL, colourPolicy: InputColourPolicy = .requireTagged,
+    trackPolicy: AssetTrackPolicy = .processing
+  ) async throws -> AssetInput {
     guard url.isFileURL, ["mov", "mp4"].contains(url.pathExtension.lowercased()) else {
       throw MediaError(
         .unsupportedMedia, stage: "inspect", "Only local MOV/MP4 inputs are supported")
@@ -50,10 +57,18 @@ package final class AssetInput: @unchecked Sendable {
       let tracks = try await asset.load(.tracks)
       let videos = tracks.filter { $0.mediaType == .video }
       let audios = tracks.filter { $0.mediaType == .audio }
+      let allowed: [AVMediaType] =
+        trackPolicy == .readOnly
+        ? [.video, .audio, .metadata, .timecode] : [.video, .audio, .metadata]
       guard videos.count == 1, audios.count <= 1,
-        tracks.allSatisfy({ [.video, .audio, .metadata].contains($0.mediaType) })
+        tracks.allSatisfy({ allowed.contains($0.mediaType) })
       else {
-        throw failure("Expected one video, at most one audio, and optional timed metadata tracks")
+        let layout = Dictionary(grouping: tracks, by: { $0.mediaType.rawValue })
+          .map { "\($0.key) × \($0.value.count)" }.sorted().joined(separator: ", ")
+        throw failure(
+          "Unsupported track layout (\(layout)). Requires one video, at most one audio; "
+            + (trackPolicy == .readOnly
+              ? "metadata and timecode are allowed." : "only timed metadata may accompany them."))
       }
       let video = videos[0]
       let transform = try await video.load(.preferredTransform)
@@ -163,13 +178,14 @@ package final class AssetInput: @unchecked Sendable {
         rate = asbd.mSampleRate
         channels = Int(asbd.mChannelsPerFrame)
       }
-      let videoEnd = try await video.load(.timeRange).end
+      let videoTimeRange = try await video.load(.timeRange)
+      if trackPolicy == .readOnly { try validateReadOnlyVideoRange(videoTimeRange) }
       let duration = try await asset.load(.duration)
       guard duration.isNumeric, duration > .zero else { throw failure("Empty or invalid duration") }
       return AssetInput(
         asset: asset, video: video, audio: audios.first, videoFormat: format,
         audioFormat: audioFormat, contract: contract, displayTransform: transform,
-        videoTimeScale: try await video.load(.naturalTimeScale), videoEnd: videoEnd,
+        videoTimeScale: try await video.load(.naturalTimeScale), videoTimeRange: videoTimeRange,
         descriptor: AssetDescriptor(
           width: Int(dimensions.width), height: Int(dimensions.height),
           codec: hevc ? "hevc" : "h264",
@@ -182,10 +198,21 @@ package final class AssetInput: @unchecked Sendable {
           maxReorderFrames: stream.maxReorderFrames, rotation: rotation, bitDepth: stream.bitDepth,
           colourSpace: colourSpace, hasDynamicHDR: hasDynamicHDR,
           timedMetadataTracks: tracks.filter { $0.mediaType == .metadata }.count,
+          timecodeTracks: tracks.filter { $0.mediaType == .timecode }.count,
           staticHDRMetadata: metadata))
-    } catch let e as MediaError { throw e } catch {
-      throw MediaError(.ioFailure, stage: "inspect", "Cannot inspect source: \(error)")
+    } catch let e as MediaError {
+      throw MediaError(
+        e.code, stage: e.stage, "\(url.lastPathComponent): \(e.message)",
+        underlyingCode: e.underlyingCode)
+    } catch {
+      throw MediaError(
+        .ioFailure, stage: "inspect", "\(url.lastPathComponent): Cannot inspect source: \(error)")
     }
+  }
+  package static func validateReadOnlyVideoRange(_ range: CMTimeRange) throws {
+    guard range.start.isNumeric, range.end.isNumeric, range.start >= .zero,
+      range.end > range.start
+    else { throw failure("Invalid video time range") }
   }
   package static func validateChroma(_ chroma: String?) throws {
     guard chroma == "Left" else { throw failure("Explicit left-sited chroma required") }

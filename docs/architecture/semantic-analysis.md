@@ -26,6 +26,8 @@ The actor owns synchronous Core ML model handles and serial operations. Only com
 
 Image preprocessing produces a 256 × 256 sRGB center crop. SDR BT.709 sampling uses the core required-hardware VideoToolbox decoder and contract-applied YUV colour metadata before Core Image conversion; this includes explicitly assumed untagged ALi sources. HDR sampling uses `AVAssetImageGenerator` with `forceSDR`. Both apply display rotation. HDR conversion is an analysis derivative, not a reference tone-mapping or HDR display approval. The chosen backend and preprocessing revision are recorded.
 
+Read-only indexing and playback accept an editor timecode track alongside the supported video/audio/metadata layout; its count is recorded in the optional `timecodeTracks` descriptor field. Timecode samples are not read or mapped to source PTS, and export/remux admission remains strict. All selected sources pass metadata and video-range admission before loading Core ML models.
+
 Sampling uses the video track range, a declared interval and a per-source request limit. Actual source PTS is retained separately from requested time, and duplicate actual frames are omitted. Forward requests across a presentation gap can share a future frame without being mistaken for backward seeks. Sparse samples do not imply continuous coverage.
 
 ## Records, resources and cancellation

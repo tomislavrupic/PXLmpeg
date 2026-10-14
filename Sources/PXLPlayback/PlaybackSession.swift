@@ -79,7 +79,8 @@ public struct PlaybackSnapshot: Sendable {
       loadingTask = Task { [weak self] in
         let result: Result<AssetInput, any Error>
         do {
-          result = .success(try await AssetInput.open(source, colourPolicy: colourPolicy))
+          result = .success(
+            try await AssetInput.open(source, colourPolicy: colourPolicy, trackPolicy: .readOnly))
         } catch { result = .failure(error) }
         guard let self, self.generation == token, !Task.isCancelled else { return }
         self.loaded = result
