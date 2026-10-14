@@ -1,0 +1,3112 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-14",
+  "version": "0.7.0-semantic-prototype",
+  "machine": {
+    "chip": "Apple M3 Ultra",
+    "memoryGiB": 96,
+    "os": "macOS 27.0.1",
+    "swift": "6.4",
+    "xcode": "27"
+  },
+  "modelSourceRevision": "3e0a7bfb9fe83da8a3efaa3fd8f7df24214bb947",
+  "tokenizerSourceRevision": "48faa0fea4b08d74188b3841771aca6ff2c92852",
+  "preprocessing": "nativeVT-BT709-or-system-forceSDR-sRGB-centerCrop256-v1",
+  "sampling": {
+    "intervalSeconds": 0.5,
+    "maximumSamplesPerSource": 256
+  },
+  "inputColourPolicy": "assumeBT709Limited",
+  "sources": [
+    {
+      "alias": "iphone-original",
+      "sha256": "869d328924d5a3df27163822c0f69c104e900c9c2ae102face9906a8ca11ccc6",
+      "hashUnchanged": true,
+      "codec": "hevc",
+      "bitDepth": 10,
+      "colourSpace": "hlg2020",
+      "rotation": 180,
+      "samplingBackend": "assetImageGenerator-forceSDR",
+      "videoStartSeconds": 0,
+      "videoEndSeconds": 3.7916666666666665,
+      "truncated": false,
+      "actualSampleSeconds": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5
+      ]
+    },
+    {
+      "alias": "ali-01",
+      "sha256": "e054ca77d3b0aeb331b3b4f3f3c97ba1f8f4f7a9765a1905f28e8ed3950d2957",
+      "hashUnchanged": true,
+      "codec": "hevc",
+      "bitDepth": 8,
+      "colourSpace": "bt709",
+      "rotation": 0,
+      "samplingBackend": "nativeVT-explicitBT709",
+      "videoStartSeconds": 0,
+      "videoEndSeconds": 5.042,
+      "truncated": false,
+      "actualSampleSeconds": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0
+      ]
+    },
+    {
+      "alias": "ali-02",
+      "sha256": "2f37113efe06e949a051ef50e126aafcc7518ef40f231aa01283efc08046a804",
+      "hashUnchanged": true,
+      "codec": "hevc",
+      "bitDepth": 8,
+      "colourSpace": "bt709",
+      "rotation": 0,
+      "samplingBackend": "nativeVT-explicitBT709",
+      "videoStartSeconds": 0,
+      "videoEndSeconds": 5.042,
+      "truncated": false,
+      "actualSampleSeconds": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0
+      ]
+    },
+    {
+      "alias": "ali-03",
+      "sha256": "96273b630d43281050a14d018da46d0e67fe379632a2e7a8a5cebffbb3419163",
+      "hashUnchanged": true,
+      "codec": "hevc",
+      "bitDepth": 8,
+      "colourSpace": "bt709",
+      "rotation": 0,
+      "samplingBackend": "nativeVT-explicitBT709",
+      "videoStartSeconds": 0,
+      "videoEndSeconds": 5.042,
+      "truncated": false,
+      "actualSampleSeconds": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0
+      ]
+    },
+    {
+      "alias": "ali-04",
+      "sha256": "15cab67cd81f72e5f53ca5e506936564ace981147388867ca3ff43440fc9ad93",
+      "hashUnchanged": true,
+      "codec": "hevc",
+      "bitDepth": 8,
+      "colourSpace": "bt709",
+      "rotation": 0,
+      "samplingBackend": "nativeVT-explicitBT709",
+      "videoStartSeconds": 0,
+      "videoEndSeconds": 5.042,
+      "truncated": false,
+      "actualSampleSeconds": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0
+      ]
+    },
+    {
+      "alias": "ali-05",
+      "sha256": "70c868b129eada80ddaa2bf29b8347c672d70d54758d41f3cc3cbef6a4c52de1",
+      "hashUnchanged": true,
+      "codec": "hevc",
+      "bitDepth": 8,
+      "colourSpace": "bt709",
+      "rotation": 0,
+      "samplingBackend": "nativeVT-explicitBT709",
+      "videoStartSeconds": 0,
+      "videoEndSeconds": 3.042,
+      "truncated": false,
+      "actualSampleSeconds": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ]
+    },
+    {
+      "alias": "ali-06",
+      "sha256": "149873b73066f01e67f2fba6b19459c11b859eda49902469cbabad8ab8baf560",
+      "hashUnchanged": true,
+      "codec": "hevc",
+      "bitDepth": 8,
+      "colourSpace": "bt709",
+      "rotation": 0,
+      "samplingBackend": "nativeVT-explicitBT709",
+      "videoStartSeconds": 0,
+      "videoEndSeconds": 5.042,
+      "truncated": false,
+      "actualSampleSeconds": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0
+      ]
+    }
+  ],
+  "retrieval": {
+    "s0": {
+      "receipt": {
+        "elapsedMilliseconds": 3401.869334,
+        "frames": 70,
+        "modelID": "56c4f25da35ff46d7a2a0ab6a31f5a1be7fa6cd3b7659cc66a221ffe73dfa587",
+        "sources": 7
+      },
+      "correctTop1": 7,
+      "queries": [
+        {
+          "query": "a room with a guitar and a tall plant by the window",
+          "expectedSourceAlias": "iphone-original",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 0
+              },
+              "score": 0.3547799
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 1200
+              },
+              "score": 0.3496889
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 600
+              },
+              "score": 0.34752953
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 900
+              },
+              "score": 0.34711277
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 1800
+              },
+              "score": 0.34120184
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 300
+              },
+              "score": 0.34093487
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 1500
+              },
+              "score": 0.3370592
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 2100
+              },
+              "score": 0.33496332
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.09793687
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.09739122
+            }
+          ]
+        },
+        {
+          "query": "a giant insect creature in a spaceship cockpit",
+          "expectedSourceAlias": "ali-01",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.32124752
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.31958517
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.31820977
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.31324962
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.29939073
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.283823
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 55296
+              },
+              "score": 0.27797315
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.2777688
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.27561715
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.2750526
+            }
+          ]
+        },
+        {
+          "query": "a corridor covered in blue slime",
+          "expectedSourceAlias": "ali-02",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.33194897
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.31843007
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.31370038
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.31201902
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.29931194
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.29854393
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.2976632
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.27778843
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.27292567
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.24993093
+            }
+          ]
+        },
+        {
+          "query": "soldiers walking through a ruined alien landscape",
+          "expectedSourceAlias": "ali-03",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.27595735
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.27500737
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.27419192
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.27231216
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.27176085
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.260376
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.2598718
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 55296
+              },
+              "score": 0.25365314
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.24893434
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.24695738
+            }
+          ]
+        },
+        {
+          "query": "a frightened woman in a white spacesuit",
+          "expectedSourceAlias": "ali-04",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.2644058
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.2632084
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.2602219
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.255958
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.25519633
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.25329164
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.25118175
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.25114533
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.25015736
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 55296
+              },
+              "score": 0.24969465
+            }
+          ]
+        },
+        {
+          "query": "a man in a helmet holding a finger to his lips",
+          "expectedSourceAlias": "ali-05",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.26733926
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.2592096
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.25850353
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.24789941
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.24418747
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.21595995
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.21327923
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.2060206
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.20349373
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.20211741
+            }
+          ]
+        },
+        {
+          "query": "a tentacled alien creature served on a plate with candles",
+          "expectedSourceAlias": "ali-06",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.35629743
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.35519147
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.3492547
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 55296
+              },
+              "score": 0.3420215
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.3403226
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.33989254
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.3356081
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.32140616
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.3102769
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.23664017
+            }
+          ]
+        }
+      ]
+    },
+    "s2": {
+      "receipt": {
+        "elapsedMilliseconds": 5578.425666,
+        "frames": 70,
+        "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+        "sources": 7
+      },
+      "correctTop1": 7,
+      "queries": [
+        {
+          "query": "a room with a guitar and a tall plant by the window",
+          "expectedSourceAlias": "iphone-original",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 1800
+              },
+              "score": 0.33675095
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 1500
+              },
+              "score": 0.3365401
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 2100
+              },
+              "score": 0.3336046
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 1200
+              },
+              "score": 0.3303655
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 0
+              },
+              "score": 0.32851797
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 300
+              },
+              "score": 0.32704726
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 600
+              },
+              "score": 0.3255185
+            },
+            {
+              "sourceAlias": "iphone-original",
+              "actualTime": {
+                "timescale": 600,
+                "value": 900
+              },
+              "score": 0.32368904
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.06673033
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.06356201
+            }
+          ]
+        },
+        {
+          "query": "a giant insect creature in a spaceship cockpit",
+          "expectedSourceAlias": "ali-01",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.37316287
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.37216544
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.37145913
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.36999032
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.36483854
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.34540376
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.32085148
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.3025014
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 55296
+              },
+              "score": 0.30035192
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.29872903
+            }
+          ]
+        },
+        {
+          "query": "a corridor covered in blue slime",
+          "expectedSourceAlias": "ali-02",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.35071906
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.33452395
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.3338868
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.3335553
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.33210343
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.33151177
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.33119366
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.33013293
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.30258942
+            },
+            {
+              "sourceAlias": "ali-02",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.2774655
+            }
+          ]
+        },
+        {
+          "query": "soldiers walking through a ruined alien landscape",
+          "expectedSourceAlias": "ali-03",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.31284413
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.30860004
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.30610812
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.30449894
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.3026742
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.30248442
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.2996797
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.2985228
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 55296
+              },
+              "score": 0.29666457
+            },
+            {
+              "sourceAlias": "ali-03",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.29594615
+            }
+          ]
+        },
+        {
+          "query": "a frightened woman in a white spacesuit",
+          "expectedSourceAlias": "ali-04",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.31013596
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.30993438
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.30643967
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.30439475
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.30366018
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.30249193
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.3018636
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.29886085
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.29659775
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.29552218
+            }
+          ]
+        },
+        {
+          "query": "a man in a helmet holding a finger to his lips",
+          "expectedSourceAlias": "ali-05",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.2841585
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.2768313
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.27615914
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.27501315
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.27492625
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 1000,
+                "value": 0
+              },
+              "score": 0.20181516
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.20118882
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.20111859
+            },
+            {
+              "sourceAlias": "ali-05",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 6144
+              },
+              "score": 0.19608383
+            },
+            {
+              "sourceAlias": "ali-04",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.19480498
+            }
+          ]
+        },
+        {
+          "query": "a tentacled alien creature served on a plate with candles",
+          "expectedSourceAlias": "ali-06",
+          "top1Correct": true,
+          "rankedHits": [
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 55296
+              },
+              "score": 0.34999532
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 61440
+              },
+              "score": 0.34942985
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 24576
+              },
+              "score": 0.34896177
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 18432
+              },
+              "score": 0.3446508
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 30720
+              },
+              "score": 0.3416373
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 49152
+              },
+              "score": 0.33082476
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 12288
+              },
+              "score": 0.3306707
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 36864
+              },
+              "score": 0.32730857
+            },
+            {
+              "sourceAlias": "ali-06",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.32491055
+            },
+            {
+              "sourceAlias": "ali-01",
+              "actualTime": {
+                "timescale": 12288,
+                "value": 43008
+              },
+              "score": 0.23192823
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "predictionProfiles": [
+    {
+      "benchmark": {
+        "computePolicy": "cpuOnly",
+        "firstImagePredictionMilliseconds": 10.786042,
+        "firstTextPredictionMilliseconds": 4.28925,
+        "imagePredictionMilliseconds": [
+          8.561875,
+          8.180459,
+          8.203458,
+          8.146375,
+          8.142916,
+          8.109791,
+          8.716208,
+          8.595541,
+          8.721333,
+          8.119083,
+          8.546084,
+          8.42775,
+          8.14225,
+          8.365042,
+          8.314334,
+          8.613542,
+          9.301167,
+          8.852458,
+          8.960333,
+          8.77475,
+          8.642792,
+          8.800709,
+          8.421958,
+          8.617458,
+          8.6525,
+          9.350208,
+          9.113291,
+          9.11925,
+          8.70375,
+          8.771792,
+          8.726167,
+          8.919166,
+          8.953875,
+          8.2145,
+          8.182417,
+          7.969791,
+          8.348375,
+          8.262,
+          8.200875,
+          8.408667,
+          8.269875,
+          8.219916,
+          8.517792,
+          8.410541,
+          8.747042,
+          8.586,
+          8.266708,
+          8.445084,
+          8.040167,
+          8.318792,
+          8.352625,
+          7.998416,
+          9.2095,
+          8.671208,
+          8.836958,
+          8.301917,
+          8.496458,
+          8.098875,
+          8.358875,
+          8.522166,
+          8.475875,
+          8.199875,
+          8.361375,
+          8.062959,
+          8.20275,
+          8.078375,
+          8.280667,
+          8.206084,
+          7.980833,
+          8.151958,
+          8.850833,
+          8.167583,
+          8.369708,
+          8.074083,
+          8.58575,
+          8.121875,
+          8.792417,
+          8.354083,
+          8.266625,
+          8.081375,
+          8.25025,
+          8.300458,
+          8.193292,
+          7.98775,
+          8.116959,
+          8.439958,
+          8.270125,
+          8.330667,
+          7.924166,
+          8.003083,
+          8.133708,
+          8.289666,
+          8.246667,
+          8.24975,
+          8.396,
+          8.365542,
+          8.701333,
+          8.803083,
+          8.340292,
+          8.279459
+        ],
+        "loadMilliseconds": 538.413458,
+        "modelID": "56c4f25da35ff46d7a2a0ab6a31f5a1be7fa6cd3b7659cc66a221ffe73dfa587",
+        "modelName": "s0",
+        "note": "Synchronous Core ML prediction wall time only; preprocessing/tokenization/output normalization excluded. Five warmups excluded. Load may use existing compiler/system caches; first prediction is not a guaranteed cold-system measurement. Runtime device use requires a separate trace.",
+        "sampleActualTime": {
+          "timescale": 600,
+          "value": 0
+        },
+        "textPredictionMilliseconds": [
+          2.112584,
+          1.955666,
+          2.005167,
+          1.964625,
+          1.928208,
+          1.9685,
+          1.962125,
+          2.036875,
+          2.097458,
+          1.978541,
+          1.995416,
+          2.16575,
+          2.071708,
+          2.0855,
+          2.169292,
+          2.015875,
+          2.16325,
+          2.62975,
+          2.321458,
+          2.253625,
+          2.39875,
+          2.147167,
+          2.23675,
+          2.466042,
+          2.218167,
+          2.441,
+          2.080625,
+          2.20475,
+          2.222292,
+          2.211459,
+          2.127875,
+          2.019375,
+          2.098125,
+          1.979833,
+          2.414375,
+          2.292042,
+          2.101,
+          2.169,
+          2.276917,
+          2.404834,
+          2.187292,
+          2.165833,
+          2.087625,
+          2.347708,
+          3.484834,
+          2.630459,
+          2.814875,
+          2.069458,
+          1.933959,
+          2.009125,
+          1.986458,
+          1.957625,
+          2.110875,
+          2.0255,
+          2.045167,
+          1.989875,
+          1.903209,
+          2.040166,
+          2.133417,
+          2.540875,
+          2.108333,
+          2.279875,
+          2.096,
+          2.16275,
+          2.213459,
+          2.088292,
+          3.181917,
+          2.278042,
+          2.145667,
+          2.118125,
+          1.953125,
+          2.046625,
+          2.053125,
+          1.948083,
+          2.084916,
+          1.96725,
+          2.004833,
+          1.934375,
+          1.933166,
+          2.05625,
+          1.949667,
+          1.956375,
+          1.941708,
+          1.821333,
+          1.908875,
+          1.911125,
+          1.929083,
+          1.91425,
+          1.996166,
+          2.082291,
+          1.967042,
+          2.004708,
+          1.885541,
+          1.88725,
+          2.013208,
+          2.130458,
+          1.998375,
+          1.935,
+          2.511625,
+          2.059542
+        ],
+        "warmupCount": 5
+      },
+      "plan": {
+        "computePolicy": "cpuOnly",
+        "image": {
+          "estimatedCostWeight": {
+            "cpu": 0.9999999999999991,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "cpu": 206,
+            "unassigned": 678
+          },
+          "supportedOperations": {
+            "cpu": 206
+          },
+          "totalOperations": 884
+        },
+        "modelID": "56c4f25da35ff46d7a2a0ab6a31f5a1be7fa6cd3b7659cc66a221ffe73dfa587",
+        "text": {
+          "estimatedCostWeight": {
+            "cpu": 0.9999999999999996,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "cpu": 112,
+            "unassigned": 222
+          },
+          "supportedOperations": {
+            "cpu": 112
+          },
+          "totalOperations": 334
+        }
+      },
+      "prewarmedForTrace": false,
+      "medianImageMilliseconds": 8.3505,
+      "medianTextMilliseconds": 2.081458
+    },
+    {
+      "benchmark": {
+        "computePolicy": "cpuAndNeuralEngine",
+        "firstImagePredictionMilliseconds": 3.712708,
+        "firstTextPredictionMilliseconds": 1.368417,
+        "imagePredictionMilliseconds": [
+          1.210583,
+          1.211541,
+          1.200041,
+          1.18625,
+          1.13325,
+          1.1275,
+          1.256458,
+          1.202875,
+          1.301375,
+          1.299584,
+          1.283583,
+          1.211667,
+          1.206459,
+          1.188334,
+          1.286167,
+          1.251667,
+          1.233417,
+          1.218125,
+          1.231292,
+          1.366875,
+          1.311333,
+          1.3145,
+          1.298916,
+          1.295208,
+          1.301625,
+          1.352042,
+          1.34475,
+          1.312709,
+          1.336917,
+          1.317417,
+          1.350959,
+          1.464375,
+          1.487791,
+          1.471042,
+          1.466625,
+          1.4905,
+          1.539042,
+          1.555125,
+          1.4725,
+          1.541125,
+          1.528167,
+          1.568833,
+          1.734042,
+          1.8235,
+          1.774667,
+          1.760083,
+          1.720625,
+          1.982792,
+          2.199709,
+          1.943542,
+          1.918167,
+          1.911916,
+          1.772584,
+          1.761334,
+          1.78675,
+          1.776292,
+          1.706875,
+          1.685708,
+          1.714792,
+          2.041542,
+          2.186166,
+          2.188375,
+          2.191708,
+          2.143375,
+          2.145875,
+          2.246542,
+          2.609,
+          2.296292,
+          2.279458,
+          2.202666,
+          2.197334,
+          2.207875,
+          2.285583,
+          2.378875,
+          2.314125,
+          2.289709,
+          2.208708,
+          2.159875,
+          2.148208,
+          2.160959,
+          2.139,
+          2.138834,
+          2.19125,
+          2.133667,
+          2.142459,
+          2.131,
+          2.128583,
+          2.267833,
+          2.160458,
+          2.172625,
+          2.143667,
+          2.184208,
+          2.247292,
+          2.232667,
+          2.167458,
+          2.165792,
+          2.245459,
+          2.19075,
+          2.132875,
+          2.127667
+        ],
+        "loadMilliseconds": 1746.607458,
+        "modelID": "56c4f25da35ff46d7a2a0ab6a31f5a1be7fa6cd3b7659cc66a221ffe73dfa587",
+        "modelName": "s0",
+        "note": "Synchronous Core ML prediction wall time only; preprocessing/tokenization/output normalization excluded. Five warmups excluded. Load may use existing compiler/system caches; first prediction is not a guaranteed cold-system measurement. Runtime device use requires a separate trace.",
+        "sampleActualTime": {
+          "timescale": 600,
+          "value": 0
+        },
+        "textPredictionMilliseconds": [
+          1.632375,
+          1.558458,
+          1.500542,
+          1.45375,
+          1.497084,
+          1.506459,
+          1.551334,
+          1.524292,
+          1.656542,
+          1.629167,
+          1.528042,
+          1.497167,
+          1.496125,
+          1.513208,
+          1.491958,
+          1.572541,
+          1.625,
+          1.673334,
+          1.784041,
+          1.631959,
+          1.514458,
+          1.528542,
+          1.516208,
+          1.556208,
+          1.530584,
+          1.548459,
+          1.584916,
+          1.702042,
+          1.509083,
+          1.504084,
+          1.501709,
+          1.534375,
+          1.635584,
+          1.786584,
+          1.645875,
+          1.503875,
+          1.528084,
+          1.51575,
+          1.506833,
+          1.505625,
+          1.581792,
+          1.63575,
+          1.685291,
+          1.756375,
+          1.620709,
+          1.594208,
+          1.522375,
+          1.731208,
+          1.890417,
+          1.745375,
+          1.638375,
+          1.662875,
+          1.623583,
+          1.526125,
+          1.528375,
+          1.651459,
+          1.811542,
+          1.827125,
+          1.87925,
+          1.671792,
+          1.718084,
+          1.7195,
+          1.510791,
+          1.521125,
+          1.488583,
+          1.524375,
+          1.512792,
+          1.511542,
+          1.52225,
+          1.495875,
+          1.500708,
+          1.54325,
+          1.52225,
+          1.483,
+          1.521083,
+          1.516208,
+          1.517042,
+          1.51275,
+          1.524708,
+          1.487792,
+          1.507417,
+          1.527541,
+          1.508083,
+          1.511,
+          1.503291,
+          1.522166,
+          1.515084,
+          1.511292,
+          1.507416,
+          1.506125,
+          1.51525,
+          1.531417,
+          1.516708,
+          1.472417,
+          1.45425,
+          1.449792,
+          1.431583,
+          1.434875,
+          1.407708,
+          1.436875
+        ],
+        "warmupCount": 5
+      },
+      "plan": {
+        "computePolicy": "cpuAndNeuralEngine",
+        "image": {
+          "estimatedCostWeight": {
+            "ane": 0.9802387934154589,
+            "cpu": 0.01976120658454031,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "ane": 204,
+            "cpu": 2,
+            "unassigned": 678
+          },
+          "supportedOperations": {
+            "ane": 204,
+            "cpu": 206
+          },
+          "totalOperations": 884
+        },
+        "modelID": "56c4f25da35ff46d7a2a0ab6a31f5a1be7fa6cd3b7659cc66a221ffe73dfa587",
+        "text": {
+          "estimatedCostWeight": {
+            "ane": 0.7410771577340807,
+            "cpu": 0.25892284226591883,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "ane": 106,
+            "cpu": 6,
+            "unassigned": 222
+          },
+          "supportedOperations": {
+            "ane": 108,
+            "cpu": 112
+          },
+          "totalOperations": 334
+        }
+      },
+      "prewarmedForTrace": false,
+      "medianImageMilliseconds": 1.7736255,
+      "medianTextMilliseconds": 1.5223125
+    },
+    {
+      "benchmark": {
+        "computePolicy": "all",
+        "firstImagePredictionMilliseconds": 3.286166,
+        "firstTextPredictionMilliseconds": 56.858042,
+        "imagePredictionMilliseconds": [
+          1.915292,
+          1.585291,
+          1.274833,
+          1.185792,
+          1.205542,
+          1.283333,
+          1.26075,
+          1.3845,
+          1.310542,
+          1.272792,
+          1.222083,
+          1.191792,
+          1.24825,
+          1.276542,
+          1.256625,
+          1.187833,
+          1.336708,
+          1.147208,
+          1.221584,
+          1.180875,
+          1.188834,
+          1.213625,
+          1.266958,
+          1.195916,
+          1.141208,
+          1.148875,
+          1.113625,
+          1.140292,
+          1.223958,
+          1.218625,
+          1.220167,
+          1.231875,
+          1.151375,
+          1.271458,
+          1.184041,
+          1.208584,
+          1.085792,
+          1.083791,
+          1.151625,
+          1.1855,
+          1.185583,
+          1.2175,
+          1.351,
+          1.395292,
+          1.292084,
+          1.1655,
+          1.174708,
+          1.2845,
+          1.414,
+          1.085292,
+          1.059708,
+          1.065875,
+          1.074792,
+          1.159292,
+          1.081625,
+          1.132084,
+          1.089334,
+          1.055625,
+          1.129708,
+          1.130083,
+          1.093334,
+          1.112875,
+          1.10175,
+          1.081917,
+          1.062208,
+          1.087375,
+          1.052667,
+          1.14625,
+          1.131,
+          1.098666,
+          1.079417,
+          1.141333,
+          1.1175,
+          1.086208,
+          1.074167,
+          1.074,
+          1.146416,
+          1.10925,
+          1.06275,
+          1.074458,
+          1.153834,
+          1.086917,
+          1.067833,
+          1.063208,
+          1.0595,
+          1.076417,
+          1.119625,
+          1.125917,
+          1.12925,
+          1.100333,
+          1.149292,
+          1.100292,
+          1.051333,
+          1.070209,
+          1.072333,
+          1.052042,
+          1.21175,
+          1.143333,
+          1.123375,
+          1.089416
+        ],
+        "loadMilliseconds": 1348.691417,
+        "modelID": "56c4f25da35ff46d7a2a0ab6a31f5a1be7fa6cd3b7659cc66a221ffe73dfa587",
+        "modelName": "s0",
+        "note": "Synchronous Core ML prediction wall time only; preprocessing/tokenization/output normalization excluded. Five warmups excluded. Load may use existing compiler/system caches; first prediction is not a guaranteed cold-system measurement. Runtime device use requires a separate trace.",
+        "sampleActualTime": {
+          "timescale": 600,
+          "value": 0
+        },
+        "textPredictionMilliseconds": [
+          62.140667,
+          5.267042,
+          1.696291,
+          5.408167,
+          8.836292,
+          24.989708,
+          17.435375,
+          35.434625,
+          39.916416,
+          17.4325,
+          19.30575,
+          12.822542,
+          17.1665,
+          17.822,
+          9.935125,
+          20.263625,
+          33.348375,
+          20.265375,
+          43.770459,
+          25.074042,
+          2.224458,
+          4.919333,
+          2.200708,
+          23.154042,
+          10.094875,
+          21.099959,
+          30.437666,
+          20.515958,
+          21.243167,
+          20.95275,
+          17.064334,
+          26.880917,
+          17.629,
+          10.503,
+          27.530125,
+          24.194458,
+          22.415959,
+          25.819334,
+          42.428917,
+          2.585041,
+          4.496375,
+          2.315292,
+          22.870958,
+          12.48025,
+          18.608,
+          44.970458,
+          24.326542,
+          19.207,
+          19.551583,
+          14.847,
+          17.026292,
+          17.696167,
+          10.303041,
+          25.749416,
+          24.49975,
+          22.878625,
+          41.601125,
+          28.785875,
+          2.194041,
+          4.859125,
+          2.403,
+          28.312667,
+          7.493791,
+          15.251917,
+          31.999833,
+          26.887458,
+          17.209084,
+          17.573708,
+          18.656458,
+          14.212709,
+          17.034875,
+          18.007625,
+          10.41975,
+          22.979,
+          28.4225,
+          22.8075,
+          39.450083,
+          29.436208,
+          2.446667,
+          4.856875,
+          2.545666,
+          31.051542,
+          13.474375,
+          11.385083,
+          31.764334,
+          31.654334,
+          22.71025,
+          21.941208,
+          17.9985,
+          21.649459,
+          16.390375,
+          39.189583,
+          32.118875,
+          52.779292,
+          13.673625,
+          5.994708,
+          18.481125,
+          16.562583,
+          16.752334,
+          25.9925
+        ],
+        "warmupCount": 5
+      },
+      "plan": {
+        "computePolicy": "all",
+        "image": {
+          "estimatedCostWeight": {
+            "ane": 0.980238793415459,
+            "cpu": 0.01976120658454032,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "ane": 204,
+            "cpu": 2,
+            "unassigned": 678
+          },
+          "supportedOperations": {
+            "ane": 204,
+            "cpu": 206,
+            "gpu": 206
+          },
+          "totalOperations": 884
+        },
+        "modelID": "56c4f25da35ff46d7a2a0ab6a31f5a1be7fa6cd3b7659cc66a221ffe73dfa587",
+        "text": {
+          "estimatedCostWeight": {
+            "gpu": 1.0000000000000009,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "gpu": 112,
+            "unassigned": 222
+          },
+          "supportedOperations": {
+            "ane": 108,
+            "cpu": 112,
+            "gpu": 112
+          },
+          "totalOperations": 334
+        }
+      },
+      "prewarmedForTrace": false,
+      "medianImageMilliseconds": 1.1447915,
+      "medianTextMilliseconds": 18.931729
+    },
+    {
+      "benchmark": {
+        "computePolicy": "cpuOnly",
+        "firstImagePredictionMilliseconds": 23.379833,
+        "firstTextPredictionMilliseconds": 9.058125,
+        "imagePredictionMilliseconds": [
+          20.04925,
+          19.283875,
+          19.159833,
+          18.732583,
+          20.299208,
+          18.348791,
+          19.023792,
+          19.19,
+          18.440875,
+          18.582583,
+          18.872042,
+          19.157333,
+          19.517083,
+          19.681208,
+          19.986084,
+          20.832916,
+          19.773541,
+          18.830333,
+          19.00575,
+          19.098292,
+          19.332666,
+          19.809458,
+          20.151667,
+          20.210875,
+          19.1105,
+          20.32,
+          19.010416,
+          18.602041,
+          18.725625,
+          19.259709,
+          19.540166,
+          19.180208,
+          19.292708,
+          19.934292,
+          19.950416,
+          19.222375,
+          19.282959,
+          18.90275,
+          19.873583,
+          19.564958,
+          19.712541,
+          20.146917,
+          19.255625,
+          19.073541,
+          19.666167,
+          18.834125,
+          18.839625,
+          19.0865,
+          18.912083,
+          19.161167,
+          18.826083,
+          20.967875,
+          19.552333,
+          19.887125,
+          18.671792,
+          18.6525,
+          19.218875,
+          18.92825,
+          19.259375,
+          19.07925,
+          19.966583,
+          19.119541,
+          19.023875,
+          19.715583,
+          18.7065,
+          18.756958,
+          18.5945,
+          19.355292,
+          19.169042,
+          19.042625,
+          19.250416,
+          19.571958,
+          19.83525,
+          18.789583,
+          19.082125,
+          18.953875,
+          19.302584,
+          19.069125,
+          19.657625,
+          20.057333,
+          18.897625,
+          19.380833,
+          19.551792,
+          18.820292,
+          18.487958,
+          18.661584,
+          18.786625,
+          19.388041,
+          19.046333,
+          18.97975,
+          19.36925,
+          19.629667,
+          18.65,
+          18.563667,
+          19.124917,
+          19.637667,
+          19.207125,
+          19.648458,
+          19.985,
+          18.55775
+        ],
+        "loadMilliseconds": 865.644375,
+        "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+        "modelName": "s2",
+        "note": "Synchronous Core ML prediction wall time only; preprocessing/tokenization/output normalization excluded. Five warmups excluded. Load may use existing compiler/system caches; first prediction is not a guaranteed cold-system measurement. Runtime device use requires a separate trace.",
+        "sampleActualTime": {
+          "timescale": 600,
+          "value": 0
+        },
+        "textPredictionMilliseconds": [
+          4.641917,
+          5.569958,
+          4.6995,
+          4.557791,
+          5.800458,
+          4.7055,
+          4.481833,
+          4.52475,
+          4.375042,
+          4.358875,
+          4.401709,
+          4.36975,
+          4.404583,
+          4.407042,
+          4.40925,
+          4.49675,
+          4.454875,
+          4.332208,
+          4.472917,
+          5.137,
+          4.815542,
+          4.609833,
+          5.577667,
+          4.817583,
+          4.543083,
+          4.6655,
+          4.79225,
+          4.744542,
+          4.539792,
+          4.948583,
+          4.601042,
+          4.532375,
+          6.7785,
+          4.510792,
+          5.143833,
+          4.896125,
+          5.015041,
+          5.707584,
+          5.08025,
+          4.9875,
+          4.643041,
+          4.495166,
+          4.590334,
+          4.494709,
+          4.476417,
+          4.526541,
+          4.691375,
+          4.551916,
+          4.493292,
+          4.670667,
+          4.512667,
+          5.69125,
+          5.062958,
+          5.129208,
+          5.107459,
+          5.0885,
+          5.27575,
+          4.995875,
+          5.185833,
+          5.02575,
+          5.189042,
+          4.991666,
+          5.057125,
+          5.771292,
+          6.050958,
+          4.579875,
+          4.513291,
+          4.527375,
+          4.551375,
+          4.459542,
+          4.527917,
+          5.447458,
+          4.727791,
+          4.471542,
+          5.796167,
+          4.671083,
+          4.423083,
+          4.418208,
+          4.452708,
+          4.434791,
+          4.466209,
+          4.330042,
+          4.469292,
+          4.512708,
+          4.317875,
+          4.495875,
+          4.28875,
+          4.338667,
+          4.349833,
+          4.998959,
+          4.640708,
+          4.492208,
+          5.362292,
+          4.899916,
+          4.404167,
+          4.621541,
+          4.83125,
+          4.589375,
+          4.591959,
+          5.235458
+        ],
+        "warmupCount": 5
+      },
+      "plan": {
+        "computePolicy": "cpuOnly",
+        "image": {
+          "estimatedCostWeight": {
+            "cpu": 1.0000000000000007,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "cpu": 392,
+            "unassigned": 1320
+          },
+          "supportedOperations": {
+            "cpu": 392
+          },
+          "totalOperations": 1712
+        },
+        "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+        "text": {
+          "estimatedCostWeight": {
+            "cpu": 0.9999999999999988,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "cpu": 260,
+            "unassigned": 458
+          },
+          "supportedOperations": {
+            "cpu": 260
+          },
+          "totalOperations": 718
+        }
+      },
+      "prewarmedForTrace": false,
+      "medianImageMilliseconds": 19.185104000000003,
+      "medianTextMilliseconds": 4.596500499999999
+    },
+    {
+      "benchmark": {
+        "computePolicy": "cpuAndNeuralEngine",
+        "firstImagePredictionMilliseconds": 7.417083,
+        "firstTextPredictionMilliseconds": 4.67825,
+        "imagePredictionMilliseconds": [
+          3.515375,
+          3.549958,
+          3.47725,
+          3.411833,
+          3.168125,
+          3.021875,
+          3.04,
+          3.200291,
+          2.946208,
+          2.810209,
+          2.79725,
+          2.445041,
+          2.457042,
+          2.467792,
+          2.450041,
+          2.468917,
+          2.251125,
+          2.262458,
+          2.31775,
+          2.459125,
+          2.584666,
+          2.468416,
+          2.311083,
+          2.2695,
+          2.269542,
+          2.274083,
+          2.282375,
+          2.244583,
+          2.222833,
+          2.252959,
+          2.232333,
+          2.261334,
+          2.275833,
+          2.269542,
+          2.283667,
+          2.275459,
+          2.266459,
+          2.292333,
+          2.215208,
+          2.233958,
+          2.265458,
+          2.26825,
+          2.253209,
+          2.279834,
+          2.279208,
+          2.264334,
+          2.286291,
+          2.266334,
+          2.312958,
+          2.556291,
+          2.334,
+          2.237667,
+          2.281916,
+          2.259083,
+          2.280125,
+          2.224834,
+          2.231583,
+          2.225166,
+          2.215417,
+          2.287833,
+          2.274833,
+          2.865209,
+          2.795083,
+          2.60125,
+          2.378416,
+          2.334416,
+          2.266083,
+          2.247708,
+          2.248,
+          2.24025,
+          2.194,
+          2.110375,
+          2.124167,
+          2.07025,
+          2.063,
+          2.219625,
+          2.1425,
+          2.214083,
+          2.171833,
+          2.120583,
+          2.122417,
+          2.109084,
+          2.066416,
+          2.1275,
+          2.209209,
+          2.294709,
+          2.263709,
+          2.212416,
+          2.130208,
+          2.070292,
+          2.122167,
+          2.052875,
+          2.055916,
+          2.054709,
+          2.062584,
+          2.055084,
+          2.081042,
+          2.181292,
+          2.146833,
+          2.135167
+        ],
+        "loadMilliseconds": 3508.734208,
+        "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+        "modelName": "s2",
+        "note": "Synchronous Core ML prediction wall time only; preprocessing/tokenization/output normalization excluded. Five warmups excluded. Load may use existing compiler/system caches; first prediction is not a guaranteed cold-system measurement. Runtime device use requires a separate trace.",
+        "sampleActualTime": {
+          "timescale": 600,
+          "value": 0
+        },
+        "textPredictionMilliseconds": [
+          1.29875,
+          1.23375,
+          1.19625,
+          1.201708,
+          1.194083,
+          1.188875,
+          1.209958,
+          1.182083,
+          1.225875,
+          1.188625,
+          1.220541,
+          1.185125,
+          1.180417,
+          1.194875,
+          1.185709,
+          1.243875,
+          1.216459,
+          1.208959,
+          1.234709,
+          1.248334,
+          1.212708,
+          1.269708,
+          1.166125,
+          1.21675,
+          1.214834,
+          1.244875,
+          1.283916,
+          1.241791,
+          1.234958,
+          1.32025,
+          1.480417,
+          1.402042,
+          1.382416,
+          1.25275,
+          1.207916,
+          1.282792,
+          1.257291,
+          1.221416,
+          1.440833,
+          1.298291,
+          1.398167,
+          1.308875,
+          1.231541,
+          1.295792,
+          1.270334,
+          1.217875,
+          1.245541,
+          1.26125,
+          1.233083,
+          1.23275,
+          1.250042,
+          1.215042,
+          1.34725,
+          1.288833,
+          1.222125,
+          1.239917,
+          1.299,
+          1.267833,
+          1.279167,
+          1.324542,
+          1.399667,
+          1.262917,
+          1.253375,
+          1.296416,
+          1.252833,
+          1.200833,
+          1.235791,
+          1.276916,
+          1.224333,
+          1.389166,
+          1.540625,
+          1.410542,
+          1.460458,
+          1.357,
+          1.29575,
+          1.292417,
+          1.317792,
+          1.619083,
+          1.537417,
+          1.464458,
+          1.513083,
+          1.395541,
+          1.361584,
+          1.316625,
+          1.292458,
+          1.37825,
+          1.503875,
+          1.645709,
+          1.496083,
+          1.433875,
+          1.367917,
+          1.280792,
+          1.883417,
+          1.3175,
+          1.187625,
+          1.174333,
+          1.159666,
+          1.167042,
+          1.174958,
+          1.182458
+        ],
+        "warmupCount": 5
+      },
+      "plan": {
+        "computePolicy": "cpuAndNeuralEngine",
+        "image": {
+          "estimatedCostWeight": {
+            "ane": 0.9926528445863925,
+            "cpu": 0.007347155413606854,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "ane": 390,
+            "cpu": 2,
+            "unassigned": 1320
+          },
+          "supportedOperations": {
+            "ane": 390,
+            "cpu": 392
+          },
+          "totalOperations": 1712
+        },
+        "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+        "text": {
+          "estimatedCostWeight": {
+            "ane": 0.8742394913207161,
+            "cpu": 0.12576050867928376,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "ane": 254,
+            "cpu": 6,
+            "unassigned": 458
+          },
+          "supportedOperations": {
+            "ane": 256,
+            "cpu": 260
+          },
+          "totalOperations": 718
+        }
+      },
+      "prewarmedForTrace": false,
+      "medianImageMilliseconds": 2.2657705000000004,
+      "medianTextMilliseconds": 1.2592705
+    },
+    {
+      "benchmark": {
+        "computePolicy": "all",
+        "firstImagePredictionMilliseconds": 8.109667,
+        "firstTextPredictionMilliseconds": 105.442375,
+        "imagePredictionMilliseconds": [
+          2.7815,
+          2.4435,
+          2.352,
+          2.446084,
+          2.289875,
+          2.171625,
+          2.172667,
+          2.143625,
+          2.11275,
+          2.096958,
+          2.082083,
+          2.147584,
+          2.157083,
+          2.235542,
+          2.302459,
+          2.376541,
+          2.336291,
+          2.16675,
+          2.088542,
+          2.078208,
+          2.229833,
+          2.264667,
+          2.400042,
+          2.282958,
+          2.191666,
+          2.1,
+          2.089,
+          2.129125,
+          2.141583,
+          2.065875,
+          2.053125,
+          2.062584,
+          2.0615,
+          2.065792,
+          2.103416,
+          2.085208,
+          2.094792,
+          2.090584,
+          2.069583,
+          2.083625,
+          2.15825,
+          2.082458,
+          2.09375,
+          2.115875,
+          2.163625,
+          2.143917,
+          2.094167,
+          2.069042,
+          2.063334,
+          2.093167,
+          2.052709,
+          2.055208,
+          2.121625,
+          2.241041,
+          2.1905,
+          2.295375,
+          2.236,
+          2.194875,
+          2.072208,
+          2.094542,
+          2.21475,
+          2.225875,
+          2.227875,
+          2.196167,
+          2.098667,
+          2.0675,
+          2.05975,
+          2.088917,
+          2.053834,
+          2.050833,
+          2.139125,
+          2.163792,
+          2.110291,
+          2.097,
+          2.213125,
+          2.260625,
+          2.2175,
+          2.127875,
+          2.088583,
+          2.053583,
+          2.037375,
+          2.163458,
+          2.321,
+          2.187917,
+          2.053042,
+          2.097875,
+          2.084584,
+          2.103333,
+          2.193167,
+          2.225542,
+          2.306708,
+          2.388208,
+          2.244125,
+          2.186041,
+          2.331625,
+          2.502,
+          2.298375,
+          2.26525,
+          2.285792,
+          2.133
+        ],
+        "loadMilliseconds": 2164.0125,
+        "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+        "modelName": "s2",
+        "note": "Synchronous Core ML prediction wall time only; preprocessing/tokenization/output normalization excluded. Five warmups excluded. Load may use existing compiler/system caches; first prediction is not a guaranteed cold-system measurement. Runtime device use requires a separate trace.",
+        "sampleActualTime": {
+          "timescale": 600,
+          "value": 0
+        },
+        "textPredictionMilliseconds": [
+          60.004834,
+          69.876,
+          6.55975,
+          33.899958,
+          54.25025,
+          56.564458,
+          37.711542,
+          31.623709,
+          20.664583,
+          61.804458,
+          70.709125,
+          6.324333,
+          33.443541,
+          62.656167,
+          32.67225,
+          38.64925,
+          30.97225,
+          26.17525,
+          71.27225,
+          70.214959,
+          7.138125,
+          34.97175,
+          56.219208,
+          39.623333,
+          37.561667,
+          37.361042,
+          19.556125,
+          70.536042,
+          71.105792,
+          7.459083,
+          33.918875,
+          47.978458,
+          53.91675,
+          35.399583,
+          34.552666,
+          18.798625,
+          71.105292,
+          72.02125,
+          7.0705,
+          35.24375,
+          62.965917,
+          31.587209,
+          38.116584,
+          38.408125,
+          19.47525,
+          72.63025,
+          69.290792,
+          6.412,
+          37.550959,
+          62.745958,
+          47.723417,
+          33.612458,
+          39.033041,
+          72.071083,
+          70.310708,
+          6.380125,
+          33.659709,
+          65.732875,
+          44.962167,
+          34.894875,
+          33.7135,
+          20.453542,
+          80.019791,
+          54.064334,
+          6.237667,
+          35.497,
+          50.602792,
+          57.668708,
+          38.74775,
+          39.787,
+          34.589375,
+          41.531417,
+          72.108625,
+          6.455917,
+          31.526291,
+          23.658917,
+          73.705125,
+          36.794958,
+          30.748375,
+          30.345875,
+          66.072417,
+          77.46975,
+          7.339875,
+          21.491875,
+          30.871458,
+          71.339,
+          40.98625,
+          31.940708,
+          28.635792,
+          70.604333,
+          71.558541,
+          6.536125,
+          21.569375,
+          39.610917,
+          67.039083,
+          37.35275,
+          40.13225,
+          27.511209,
+          62.772791,
+          71.364625
+        ],
+        "warmupCount": 5
+      },
+      "plan": {
+        "computePolicy": "all",
+        "image": {
+          "estimatedCostWeight": {
+            "ane": 0.9926528445863914,
+            "cpu": 0.007347155413606844,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "ane": 390,
+            "cpu": 2,
+            "unassigned": 1320
+          },
+          "supportedOperations": {
+            "ane": 390,
+            "cpu": 392,
+            "gpu": 392
+          },
+          "totalOperations": 1712
+        },
+        "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+        "text": {
+          "estimatedCostWeight": {
+            "gpu": 1.0000000000000009,
+            "unassigned": 0
+          },
+          "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+          "preferredOperations": {
+            "gpu": 260,
+            "unassigned": 458
+          },
+          "supportedOperations": {
+            "ane": 256,
+            "cpu": 260,
+            "gpu": 260
+          },
+          "totalOperations": 718
+        }
+      },
+      "prewarmedForTrace": false,
+      "medianImageMilliseconds": 2.142604,
+      "medianTextMilliseconds": 37.914063
+    }
+  ],
+  "runtimeTraceSummary": {
+    "schemaVersion": 1,
+    "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+    "computePolicy": "cpuAndNeuralEngine",
+    "recordingTarget": "pxl-search",
+    "planned": {
+      "computePolicy": "cpuAndNeuralEngine",
+      "image": {
+        "estimatedCostWeight": {
+          "ane": 0.9926528445863925,
+          "cpu": 0.007347155413606854,
+          "unassigned": 0
+        },
+        "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+        "preferredOperations": {
+          "ane": 390,
+          "cpu": 2,
+          "unassigned": 1320
+        },
+        "supportedOperations": {
+          "ane": 390,
+          "cpu": 392
+        },
+        "totalOperations": 1712
+      },
+      "modelID": "b225e786a55a26d50f4530beb2bcf82810903b316936693decb5cfd9ebc7cd60",
+      "text": {
+        "estimatedCostWeight": {
+          "ane": 0.8742394913207149,
+          "cpu": 0.12576050867928362,
+          "unassigned": 0
+        },
+        "note": "Planned placement and estimated cost weights, not measured execution or runtime percentages. Unassigned includes constants/control bookkeeping.",
+        "preferredOperations": {
+          "ane": 254,
+          "cpu": 6,
+          "unassigned": 458
+        },
+        "supportedOperations": {
+          "ane": 256,
+          "cpu": 260
+        },
+        "totalOperations": 718
+      }
+    },
+    "runtimeANEPredictionGroups": {
+      "Neural Engine Prediction": {
+        "events": 212,
+        "sumMilliseconds": 371.225459,
+        "medianMilliseconds": 1.762,
+        "minimumMilliseconds": 0.829125,
+        "maximumMilliseconds": 3.260167
+      }
+    },
+    "measuredBatchOverlap": {
+      "MeasuredImageBatch": {
+        "measuredCalls": 100,
+        "batchWallMilliseconds": 255.493708,
+        "nativePredictionWallMilliseconds": 245.585125,
+        "overlappingANEIntervals": 100,
+        "aneIntervalUnionMilliseconds": 194.996583
+      },
+      "MeasuredTextBatch": {
+        "measuredCalls": 100,
+        "batchWallMilliseconds": 225.01025,
+        "nativePredictionWallMilliseconds": 198.35483,
+        "overlappingANEIntervals": 100,
+        "aneIntervalUnionMilliseconds": 159.482208
+      }
+    },
+    "note": "Measured ANE hardware intervals during the recording; labels may be model-specific or generic. Counts can include first prediction and warmups; each call may contain multiple ANE partitions. This is runtime ANE participation, not a percentage of all model operations or CPU/GPU wall time. Device plans and cost weights are separate estimates. Attached recordings can lose program labels: generic hardware intervals are time-correlated with PID-scoped batch signposts and are NOT independently process-attributed. Interval wall time is not an exact CPU/ANE operation or utilization percentage. Raw trace may include system context and remains local."
+  },
+  "verification": {
+    "testsPassed": 86,
+    "testsFailed": 0,
+    "testsSkipped": 0,
+    "releaseBuildPassed": true,
+    "externalPackageDependencies": 0,
+    "binaryTargets": 0,
+    "systemRuntimeDependenciesOnly": [
+      "pxlmpeg",
+      "pxl-player",
+      "pxl-search"
+    ]
+  },
+  "limitations": [
+    "Seven visually inspected known queries are a smoke test, not held-out accuracy or temporal action validation.",
+    "Sparse samples and center crop can miss content. Similarity is not probability; absent queries still rank candidates.",
+    "Separate CLI invocations include compilation/verification startup. Prediction timings exclude preprocessing, tokenizer, normalization and loading.",
+    "Generic attached ANE intervals are temporally correlated with PID-scoped batch signposts, not independently process-attributed or exact operation/utilization percentages.",
+    "Background applications were not controlled; GPU/all results are specific to these runs.",
+    "Minimum macOS 15 and simultaneous playback responsiveness were not tested."
+  ],
+  "privacy": "Source aliases replace private paths. No media, weights, embeddings, raw traces, host IDs or unrelated process details are published.",
+  "processMemoryRun": {
+    "model": "s2",
+    "computePolicy": "cpuAndNeuralEngine",
+    "sources": 7,
+    "frames": 70,
+    "indexElapsedMilliseconds": 5006.436542,
+    "processWallSeconds": 5.26,
+    "maximumResidentSetSizeBytes": 518963200,
+    "peakMemoryFootprintBytes": 740672832,
+    "measurement": "/usr/bin/time -l; process metrics, not aggregate device/XPC peak or strict budget"
+  }
+}

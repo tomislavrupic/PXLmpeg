@@ -1,46 +1,49 @@
-# Semantic footage indexing — research design
+# Semantic footage indexing
 
-The selected user need is to search for **people, objects and actions**, with **Apple Neural Engine acceleration**. OCR is an optional secondary analyzer. This document records a direction, not an implemented or benchmarked feature.
+PXLmpeg 0.7 implements an optional **sampled visual search prototype**. `PXLAnalysis` supplies a Core ML image/text encoder pair, bounded native sampling, validated embedding sidecars and timestamped cosine ranking. Pixel Deck remains the intended catalog/UI consumer; no existing application has been switched over.
 
 ## Responsibilities
 
-PXLmpeg supplies timestamped samples, explicit image/colour/orientation contracts, cancellation and resource admission. Optional analyzers return observations with provenance. Pixel Deck owns its catalog, vector index, search UI and the decision to run analysis. Core media processing must work without a model, database, downloaded weights or third-party runtime.
+Core media processing builds and runs without models, databases, downloaded weights or third-party runtimes. `PXLAnalysis` depends on the core; the core does not depend on analysis. Model assets are explicitly supplied by the host. Pixel Deck owns its catalog, vector database, search UI, playback priority, access permissions and the decision to run analysis.
 
 ```mermaid
 flowchart LR
-  V[Original footage] --> D[Native decode and timed sampling]
-  D --> P[Explicit orientation, colour and model preprocessing]
-  P --> M[Optional Core ML model / ANE enabled]
-  M --> O[Timestamped observations and embeddings]
-  O --> S[New sidecar or host stream]
-  S --> C[Pixel Deck catalog and search]
-  Q[Text query] --> T[Matching text encoder]
-  T --> C
-  C --> J[Ranked time ranges / jump to playback]
+  V[Read-only original footage] --> D[Native timed sampler]
+  D --> P[Display orientation and explicit SDR/sRGB conversion]
+  P --> I[Core ML MobileCLIP image encoder]
+  I --> S[New sidecar: SHA-256, actual PTS, normalized embeddings]
+  Q[Text query] --> T[Matching Core ML text encoder]
+  T --> R[Cosine ranking]
+  S --> R
+  R --> H[Host catalog and jump to playback]
 ```
 
-## Small first experiment
+## Implemented model and contracts
 
-Evaluate one compact image/text embedding pair before adding a captioning model. Sample a bounded number of frames and encode them once; a text query such as “a person next to a red car” retrieves candidate time ranges by embedding similarity. Apple's [MobileCLIP research and native Core ML example](https://github.com/apple-aiml-research/ml-mobileclip/tree/main/ios_app) are candidates to evaluate, not a dependency or model choice. No model is currently bundled or downloaded.
+The default is Apple's **original MobileCLIP-S2** image/text pair; S0 remains selectable for comparison. The official [Core ML release](https://huggingface.co/apple/coreml-mobileclip) and [native example](https://github.com/apple-aiml-research/ml-mobileclip/tree/main/ios_app) avoid a conversion toolchain. Models, vocabulary and merges are pinned and SHA-256 verified by the developer fetch script. The original Swift byte-BPE tokenizer is checked against the native example's token sequences, including punctuation and Unicode. Query content is limited to 75 tokens plus start/end markers, padded to 77; unsupported length fails explicitly.
 
-Frame embeddings can retrieve visual content but do not establish temporal actions. “Entering” versus “leaving,” direction of motion and actions spanning cuts need a temporal model or additional ordered-frame analysis. Add a bounded second pass over retrieved short segments only after evaluating the first pass. Generated descriptions and model labels remain fallible observations; similarity scores are not calibrated probabilities. Detecting “a person” does not identify that person.
+The actor owns synchronous Core ML model handles and serial operations. Only compiler-returned temporary compiled models are loaded, so arbitrary host `.mlmodelc` cache directories cannot bypass raw-asset identity checks. A persistent actor amortizes startup. Every separate CLI invocation verifies and compiles assets; this currently takes seconds even when the OS can reuse compiler caches.
 
-## Neural Engine requirement
+Image preprocessing produces a 256 × 256 sRGB center crop. SDR BT.709 sampling uses the core required-hardware VideoToolbox decoder and contract-applied YUV colour metadata before Core Image conversion; this includes explicitly assumed untagged ALi sources. HDR sampling uses `AVAssetImageGenerator` with `forceSDR`. Both apply display rotation. HDR conversion is an analysis derivative, not a reference tone-mapping or HDR display approval. The chosen backend and preprocessing revision are recorded.
 
-Use a host-supplied Core ML model that performs useful work on ANE. Initially benchmark `MLModelConfiguration.computeUnits = .cpuAndNeuralEngine`, which permits CPU and ANE and excludes GPU inference. Preprocessing may still use Metal. Benchmark `.all` separately if it improves end-to-end performance without harming playback; neither option forces every operation onto ANE.
+Sampling uses the video track range, a declared interval and a per-source request limit. Actual source PTS is retained separately from requested time, and duplicate actual frames are omitted. Forward requests across a presentation gap can share a future frame without being mistaken for backward seeks. Sparse samples do not imply continuous coverage.
 
-Inspect supported/preferred devices with `MLComputePlan`. Record runtime operation placement using Xcode's model performance report and Instruments. Distinguish requested compute policy, planned placement and measured utilization. CPU fallbacks, conversion costs and model warm-up are part of the results. No ANE-only execution guarantee is exposed by this design. See [Apple's performance guide](https://developer.apple.com/documentation/coreml/analyzing-a-core-ml-model-s-performance-in-xcode) and [Core ML optimization](https://developer.apple.com/videos/play/wwdc2022/10027/).
+## Records, resources and cancellation
 
-## Sampling and records
+Schema v1 includes source SHA-256 and media descriptor, source video range, sampling backend and truncation, requested/actual PTS, normalized 512-float embeddings, model/tokenizer/preprocessing identity, compute policy and elapsed indexing time. Source hashes are verified before and after indexing. Query and index model identities must match. A query reads the sidecar, not the footage; the host must validate source identity before using old results against modified files.
 
-Begin with an explicit sampling interval and maximum work per job. Adaptive shot-change sampling can follow measured recall tests; sparse sampling can miss short actions and must not imply continuous coverage. Playback has priority over background indexing. Bound in-flight samples and model working sets; cancel when the job or source generation changes.
+The prototype accepts 1–32 local supported MOV/MP4 sources, intervals from 0.1–60 seconds, up to 4096 requests per source and 4096 aggregate embeddings. Serialized sidecars are capped at 32 MiB. Regular-file admission rejects FIFO/device inputs before blocking reads. Publication uses a new exclusive destination and removes owned temporary output on failure. Originals are never rewritten.
 
-Each record needs a schema revision, source content identity, actual source PTS and duration, sample/segment coverage, analyzer and model identity, model/preprocessing revision, compute policy and observation type. Retain embedding dimensions/normalization and text-encoder identity so incompatible models are never searched together. Text/boxes use normalized display-oriented coordinates with a declared origin. Record HDR interpretation and any explicit conversion to the model's SDR/RGB input; P010 storage is not automatically a model-compatible image.
+One operation runs per actor. At most one sample/model inference is in flight. SDR decoding uses an SPS-bounded reorder window and a 256 MiB owned-media budget, on a private serial blocking queue. Core Image, Core ML and native opaque allocations are not covered by that budget. Cancellation is checked around sampling, hashing, inference and publication; an OS call already in progress may finish before cancellation returns. This is not a hard deadline for a hung native call. Separate playback and analysis scheduling remain the host's responsibility.
 
-Store new sidecars or stream records to the host. Never embed analysis by rewriting the original. A sidecar cache must detect changed source contents; the current processing engine's file identity/size/mtime fingerprint is not a content hash. Deduplication may merge similar observations into candidate spans, but should retain contributing timestamps and gaps.
+## Neural Engine evidence
 
-## Acceptance before integration
+The default `cpuAndNeuralEngine` policy permits CPU and ANE inference and excludes GPU inference; preprocessing may use Metal. `all` and `cpuOnly` are available for measurement. There is no ANE-only guarantee.
 
-Use a small annotated set of real ALi and iPhone clips, including rotations, SDR/HDR, small subjects, quick cuts and temporal actions. Measure search recall and false matches against exact annotated time ranges, cold/warm indexing latency, frames analyzed per second, memory, cancellation and playback responsiveness. Profile actual ANE participation on the target Mac. Compare sampling schedules and CPU + ANE versus all compute units. Select the model only after quality, conversion, tokenizer compatibility and distribution terms are understood.
+`MLComputePlan` reports supported/preferred devices and estimated cost weights. The CLI benchmark measures native prediction wall time after first predictions and five warmups. The Instruments script attaches after prewarming, records actual ANE hardware activity, and aligns it with PID-scoped image/text batch signposts. Attached hardware intervals can be generic and lack process/model attribution, so overlap supports runtime ANE participation but cannot establish an exact fraction of operations or device utilization. See [validation](../validation/semantic-search.md), [Apple's performance guide](https://developer.apple.com/documentation/coreml/analyzing-a-core-ml-model-s-performance-in-xcode) and [Core ML optimization](https://developer.apple.com/videos/play/wwdc2022/10027/).
 
-The first interactive playback backend is AVPlayer and does not yet expose reusable frame leases. Analysis should use a deliberate media sample API/worker; attaching repeated image extraction to the UI timer would couple indexing to playback and duplicate expensive work. Model execution and catalog integration are separate follow-up implementation milestones.
+## Next research gates
+
+The first real-footage smoke test covers one rotated iPhone HLG original and six ALi clips. It does not establish general recall, absent-query rejection, long-form stability or responsiveness during simultaneous playback. Before catalog integration, evaluate held-out clips, exact annotated time ranges, short events, edge subjects, cuts and longer sources. Measure competing playback workloads and scheduling, total process/device memory, and reusable sampler access.
+
+Image embeddings retrieve visual content but do not establish temporal actions. “Entering” versus “leaving,” motion direction and actions spanning cuts need ordered-frame analysis or a temporal model. Add a bounded second pass over retrieved segments only after evaluating the first pass. OCR, captions, tracking and person identity are separate capabilities. Scores are similarities, not calibrated probabilities; a ranked match is returned even when the query is absent. Adaptive sampling, persistent catalog indexing and temporal understanding remain future work.

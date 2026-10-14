@@ -7,6 +7,8 @@ let package = Package(
     .library(name: "PXLMedia", targets: ["PXLMedia"]),
     .library(name: "PXLmpeg", targets: ["PXLmpeg"]),
     .library(name: "PXLPlayback", targets: ["PXLPlayback"]),
+    .library(name: "PXLAnalysis", targets: ["PXLAnalysis"]),
+    .executable(name: "pxl-search", targets: ["PXLSearchCLI"]),
     .executable(name: "pxlmpeg", targets: ["PXLmpegCLI"]),
     .executable(name: "pxl-player", targets: ["PXLPlayer"]),
     .executable(name: "pxl-validation", targets: ["PXLValidation"]),
@@ -14,6 +16,9 @@ let package = Package(
   dependencies: [],
   targets: [
     .target(name: "PXLMedia"),
+    .target(name: "PXLAnalysis", dependencies: ["PXLMedia", "PXLAppleMedia"]),
+    .executableTarget(name: "PXLSearchCLI", dependencies: ["PXLAnalysis", "PXLMedia"]),
+    .testTarget(name: "PXLAnalysisTests", dependencies: ["PXLAnalysis", "PXLTestSupport", "PXLAppleMedia"]),
     .executableTarget(name: "PXLPlayer", dependencies: ["PXLPlayback", "PXLMedia"]),
     .target(name: "PXLPlayback", dependencies: ["PXLMedia", "PXLAppleMedia"]),
     .testTarget(name: "PXLPlaybackTests", dependencies: ["PXLPlayback", "PXLTestSupport"]),

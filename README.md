@@ -8,7 +8,7 @@ A native Swift + Metal media engine for Apple Silicon, with **zero third-party d
 
 The native pipeline reads H.264/HEVC MOV/MP4 with AVFoundation, decodes on required hardware with VideoToolbox, rotates/resizes NV12 or 10-bit P010 planes with our Metal kernels, encodes on required hardware, and writes a new MOV or MP4. AAC can be copied unchanged or explicitly dropped. Both codec sessions report actual hardware use.
 
-Version **0.6.0-native-playback** adds an optional native playback library and Mac demo with play/pause, seeking, audio and generation-safe replacement. See [playback validation](docs/validation/playback.md).
+Version **0.7.0-semantic-prototype** adds optional local semantic footage search with Core ML MobileCLIP-S2, timestamped sidecar indexes and Neural Engine profiling. See [semantic validation](docs/validation/semantic-search.md). The optional native playback library and Mac demo support play/pause, seeking, audio and generation-safe replacement; see [playback validation](docs/validation/playback.md).
 
 The **0.5 remux/MP4 milestone** added MP4 output and native compressed stream copying. MOV/MP4 round trips preserve encoded pictures, AAC samples, presentation timing, display transforms and HDR metadata; the copy path initializes no decoder, GPU or encoder. Main10 SDR and BT.2020 HLG/PQ remain supported. See [remux/MP4 validation](docs/validation/remux-mp4.md) and [Sirius preview integration contract](docs/integrations/sirius-preview.md). See [HDR/iPhone validation](docs/validation/hdr.md), [HEVC/rotation results](docs/validation/hevc-rotation.md), and [Pixel Deck fit](docs/validation/pixel-deck-fit.md). Earlier [B-frame results](docs/validation/bframes.md) and [initial benchmarks](docs/validation/m1-native-pipeline.md) remain historical evidence.
 
@@ -56,7 +56,7 @@ When relocating the CLI for transcoding, copy **both** `.build/release/pxlmpeg` 
 - Supplied mastering-display, content-light and ambient metadata retained and verified. Apple encoder HDR insertion is configured to Auto with old dynamic metadata preservation disabled. Receipts expose actual output static metadata and Dolby configuration RPU signalling; they do not certify per-frame RPU contents or HDR display appearance.
 - One running job per engine; transcoding uses one rendered frame at a time with up to `SPS reorder bound + 1` retained decoded frames; bounded owned memory; atomic publication that refuses to overwrite an existing destination.
 
-The narrow Dolby input subset is single-layer profile 8 with an HLG/PQ-compatible base layer and v1.0 configuration (8.4/8.1). ProRes, 4:2:2/4:4:4, full-range, arbitrary transforms, broader containers, editing, PCM/audio DSP, tone mapping and model processing remain future work. Native VFR, nonzero-start and simple container edit-offset cases pass; general trim/preroll/speed changes and AAC priming need broader validation. HDR reference-display approval and minimum-OS validation remain unperformed.
+The narrow Dolby input subset is single-layer profile 8 with an HLG/PQ-compatible base layer and v1.0 configuration (8.4/8.1). ProRes, 4:2:2/4:4:4, full-range, arbitrary transforms, broader containers, editing, PCM/audio DSP, general tone mapping and temporal video understanding remain future work. Native VFR, nonzero-start and simple container edit-offset cases pass; general trim/preroll/speed changes and AAC priming need broader validation. HDR reference-display approval and minimum-OS validation remain unperformed.
 
 ALi files with missing colour tags require an explicit `"inputColourPolicy": "assumeBT709Limited"` in the job request. The default is `requireTagged`. This interpretation is recorded in receipts; conflicting tagged colour is rejected. `plan` applies the request policy, while `inspect` remains strict.
 
@@ -91,7 +91,47 @@ session.close() // on attachment/window teardown
 
 This backend uses **AVPlayer** for decoding, audio synchronization and presentation. It does not enforce the transcode worker's hardware selection or owned-memory budget, expose PCM/frame leases, or use our Metal kernels for playback. Native zero-tolerance seeking remains constrained by source sample timing. After `.ended`, seek to zero before replaying. The host owns UI, access lifetimes and cache state. See [playback validation](docs/validation/playback.md).
 
-For AI integration, the selected direction is [semantic footage indexing](docs/architecture/semantic-analysis.md): optional Core ML models, Neural Engine profiling, timestamped observations and embeddings for Pixel Deck search. This is a research design; no model or semantic analyzer has been implemented or bundled.
+## Semantic footage search
+
+The optional `PXLAnalysis` library and `pxl-search` CLI encode sampled frames and text into a shared 512-dimensional embedding space. Search returns ranked **actual source timestamps**, source hashes and cosine similarity scores. MobileCLIP-S2 is the default; S0 is available for comparison. This is an early visual retrieval prototype, not verified captions, identity recognition or temporal action understanding.
+
+Fetch the pinned original Apple Core ML models and matching tokenizer explicitly. Python 3 standard library is used only by this developer download script; runtime inference is native Swift/Core ML and performs no network requests. Model assets stay outside Git and have their own [upstream release terms](docs/validation/semantic-search.md#model-provenance).
+
+```sh
+./Scripts/build.sh -c release
+python3 Scripts/fetch-semantic-model.py --variant s2
+./.build/release/pxl-search index --models .work/semantic/models \
+  --output /absolute/path/new-index.json --interval 0.5 /absolute/path/input.mov
+./.build/release/pxl-search query --models .work/semantic/models \
+  --index /absolute/path/new-index.json --limit 5 "a person beside a car"
+```
+
+Use `--assume-bt709` for untagged SDR footage only when that interpretation is known to be correct. Rotation is applied before model preprocessing. SDR uses the core hardware decoder and explicit BT.709 conversion; HDR samples use Apple's system SDR conversion. Both are rendered to sRGB and center-cropped to 256 × 256 for the model. The original HDR source is untouched. Sparse sampling and center cropping can miss brief events or objects near the edges.
+
+```swift
+import PXLAnalysis
+
+let analyzer = try SemanticAnalyzer(models: localModelDirectory)
+let index = try await analyzer.index(
+    sources: [sourceURL], options: try SamplingOptions(intervalSeconds: 0.5))
+try index.write(to: newSidecarURL) // exclusive publication; never overwrites
+let hits = try await analyzer.query("a guitar beside a plant", index: index, limit: 5)
+// hits contain source, sourceSHA256, actualTime and score.
+```
+
+Retain the actor to reuse loaded models for warm searches. Each CLI invocation verifies raw model assets and asks Core ML to compile them; startup takes seconds on the tested Mac. Warm prediction times are not CLI startup or indexing throughput. Indexes bind model, tokenizer, preprocessing and source SHA-256 identities. Hosts must revalidate source contents before reusing an index after file changes; querying does not reopen or rehash the footage.
+
+Sampling defaults to one frame per second, capped at 256 requests per source; limits are 32 sources, 4096 aggregate embeddings and a 32 MiB serialized sidecar. Only one operation runs per analyzer. Cancellation is cooperative around native calls. The SDR decoder has a 256 MiB owned-media budget; Core ML, Core Image and OS allocations are outside that budget.
+
+```sh
+./.build/release/pxl-search plan --models .work/semantic/models
+./.build/release/pxl-search profile --models .work/semantic/models \
+  --compute cpuAndNeuralEngine --repetitions 100 /absolute/path/tagged.mov
+# Full Xcode/Instruments required; raw trace stays in ignored Artifacts/:
+./Scripts/profile-semantic.sh /absolute/path/tagged.mov
+```
+
+`.cpuAndNeuralEngine` permits CPU fallbacks and excludes GPU inference; image preprocessing can still use the GPU. `plan` reports preferred devices and estimated cost weights. `profile` reports native prediction latency; the Instruments script correlates actual ANE hardware intervals with PID-scoped benchmark batches. None of these metrics is an exact percentage of operations running on ANE. See the [measured results and attribution limits](docs/validation/semantic-search.md) and [architecture](docs/architecture/semantic-analysis.md).
 
 ## Copy without re-encoding
 
@@ -128,6 +168,9 @@ The request's budget measures engine-owned media allocations, not total process 
 
 ```sh
 ./Scripts/test.sh
+# Optional real-model and camera tests (after fetching model assets):
+PXL_SEMANTIC_MODELS="$PWD/.work/semantic/models" \
+PXL_PLAYBACK_SOURCE=/absolute/path/to/iphone-original.MOV ./Scripts/test.sh
 ./Scripts/build.sh -c release
 ./Scripts/verify-dependencies.sh
 ./Scripts/acceptance.sh
@@ -137,14 +180,15 @@ The request's budget measures engine-owned media allocations, not total process 
 bash Scripts/acceptance-hdr.sh /absolute/path/to/iphone-original.MOV
 ```
 
-Acceptance generates first-party media, performs one warm-up and five measured runs for each 1080p/4K case, checks frame count/timestamps and hardware flags, and exercises the relocated CLI. Reports and representative outputs go to `Artifacts/native.*`; `.work/latest-acceptance-path` identifies the latest completed run. `pxl-validation` and `PXLTestSupport` are development tools, not dependencies of either production library or the CLI.
+Acceptance generates first-party media, performs one warm-up and five measured runs for each 1080p/4K case, checks frame count/timestamps and hardware flags, and exercises the relocated CLI. Reports and representative outputs go to `Artifacts/native.*`; `.work/latest-acceptance-path` identifies the latest completed run. `pxl-validation` and `PXLTestSupport` are development tools, not dependencies of the production libraries or CLIs.
 
 Build scripts currently select SwiftPM's native build system for predictable resource packaging; Xcode 27 warns that this option is deprecated. No FFmpeg, Homebrew, Python, external Swift package, downloaded binary, model weights, or network service is required to build or run the engine.
 
 ## Design and scope
 
 - [Interactive playback results](docs/validation/playback.md)
-- [Semantic analysis research design](docs/architecture/semantic-analysis.md)
+- [Semantic search results and ANE evidence](docs/validation/semantic-search.md)
+- [Semantic analysis architecture](docs/architecture/semantic-analysis.md)
 - [Remux and MP4 results](docs/validation/remux-mp4.md)
 - [Sirius preview integration contract](docs/integrations/sirius-preview.md)
 - [Architecture](docs/superpowers/specs/2026-10-13-pxlmpeg-architecture.md)
