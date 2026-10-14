@@ -6,6 +6,8 @@ A native Swift + Metal media engine for Apple Silicon, with **zero third-party d
 
 **Early research phase.** PXLmpeg is experimental and actively evolving; it is not yet a complete FFmpeg replacement. [Visit the project site](https://tomislavrupic.github.io/PXLmpeg/).
 
+**Current priority:** professional media support and the native frame/audio engine needed by Pixel Deck. ProRes MOV + PCM is the proposed first slice; Sony MXF/XAVC feasibility follows early. These are roadmap targets, not current codec-support claims. See the [Pixel Deck engine roadmap](docs/architecture/pixel-deck-engine-roadmap.md). Semantic search remains optional.
+
 The native pipeline reads H.264/HEVC MOV/MP4 with AVFoundation, decodes on required hardware with VideoToolbox, rotates/resizes NV12 or 10-bit P010 planes with our Metal kernels, encodes on required hardware, and writes a new MOV or MP4. AAC can be copied unchanged or explicitly dropped. Both codec sessions report actual hardware use.
 
 The **0.7.0-semantic-prototype** milestone added optional local semantic footage search with Core ML MobileCLIP-S2, timestamped sidecar indexes and Neural Engine profiling. See [semantic validation](docs/validation/semantic-search.md). The optional native playback library and Mac demo support play/pause, seeking, audio and generation-safe replacement; see [playback validation](docs/validation/playback.md).
