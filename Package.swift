@@ -4,10 +4,12 @@ import PackageDescription
 let package = Package(
   name: "PXLmpeg", platforms: [.macOS(.v15)],
   products: [
+    .library(name: "PXLProfessionalMedia", targets: ["PXLProfessionalMedia"]),
     .library(name: "PXLMedia", targets: ["PXLMedia"]),
     .library(name: "PXLmpeg", targets: ["PXLmpeg"]),
     .library(name: "PXLPlayback", targets: ["PXLPlayback"]),
     .library(name: "PXLAnalysis", targets: ["PXLAnalysis"]),
+    .executable(name: "pxl-prores", targets: ["PXLProfessionalCLI"]),
     .executable(name: "pxl-search", targets: ["PXLSearchCLI"]),
     .executable(name: "pxl-search-app", targets: ["PXLSearchApp"]),
     .executable(name: "pxlmpeg", targets: ["PXLmpegCLI"]),
@@ -17,6 +19,9 @@ let package = Package(
   dependencies: [],
   targets: [
     .target(name: "PXLMedia"),
+    .executableTarget(name: "PXLProfessionalCLI", dependencies: ["PXLProfessionalMedia", "PXLMedia"]),
+    .target(name: "PXLProfessionalMedia", dependencies: ["PXLMedia", "PXLAppleMedia"]),
+    .testTarget(name: "PXLProfessionalMediaTests", dependencies: ["PXLProfessionalMedia", "PXLTestSupport", "PXLAppleMedia"]),
     .target(name: "PXLSearchUI", dependencies: ["PXLAnalysis", "PXLPlayback", "PXLMedia"]),
     .executableTarget(name: "PXLSearchApp", dependencies: ["PXLSearchUI", "PXLAnalysis"]),
     .testTarget(name: "PXLSearchUITests", dependencies: ["PXLSearchUI", "PXLAnalysis", "PXLMedia", "PXLPlayback"]),

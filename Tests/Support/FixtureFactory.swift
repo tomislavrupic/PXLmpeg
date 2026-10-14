@@ -11,7 +11,8 @@ public enum FixtureFactory {
     tagged: Bool = true, rotate: Bool = false, audio: Bool = false, audioFrames: Int? = nil,
     reorder: Bool = false, startFrame: Int = 0, frameDurations: [Int]? = nil,
     codec: AVVideoCodecType = .h264, rotationDegrees: Int = 0, bitDepth: Int = 8,
-    colourSpace: VideoColourSpace = .bt709
+    colourSpace: VideoColourSpace = .bt709, audioPCM: Bool = false,
+    audioStartSample: Int = 0, audioChannelLayoutTag: AudioChannelLayoutTag? = nil
   ) throws {
     let writer = try AVAssetWriter(outputURL: url, fileType: .mov)
     var settings: [String: Any] = [
@@ -25,6 +26,9 @@ public enum FixtureFactory {
           : AVVideoProfileLevelH264HighAutoLevel,
       ],
     ]
+    let prores = [.proRes422Proxy, .proRes422LT, .proRes422, .proRes422HQ, .proRes4444].contains(
+      codec)
+    if prores { settings.removeValue(forKey: AVVideoCompressionPropertiesKey) }
     if tagged {
       settings[AVVideoColorPropertiesKey] = [
         AVVideoColorPrimariesKey: colourSpace == .bt709
@@ -46,7 +50,9 @@ public enum FixtureFactory {
       assetWriterInput: input,
       sourcePixelBufferAttributes: [
         kCVPixelBufferPixelFormatTypeKey as String: bitDepth == 10
-          ? kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange
+          ? (prores
+            ? kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange
+            : kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange)
           : kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange,
         kCVPixelBufferWidthKey as String: width, kCVPixelBufferHeightKey as String: height,
         kCVPixelBufferIOSurfacePropertiesKey as String: [:],
@@ -54,19 +60,33 @@ public enum FixtureFactory {
     writer.add(input)
     var audioInput: AVAssetWriterInput?
     if audio {
-      let a = AVAssetWriterInput(
-        mediaType: .audio,
-        outputSettings: [
+      var audioSettings: [String: Any] =
+        audioPCM
+        ? [
+          AVFormatIDKey: kAudioFormatLinearPCM, AVSampleRateKey: 48000, AVNumberOfChannelsKey: 2,
+          AVLinearPCMBitDepthKey: 24, AVLinearPCMIsFloatKey: false,
+          AVLinearPCMIsBigEndianKey: false, AVLinearPCMIsNonInterleaved: false,
+        ]
+        : [
           AVFormatIDKey: kAudioFormatMPEG4AAC, AVSampleRateKey: 48000, AVNumberOfChannelsKey: 2,
           AVEncoderBitRateKey: 128000,
-        ])
+        ]
+      if let tag = audioChannelLayoutTag {
+        var layout = AudioChannelLayout(
+          mChannelLayoutTag: tag, mChannelBitmap: AudioChannelBitmap(rawValue: 0),
+          mNumberChannelDescriptions: 0, mChannelDescriptions: AudioChannelDescription())
+        audioSettings[AVChannelLayoutKey] = withUnsafeBytes(of: &layout) { Data($0) }
+      }
+      let a = AVAssetWriterInput(mediaType: .audio, outputSettings: audioSettings)
       writer.add(a)
       audioInput = a
     }
     guard writer.startWriting() else { throw writer.error! }
     writer.startSession(atSourceTime: .zero)
     let audioPump = audioInput.map {
-      FixtureAudioPump(input: $0, writer: writer, totalSamples: (audioFrames ?? frames) * 2000)
+      FixtureAudioPump(
+        input: $0, writer: writer, totalSamples: (audioFrames ?? frames) * 2000,
+        distinctChannels: audioPCM, startSample: audioStartSample)
     }
     audioPump?.start()
     defer { if writer.status != .completed { writer.cancelWriting() } }
@@ -97,8 +117,11 @@ public enum FixtureFactory {
         }
         let uv = CVPixelBufferGetBaseAddressOfPlane(pixel, 1)!.assumingMemoryBound(to: UInt16.self)
         let uvStride = CVPixelBufferGetBytesPerRowOfPlane(pixel, 1) / 2
-        for row in 0..<(height / 2) {
-          for x in 0..<width { uv[row * uvStride + x] = UInt16(512 + x % 7) << 6 }
+        for row in 0..<(prores ? height : height / 2) {
+          for x in 0..<width {
+            uv[row * uvStride + x] =
+              UInt16(prores ? (256 + (row % 2) * 512 + (x % 2) * 40) : 512 + x % 7) << 6
+          }
         }
       } else {
         let y = CVPixelBufferGetBaseAddressOfPlane(pixel, 0)!.assumingMemoryBound(to: UInt8.self)
@@ -157,15 +180,18 @@ public enum FixtureFactory {
     }
     input.markAsFinished()
     try audioPump?.wait()
-    writer.endSession(
-      atSourceTime: CMTime(
-        value: Int64(max(framePosition, audio ? (audioFrames ?? frames) : 0)), timescale: 24))
+    let videoEnd = CMTime(value: Int64(framePosition), timescale: 24)
+    let audioEnd = CMTime(
+      value: Int64(audioStartSample + (audioFrames ?? frames) * 2000), timescale: 48000)
+    writer.endSession(atSourceTime: audio ? max(videoEnd, audioEnd) : videoEnd)
     let sem = DispatchSemaphore(value: 0)
     writer.finishWriting { sem.signal() }
     sem.wait()
     guard writer.status == .completed else { throw writer.error! }
   }
-  fileprivate static func pcm(position: Int, count: Int) throws -> CMSampleBuffer {
+  fileprivate static func pcm(position: Int, count: Int, distinctChannels: Bool = false) throws
+    -> CMSampleBuffer
+  {
     var asbd = AudioStreamBasicDescription(
       mSampleRate: 48000, mFormatID: kAudioFormatLinearPCM,
       mFormatFlags: kAudioFormatFlagIsFloat | kAudioFormatFlagIsPacked, mBytesPerPacket: 8,
@@ -181,7 +207,7 @@ public enum FixtureFactory {
     for i in 0..<count {
       let v = Float(sin(Double(position + i) * 2 * Double.pi * 440 / 48000) * 0.2)
       values[i * 2] = v
-      values[i * 2 + 1] = v
+      values[i * 2 + 1] = distinctChannels ? -v : v
     }
     var block: CMBlockBuffer?
     guard
@@ -222,10 +248,17 @@ private final class FixtureAudioPump: @unchecked Sendable {
   let input: AVAssetWriterInput, writer: AVAssetWriter, totalSamples: Int
   let group = DispatchGroup()
   private var error: Error?
-  init(input: AVAssetWriterInput, writer: AVAssetWriter, totalSamples: Int) {
+  let distinctChannels: Bool
+  let startSample: Int
+  init(
+    input: AVAssetWriterInput, writer: AVAssetWriter, totalSamples: Int,
+    distinctChannels: Bool = false, startSample: Int = 0
+  ) {
     self.input = input
     self.writer = writer
     self.totalSamples = totalSamples
+    self.distinctChannels = distinctChannels
+    self.startSample = startSample
   }
   func start() {
     group.enter()
@@ -246,7 +279,11 @@ private final class FixtureAudioPump: @unchecked Sendable {
             Thread.sleep(forTimeInterval: 0.001)
           }
           let count = min(1024, totalSamples - position)
-          guard input.append(try FixtureFactory.pcm(position: position, count: count)) else {
+          guard
+            input.append(
+              try FixtureFactory.pcm(
+                position: position + startSample, count: count, distinctChannels: distinctChannels))
+          else {
             throw writer.error ?? NSError(domain: "fixture audio append", code: 1)
           }
           position += count

@@ -6,7 +6,7 @@ A native Swift + Metal media engine for Apple Silicon, with **zero third-party d
 
 **Early research phase.** PXLmpeg is experimental and actively evolving; it is not yet a complete FFmpeg replacement. [Visit the project site](https://tomislavrupic.github.io/PXLmpeg/).
 
-**Current priority:** professional media support and the native frame/audio engine needed by Pixel Deck. ProRes MOV + PCM is the proposed first slice; Sony MXF/XAVC feasibility follows early. These are roadmap targets, not current codec-support claims. See the [Pixel Deck engine roadmap](docs/architecture/pixel-deck-engine-roadmap.md). Semantic search remains optional.
+**Current priority:** professional media support and the native frame/audio engine needed by Pixel Deck. The research branch now has a separate native ProRes 422-family MOV + PCM ingest prototype; Sony MXF/XAVC remains a roadmap target. This is not yet a production Pixel Deck integration or ProRes export path. See the [Pixel Deck engine roadmap](docs/architecture/pixel-deck-engine-roadmap.md). Semantic search remains optional.
 
 The native pipeline reads H.264/HEVC MOV/MP4 with AVFoundation, decodes on required hardware with VideoToolbox, rotates/resizes NV12 or 10-bit P010 planes with our Metal kernels, encodes on required hardware, and writes a new MOV or MP4. AAC can be copied unchanged or explicitly dropped. Both codec sessions report actual hardware use.
 
@@ -58,9 +58,20 @@ When relocating the CLI for transcoding, copy **both** `.build/release/pxlmpeg` 
 - Supplied mastering-display, content-light and ambient metadata retained and verified. Apple encoder HDR insertion is configured to Auto with old dynamic metadata preservation disabled. Receipts expose actual output static metadata and Dolby configuration RPU signalling; they do not certify per-frame RPU contents or HDR display appearance.
 - One running job per engine; transcoding uses one rendered frame at a time with up to `SPS reorder bound + 1` retained decoded frames; bounded owned memory; atomic publication that refuses to overwrite an existing destination.
 
-The narrow Dolby input subset is single-layer profile 8 with an HLG/PQ-compatible base layer and v1.0 configuration (8.4/8.1). ProRes, 4:2:2/4:4:4, full-range, arbitrary transforms, broader containers, editing, PCM/audio DSP, general tone mapping and temporal video understanding remain future work. Native VFR, nonzero-start and simple container edit-offset cases pass; general trim/preroll/speed changes and AAC priming need broader validation. HDR reference-display approval and minimum-OS validation remain unperformed.
+The narrow Dolby input subset is single-layer profile 8 with an HLG/PQ-compatible base layer and v1.0 configuration (8.4/8.1). ProRes in the transcode/remux recipe, 4:4:4, full-range, arbitrary transforms, broader containers, editing, PCM/audio DSP, general tone mapping and temporal video understanding remain future work. Native VFR, nonzero-start and simple container edit-offset cases pass; general trim/preroll/speed changes and AAC priming need broader validation. HDR reference-display approval and minimum-OS validation remain unperformed.
 
 ALi files with missing colour tags require an explicit `"inputColourPolicy": "assumeBT709Limited"` in the job request. The default is `requireTagged`. This interpretation is recorded in receipts; conflicting tagged colour is rejected. `plan` applies the request policy, while `inspect` remains strict.
+
+## Professional ProRes + PCM ingest (research)
+
+The separate `PXLProfessionalMedia` library delivers retained ten-bit 4:2:2 `x422` CVPixelBuffers and timestamped mono/stereo 48 kHz float32 PCM chunks from ProRes Proxy/LT/422/HQ MOV. Pull delivery, owned-memory reservations, generation-fenced seeks, cancellation and actual VideoToolbox hardware reporting form the first engine boundary intended for Pixel Deck. Default decode requires hardware; unsupported formats reject explicitly. Existing transcode/remux recipes remain unchanged.
+
+```sh
+./Scripts/build.sh -c release
+./.build/release/pxl-prores probe /absolute/path/prores-pcm.mov
+```
+
+A real HQ/24-bit PCM render reached EOF with 49 native video frames and 98,000 PCM frames, matching presentation ends and unchanged source SHA-256. This validates ingest, not rendered playback or Pixel Deck integration. See the [API, limits and measured evidence](docs/validation/prores-pcm.md). ProRes export, 4444/XQ/RAW, MXF, multichannel audio and sustained production transport remain future work.
 
 ## Interactive playback
 
