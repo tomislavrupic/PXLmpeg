@@ -17,6 +17,7 @@ extension SemanticComputePolicy {
 final class ModelPair {
   let image: MLModel
   let text: MLModel
+  private let compiled: CompiledModelArtifacts
   let imageURL: URL
   let textURL: URL
   let identity: String
@@ -60,35 +61,48 @@ final class ModelPair {
     tokenizer = try CLIPTokenizer(directory: directory)
     configuration = MLModelConfiguration()
     configuration.computeUnits = policy.units
-    func compile(_ kind: String) throws -> URL {
-      let source = directory.appendingPathComponent("mobileclip_\(variant)_\(kind).mlpackage")
-      // Always ask the trusted compiler; never attribute an arbitrary pre-existing
-      // compiled directory in the host's model cache to the source hashes.
-      return try MLModel.compileModel(at: source)
-    }
-    imageURL = try compile("image")
-    textURL = try compile("text")
-    image = try MLModel(contentsOf: imageURL, configuration: configuration)
-    text = try MLModel(contentsOf: textURL, configuration: configuration)
-    guard let ic = image.modelDescription.inputDescriptionsByName["image"]?.imageConstraint,
-      ic.pixelsWide == 256, ic.pixelsHigh == 256,
-      text.modelDescription.inputDescriptionsByName["text"]?.multiArrayConstraint?.shape == [
-        1, 77,
-      ],
-      text.modelDescription.inputDescriptionsByName["text"]?.multiArrayConstraint?.dataType
-        == .int32,
-      image.modelDescription.outputDescriptionsByName["final_emb_1"]?.multiArrayConstraint?.shape
-        == [1, 512],
-      text.modelDescription.outputDescriptionsByName["final_emb_1"]?.multiArrayConstraint?.shape
-        == [1, 512]
-    else {
-      throw analysisError("Unexpected MobileCLIP input/output contract")
-    }
-    for path in paths {
-      guard try contentDigest(directory.appendingPathComponent(path)) == manifest.files[path] else {
-        throw analysisError("Model/tokenizer source changed during loading")
-      }
-    }
+    let modelIdentity = identity
+    let config = configuration
+    var admitted: (MLModel, MLModel)?
+    compiled = try CompiledModelPool.shared.lease(
+      identity: modelIdentity,
+      build: {
+        try CompiledModelArtifacts(
+          imageSource: directory.appendingPathComponent("mobileclip_\(variant)_image.mlpackage"),
+          textSource: directory.appendingPathComponent("mobileclip_\(variant)_text.mlpackage"),
+          compiler: { try MLModel.compileModel(at: $0) })
+      },
+      validate: { artifact in
+        let image = try MLModel(contentsOf: artifact.imageURL, configuration: config)
+        let text = try MLModel(contentsOf: artifact.textURL, configuration: config)
+        guard let ic = image.modelDescription.inputDescriptionsByName["image"]?.imageConstraint,
+          ic.pixelsWide == 256, ic.pixelsHigh == 256,
+          text.modelDescription.inputDescriptionsByName["text"]?.multiArrayConstraint?.shape == [
+            1, 77,
+          ],
+          text.modelDescription.inputDescriptionsByName["text"]?.multiArrayConstraint?.dataType
+            == .int32,
+          image.modelDescription.outputDescriptionsByName["final_emb_1"]?.multiArrayConstraint?
+            .shape
+            == [1, 512],
+          text.modelDescription.outputDescriptionsByName["final_emb_1"]?.multiArrayConstraint?.shape
+            == [1, 512]
+        else {
+          throw analysisError("Unexpected MobileCLIP input/output contract")
+        }
+        for path in paths {
+          guard try contentDigest(directory.appendingPathComponent(path)) == manifest.files[path]
+          else {
+            throw analysisError("Model/tokenizer source changed during loading")
+          }
+        }
+        admitted = (image, text)
+      })
+    guard let admitted else { throw analysisError("Model admission did not complete") }
+    imageURL = compiled.imageURL
+    textURL = compiled.textURL
+    image = admitted.0
+    text = admitted.1
     loadMilliseconds = milliseconds(since: start)
   }
 

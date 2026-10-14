@@ -13,7 +13,7 @@ actor VideoSampler {
   let descriptor: AssetDescriptor
   let videoStartSeconds: Double
   let videoEndSeconds: Double
-  private let generator: AVAssetImageGenerator
+  private let sourceAsset: AVAsset
   private var active = false
   init(source: URL, colourPolicy: InputColourPolicy) async throws {
     try Task.checkCancellation()
@@ -35,12 +35,7 @@ actor VideoSampler {
     descriptor = input.descriptor
     videoStartSeconds = range.start.seconds
     videoEndSeconds = range.end.seconds
-    generator = AVAssetImageGenerator(asset: input.asset)
-    generator.appliesPreferredTrackTransform = true
-    generator.requestedTimeToleranceBefore = .zero
-    generator.requestedTimeToleranceAfter = .zero
-    generator.dynamicRangePolicy = .forceSDR
-    generator.maximumSize = CGSize(width: 1024, height: 1024)
+    sourceAsset = input.asset
   }
   func sample(seconds: Double) async throws -> TimedImage {
     try Task.checkCancellation()
@@ -51,20 +46,10 @@ actor VideoSampler {
     defer { active = false }
     if let assumed { return try await assumed.sample(seconds: seconds) }
     let requested = CMTime(seconds: seconds, preferredTimescale: 600_000)
-    let sample: TimedImage = try await withCheckedThrowingContinuation { continuation in
-      generator.generateCGImagesAsynchronously(forTimes: [NSValue(time: requested)]) {
-        _, image, time, result, error in
-        do {
-          guard result == .succeeded, let image, time.isNumeric else {
-            throw error ?? analysisError("Native image extraction failed")
-          }
-          continuation.resume(
-            returning: TimedImage(
-              image: image, actualTime: try MediaTime(value: time.value, timescale: time.timescale))
-          )
-        } catch { continuation.resume(throwing: error) }
-      }
-    }
+    let generator = NativeImageGenerator(
+      asset: sourceAsset, maximumSize: CGSize(width: 1024, height: 1024))
+    let preview = try await generator.image(at: requested)
+    let sample = TimedImage(image: preview.image, actualTime: preview.actualTime)
     try Task.checkCancellation()
     return sample
   }
