@@ -55,7 +55,7 @@ struct LaunchOptions {
         let local = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
           .appendingPathComponent(".work/semantic/models")
         if FileManager.default.fileExists(
-          atPath: local.appendingPathComponent("manifest.json").path)
+          atPath: local.appendingPathComponent("download-manifest.json").path)
         {
           models = local
         }

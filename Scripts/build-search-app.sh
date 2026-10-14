@@ -37,7 +37,7 @@ cat > "$staged_app/Contents/Info.plist" <<'PLIST'
 PLIST
 # External developer cache location, not bundled model weights. Optional override is a folder.
 model_path="${1:-$root/.work/semantic/models}"
-if [ -f "$model_path/manifest.json" ]; then
+if [ -f "$model_path/download-manifest.json" ]; then
   model_path="$(cd "$model_path" && pwd)"
   /usr/libexec/PlistBuddy -c "Add :PXLDefaultModelDirectory string $model_path" "$staged_app/Contents/Info.plist"
 fi
