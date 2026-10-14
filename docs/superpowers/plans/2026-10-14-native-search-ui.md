@@ -38,7 +38,7 @@ Interfaces: SearchWindowController(workspace:) renders UI, action button calls w
 Files: README.md, docs/validation/native-search-ui.md, version and dependency audit.
 - [ ] Full suite with camera/models/real sidecar; release/app build; four-product dependency audit.
 - [x] Fresh whole-change review; important cache-admission/shutdown/cancellation/bundle issues fixed with regression evidence.
-- [ ] Publish sanitized evidence/docs on a draft branch and report tested boundary.
+- [x] Publish sanitized evidence/docs on draft branch `codex/native-search-ui-research`; [draft PR1](https://github.com/tomislavrupic/PXLmpeg/pull/1). Full revised hardware validation remains pending.
 
 Incident steering: hardware tests paused after user-reported whole-Mac stall/reset. Confirmed resource fixes passed12light tests; independent review cleared Important issues. Full revised hardware regression and UI flow remain pending. Preserve work as a draft research branch, not a verified main release.
 
