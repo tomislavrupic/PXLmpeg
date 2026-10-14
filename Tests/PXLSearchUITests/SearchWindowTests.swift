@@ -40,6 +40,24 @@ import XCTest
     let video = try XCTUnwrap(descendants(content).first { $0 is PlaybackView })
     XCTAssertEqual(
       video.convert(video.bounds, to: content).maxX, content.bounds.maxX - 24, accuracy: 2)
+    if let directory = ProcessInfo.processInfo.environment["PXL_SEARCH_UI_STYLE_EVIDENCE"] {
+      let url = URL(fileURLWithPath: directory)
+      try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+      if let bitmap = content.bitmapImageRepForCachingDisplay(in: content.bounds) {
+        content.effectiveAppearance.performAsCurrentDrawingAppearance {
+          content.cacheDisplay(in: content.bounds, to: bitmap)
+        }
+        try bitmap.representation(using: .png, properties: [:])?.write(
+          to: url.appendingPathComponent("empty-workspace.png"))
+      }
+    }
+    ui.window?.setContentSize(NSSize(width: 920, height: 620))
+    content.layoutSubtreeIfNeeded()
+    XCTAssertGreaterThanOrEqual(video.bounds.width, 420)
+    XCTAssertGreaterThan(video.bounds.height, 120)
+    XCTAssertEqual(
+      video.convert(video.bounds, to: content).maxX,
+      content.bounds.maxX - 24, accuracy: 2)
   }
   // Catch disconnected native buttons, wrong thumbnail identity and rank-based seeks.
   func testRealResultButtonSeeksToIndexedMomentAndPlaybackAdvances() async throws {

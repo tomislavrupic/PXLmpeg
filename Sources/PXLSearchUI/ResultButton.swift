@@ -31,6 +31,7 @@ import AppKit
     name.font = .systemFont(ofSize: 13, weight: .medium)
     name.lineBreakMode = .byTruncatingMiddle
     let time = NSTextField(labelWithString: Self.time(result.hit.actualTime.seconds))
+    time.textColor = SearchStyle.accent
     time.font = .monospacedDigitSystemFont(ofSize: 12, weight: .medium)
     let score = NSTextField(labelWithString: String(format: "Similarity %.3f", result.hit.score))
     score.font = .systemFont(ofSize: 11)
@@ -75,8 +76,9 @@ import AppKit
     effectiveAppearance.performAsCurrentDrawingAppearance {
       layer?.backgroundColor =
         (selected
-        ? NSColor.selectedContentBackgroundColor.withAlphaComponent(0.3)
-        : NSColor.controlBackgroundColor).cgColor
+        ? SearchStyle.accent.withAlphaComponent(0.12) : SearchStyle.raised).cgColor
+      layer?.borderWidth = 1
+      layer?.borderColor = (selected ? SearchStyle.accent : SearchStyle.line).cgColor
     }
   }
   override func hitTest(_ point: NSPoint) -> NSView? { super.hitTest(point) == nil ? nil : self }

@@ -77,3 +77,11 @@ PXL_PLAYBACK_SOURCE=/absolute/path/camera-original.MOV ./Scripts/test.sh
 ```
 
 The versioned sidecars and original [semantic benchmark](semantic-search.md) remain compatible. The v0.7 timing/device measurements are historical evidence; they are not fresh latency/stability measurements of this revised build.
+
+## App identity and interface pass — 14 October 2026
+
+The draft app now has a mint/cyan glass pixel-and-play icon, an About panel, charcoal surfaces, compact analysis controls, labelled matches/preview panes, empty-workspace guidance and selected-result outlines. Pixel Deck, Sirius and Zogg were read-only visual references; only PXLmpeg changed. The core libraries, inference/device policy, index schema and playback behaviour were not changed by this pass.
+
+Artwork, original generation prompt and macOS packaging derivatives are tracked in [`assets/app-icon`](../../assets/app-icon/README.md). The native bundle declares `CFBundleIconFile` and packages the ICNS before signing; the header uses that icon in bundled launches and the four-pixel vector identity in unbundled launches. `Scripts/build-app-icon.sh` can reproduce all sizes with Apple tools.
+
+Verification: release app build, staged ad hoc signing/strict verification and zero-third-party package/runtime audit passed. The UI suite ran without model/media environment variables: **4 passed, 8 skipped, 0 failures**. Empty-workspace layout was checked at 1160 × 760 and 920 × 620; a native AppKit bitmap was visually inspected. That bitmap uses the unbundled vector header and contains no private footage. ICNS decoding confirms the packaged resolution family. No revised model inference, real-footage playback, Dock/Finder appearance acceptance or full hardware regression was performed; the app remains closed and the whole-Mac stability investigation remains open.

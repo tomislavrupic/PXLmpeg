@@ -26,6 +26,8 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
   private let mute = NSButton(checkboxWithTitle: "Mute", target: nil, action: nil)
   private let clock = NSTextField(labelWithString: "00:00.000 / 00:00.000")
   private let previewLabel = NSTextField(labelWithString: "Select a result to preview")
+  private let previewEmpty = NSStackView()
+  private let resultsHeading = SearchStyle.caption("MATCHES")
   private var rowRevision: [String] = []
   private var seekTask: Task<Void, Never>?
 
@@ -40,6 +42,7 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     window.minSize = NSSize(width: 920, height: 620)
     window.isReleasedWhenClosed = false
     window.delegate = self
+    window.backgroundColor = SearchStyle.background
     window.appearance = NSAppearance(named: .darkAqua)
     buildContent(window.contentView!)
     workspace.onChange = { [weak self] in self?.render() }
@@ -51,9 +54,12 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
   @available(*, unavailable) required init?(coder: NSCoder) { fatalError("Use init(workspace:)") }
 
   private func buildContent(_ content: NSView) {
-    let title = NSTextField(labelWithString: "PXLmpeg Search")
+    content.wantsLayer = true
+    content.layer?.backgroundColor = SearchStyle.background.cgColor
+    let title = NSTextField(labelWithString: "PXLmpeg")
     title.font = .systemFont(ofSize: 25, weight: .semibold)
-    let subtitle = NSTextField(labelWithString: "Local footage. Find a moment, then play it.")
+    title.textColor = SearchStyle.text
+    let subtitle = NSTextField(labelWithString: "Find the moment. Stay in your footage.")
     subtitle.textColor = .secondaryLabelColor
     let heading = NSStackView(views: [title, subtitle])
     heading.orientation = .vertical
@@ -71,8 +77,22 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     modelStack.orientation = .vertical
     modelStack.alignment = .trailing
     modelStack.spacing = 4
-    let top = horizontal([heading, NSView(), modelStack])
+    let identity = horizontal([SearchBrandMark(), heading])
+    let research = SearchStyle.caption("EARLY RESEARCH")
+    research.textColor = SearchStyle.accent
+    let top = horizontal([identity, NSView(), research])
+    let setup = horizontal([SearchStyle.caption("ANALYSIS"), NSView(), modelStack])
+    modelStack.orientation = .horizontal
+    modelStack.alignment = .centerY
+    modelStack.spacing = 10
     let add = NSButton(title: "Add Footage…", target: self, action: #selector(addFootage))
+    add.image = NSImage(systemSymbolName: "plus", accessibilityDescription: nil)
+    add.imagePosition = .imageLeading
+    indexButton.image = NSImage(
+      systemSymbolName: "square.stack.3d.up", accessibilityDescription: nil)
+    indexButton.imagePosition = .imageLeading
+    indexButton.bezelColor = SearchStyle.accent
+    indexButton.contentTintColor = SearchStyle.background
     indexButton.target = self
     indexButton.action = #selector(indexFootage)
     cancelButton.target = self
@@ -95,11 +115,22 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     searchButton.target = self
     searchButton.action = #selector(runSearch)
     searchButton.bezelStyle = .rounded
+    searchButton.bezelColor = SearchStyle.accent
+    searchButton.contentTintColor = SearchStyle.background
+    searchButton.controlSize = .large
+    searchButton.image = NSImage(systemSymbolName: "magnifyingglass", accessibilityDescription: nil)
+    searchButton.imagePosition = .imageLeading
+    queryField.controlSize = .large
+    queryField.font = .systemFont(ofSize: 14)
+    queryField.heightAnchor.constraint(greaterThanOrEqualToConstant: 34).isActive = true
     let query = horizontal([queryField, searchButton])
     let scroll = NSScrollView()
     scroll.hasVerticalScroller = true
     scroll.autohidesScrollers = true
-    scroll.drawsBackground = false
+    scroll.drawsBackground = true
+    scroll.backgroundColor = SearchStyle.panel
+    scroll.wantsLayer = true
+    scroll.layer?.cornerRadius = 9
     let document = FlippedDocument()
     document.translatesAutoresizingMaskIntoConstraints = false
     resultsStack.orientation = .vertical
@@ -116,8 +147,24 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
       resultsStack.bottomAnchor.constraint(equalTo: document.bottomAnchor),
       scroll.widthAnchor.constraint(equalToConstant: 390),
     ])
+    let matches = NSView()
+    resultsHeading.translatesAutoresizingMaskIntoConstraints = false
+    scroll.translatesAutoresizingMaskIntoConstraints = false
+    matches.addSubview(resultsHeading)
+    matches.addSubview(scroll)
+    NSLayoutConstraint.activate([
+      resultsHeading.leadingAnchor.constraint(equalTo: matches.leadingAnchor),
+      resultsHeading.topAnchor.constraint(equalTo: matches.topAnchor),
+      scroll.topAnchor.constraint(equalTo: resultsHeading.bottomAnchor, constant: 10),
+      scroll.leadingAnchor.constraint(equalTo: matches.leadingAnchor),
+      scroll.trailingAnchor.constraint(equalTo: matches.trailingAnchor),
+      scroll.bottomAnchor.constraint(equalTo: matches.bottomAnchor),
+    ])
     let video = PlaybackView(session: workspace.playback)
     video.wantsLayer = true
+    video.layer?.backgroundColor = NSColor.black.cgColor
+    video.layer?.borderColor = SearchStyle.line.cgColor
+    video.layer?.borderWidth = 1
     video.layer?.cornerRadius = 9
     video.layer?.masksToBounds = true
     playButton.target = self
@@ -135,17 +182,37 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     previewLabel.lineBreakMode = .byTruncatingMiddle
     let controls = horizontal([playButton, timeline, mute])
     let preview = NSView()
-    for view in [previewLabel, video, controls, clock] {
+    let previewHeading = SearchStyle.caption("PREVIEW")
+    let previewTop = horizontal([previewHeading, NSView(), previewLabel])
+    previewLabel.textColor = SearchStyle.secondary
+    previewLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    previewEmpty.orientation = .vertical
+    previewEmpty.alignment = .centerX
+    previewEmpty.spacing = 12
+    let emptySymbol = SearchStyle.symbol("play.rectangle", description: "Footage preview")
+    emptySymbol.widthAnchor.constraint(equalToConstant: 42).isActive = true
+    emptySymbol.heightAnchor.constraint(equalToConstant: 34).isActive = true
+    let emptyTitle = NSTextField(labelWithString: "Your footage, right here.")
+    emptyTitle.font = .systemFont(ofSize: 17, weight: .medium)
+    emptyTitle.textColor = SearchStyle.text
+    let emptyNote = NSTextField(labelWithString: "Choose a match to jump to that moment.")
+    emptyNote.font = .systemFont(ofSize: 12)
+    emptyNote.textColor = SearchStyle.secondary
+    for item in [emptySymbol, emptyTitle, emptyNote] { previewEmpty.addArrangedSubview(item) }
+    for view in [previewTop, video, controls, clock, previewEmpty] {
       view.translatesAutoresizingMaskIntoConstraints = false
       preview.addSubview(view)
     }
     NSLayoutConstraint.activate([
-      previewLabel.leadingAnchor.constraint(equalTo: preview.leadingAnchor),
-      previewLabel.trailingAnchor.constraint(equalTo: preview.trailingAnchor),
-      previewLabel.topAnchor.constraint(equalTo: preview.topAnchor),
+      previewTop.leadingAnchor.constraint(equalTo: preview.leadingAnchor),
+      previewTop.trailingAnchor.constraint(equalTo: preview.trailingAnchor),
+      previewTop.topAnchor.constraint(equalTo: preview.topAnchor),
+      previewEmpty.centerXAnchor.constraint(equalTo: video.centerXAnchor),
+      previewEmpty.centerYAnchor.constraint(equalTo: video.centerYAnchor),
+      previewEmpty.widthAnchor.constraint(lessThanOrEqualTo: video.widthAnchor, constant: -24),
       video.leadingAnchor.constraint(equalTo: preview.leadingAnchor),
       video.trailingAnchor.constraint(equalTo: preview.trailingAnchor),
-      video.topAnchor.constraint(equalTo: previewLabel.bottomAnchor, constant: 12),
+      video.topAnchor.constraint(equalTo: previewTop.bottomAnchor, constant: 10),
       video.bottomAnchor.constraint(equalTo: controls.topAnchor, constant: -12),
       controls.leadingAnchor.constraint(equalTo: preview.leadingAnchor),
       controls.trailingAnchor.constraint(equalTo: preview.trailingAnchor),
@@ -155,15 +222,15 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
       preview.widthAnchor.constraint(greaterThanOrEqualToConstant: 420),
     ])
     let body = NSView()
-    for pane in [scroll, preview] {
+    for pane in [matches, preview] {
       pane.translatesAutoresizingMaskIntoConstraints = false
       body.addSubview(pane)
     }
     NSLayoutConstraint.activate([
-      scroll.leadingAnchor.constraint(equalTo: body.leadingAnchor),
-      scroll.topAnchor.constraint(equalTo: body.topAnchor),
-      scroll.bottomAnchor.constraint(equalTo: body.bottomAnchor),
-      preview.leadingAnchor.constraint(equalTo: scroll.trailingAnchor, constant: 20),
+      matches.leadingAnchor.constraint(equalTo: body.leadingAnchor),
+      matches.topAnchor.constraint(equalTo: body.topAnchor),
+      matches.bottomAnchor.constraint(equalTo: body.bottomAnchor),
+      preview.leadingAnchor.constraint(equalTo: matches.trailingAnchor, constant: 20),
       preview.trailingAnchor.constraint(equalTo: body.trailingAnchor),
       preview.topAnchor.constraint(equalTo: body.topAnchor),
       preview.bottomAnchor.constraint(equalTo: body.bottomAnchor),
@@ -171,10 +238,10 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     statusLabel.font = .systemFont(ofSize: 12)
     statusLabel.maximumNumberOfLines = 2
     let note = NSTextField(
-      labelWithString: "Early research · sampled visual matches · similarity is not certainty")
+      labelWithString: "Sampled visual matches · similarity is not certainty")
     note.font = .systemFont(ofSize: 11)
     note.textColor = .tertiaryLabelColor
-    let rows: [NSView] = [top, toolbar, assume, query, body, statusLabel, note]
+    let rows: [NSView] = [top, setup, toolbar, assume, query, body, statusLabel, note]
     for row in rows {
       row.translatesAutoresizingMaskIntoConstraints = false
       content.addSubview(row)
@@ -220,6 +287,8 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     computeMenu.selectItem(at: workspace.computePolicy == .cpuOnly ? 1 : 0)
     computeMenu.isEnabled = !workspace.isBusy
     modelLabel.toolTip = workspace.models?.path
+    resultsHeading.stringValue =
+      workspace.results.isEmpty ? "MATCHES" : "MATCHES · \(workspace.results.count)"
     statusLabel.stringValue = workspace.error ?? workspace.status
     statusLabel.textColor = workspace.error == nil ? .secondaryLabelColor : .systemRed
     if workspace.isBusy { spinner.startAnimation(nil) } else { spinner.stopAnimation(nil) }
@@ -238,10 +307,23 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
           wrappingLabelWithString: workspace.index == nil
             ? "Add footage and index it, or open a saved index from the File menu."
             : "Try a visual description, such as “a guitar beside a plant”.")
-        empty.font = .systemFont(ofSize: 14)
+        let emptyTitle = NSTextField(
+          labelWithString: workspace.index == nil ? "Start with your footage" : "Find a scene")
+        emptyTitle.font = .systemFont(ofSize: 15, weight: .medium)
+        emptyTitle.textColor = SearchStyle.text
+        let symbol = SearchStyle.symbol("rectangle.stack", description: "Footage library")
+        symbol.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        empty.font = .systemFont(ofSize: 13)
         empty.textColor = .secondaryLabelColor
-        resultsStack.addArrangedSubview(empty)
-        empty.widthAnchor.constraint(equalTo: resultsStack.widthAnchor).isActive = true
+        let card = NSStackView(views: [symbol, emptyTitle, empty])
+        card.orientation = .vertical
+        card.alignment = .leading
+        card.spacing = 12
+        card.edgeInsets = NSEdgeInsets(top: 24, left: 20, bottom: 24, right: 20)
+        resultsStack.addArrangedSubview(card)
+        card.widthAnchor.constraint(equalTo: resultsStack.widthAnchor).isActive = true
+        empty.widthAnchor.constraint(lessThanOrEqualTo: card.widthAnchor, constant: -40).isActive =
+          true
       }
       for result in workspace.results {
         let button = ResultButton(
@@ -255,6 +337,7 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
   }
   private func renderPlayback(_ snapshot: PlaybackSnapshot) {
     let available = snapshot.asset != nil && snapshot.state != .failed && snapshot.state != .loading
+    previewEmpty.isHidden = snapshot.source != nil
     playButton.isEnabled = available
     timeline.isEnabled = available
     playButton.title = snapshot.isPlaybackRequested ? "Pause" : "Play"

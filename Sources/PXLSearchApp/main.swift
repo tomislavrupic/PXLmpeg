@@ -89,6 +89,9 @@ struct LaunchOptions {
     let app = NSMenuItem()
     app.submenu = NSMenu()
     app.submenu?.addItem(
+      withTitle: "About PXLmpeg Search", action: #selector(showAbout), keyEquivalent: "")
+    app.submenu?.addItem(.separator())
+    app.submenu?.addItem(
       withTitle: "Quit PXLmpeg Search", action: #selector(NSApplication.terminate(_:)),
       keyEquivalent: "q")
     menu.addItem(app)
@@ -115,6 +118,16 @@ struct LaunchOptions {
     edit.submenu = editMenu
     menu.addItem(edit)
     NSApp.mainMenu = menu
+  }
+  @objc private func showAbout() {
+    NSApp.orderFrontStandardAboutPanel(options: [
+      .applicationName: "PXLmpeg Search",
+      .applicationVersion: "0.8 · Early research",
+      .credits: NSAttributedString(
+        string:
+          "Native footage search for Apple Silicon.\nSwift · Core ML · Metal\n\nExperimental research build by Pixel Records."
+      ),
+    ])
   }
   func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
   func applicationWillTerminate(_ notification: Notification) { controller?.workspace.close() }
