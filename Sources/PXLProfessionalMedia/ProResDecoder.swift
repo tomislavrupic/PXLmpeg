@@ -48,7 +48,7 @@ final class ProResDecoder {
         kCVPixelBufferMetalCompatibilityKey as String: true,
         kCVPixelBufferIOSurfacePropertiesKey as String: [:],
       ] as CFDictionary, outputCallback: &callback, decompressionSessionOut: &created)
-    try checkVT(status, stage: "prores-decode-create")
+    try Self.checkCreationStatus(status)
     guard let created else {
       throw MediaError(.codecFailure, stage: "prores-decode", "Missing decoder")
     }
@@ -73,6 +73,13 @@ final class ProResDecoder {
       throw error
     }
     session = created
+  }
+  static func checkCreationStatus(_ status: OSStatus) throws {
+    if status == kVTCouldNotFindVideoDecoderErr || status == kVTVideoDecoderNotAvailableNowErr {
+      throw MediaError(.hardwareUnavailable, stage: "prores-decode-create",
+                       "ProRes decoder unavailable (VideoToolbox status \(status))")
+    }
+    try checkVT(status, stage: "prores-decode-create")
   }
   static func frameReservationBytes(width: Int, height: Int) -> Int {
     ((width * 2 + 255) / 256 * 256) * height * 2 + 65536

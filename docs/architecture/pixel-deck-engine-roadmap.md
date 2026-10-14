@@ -1,7 +1,7 @@
 # Pixel Deck engine priorities
 
 Date: 2026-10-14
-Status: product direction and proposed milestone order. A first research ProRes 422-family/PCM ingest slice now exists; see [validation](../validation/prores-pcm.md). Pixel Deck adoption and professional export remain planned.
+Status: product direction and proposed milestone order. A first research ProRes 422-family/PCM ingest slice now exists; see [validation](../validation/prores-pcm.md). A first Pixel Deck Metal/Core Audio consumer integration now exists in a separate research build; [acceptance and limits](../integrations/pixel-deck-playback.md). Professional export remains planned.
 
 ![Planned PXLmpeg to Pixel Deck signal flow](../../assets/pxlmpeg-signal-flow-v2.png)
 
@@ -11,7 +11,7 @@ Target architecture illustration generated with imagegen; [generation prompt](..
 
 The user selected professional codec support as PXLmpeg's main priority because it is intended to become Pixel Deck's main media engine. Professional playback, precise media handling and native frame/audio delivery take precedence over further semantic-search features. The search app remains a useful optional research consumer of the engine.
 
-Swift, Metal and Apple system frameworks remain the implementation foundation, with zero third-party dependencies in the core. Pixel Deck retains product UI, catalogues, audio-device clocks/routing, monitoring transforms and external-output scheduling. No Pixel Deck source or installed app is changed by this roadmap.
+Swift, Metal and Apple system frameworks remain the implementation foundation, with zero third-party dependencies in the core. Pixel Deck retains product UI, catalogues, audio-device clocks/routing, monitoring transforms and external-output scheduling. The consumer implementation lives in Pixel Deck; this roadmap does not establish production adoption.
 
 ## Consumer requirements verified in source
 
@@ -19,7 +19,7 @@ Pixel Deck's README declares MOV/MP4/MKV/MXF/MTS/M2TS/AVI/WebM, ProRes and commo
 
 Pixel Deck's architecture specifically documents BURANO H.264 High 4:2:2 Intra 10-bit camera media using its software compatibility backend and precision-preserving `x422` buffers. Sony MXF sidecars carry gamma/gamut and card-LUT information. This camera path is a priority requirement, but its current implementation is not evidence of a native dependency-free decoder in PXLmpeg.
 
-PXLmpeg currently supports a narrow H.264/HEVC MOV/MP4 processing recipe. Its AVPlayer-backed playback view does not expose decoded-frame leases or PCM to Pixel Deck. The separate research `PXLProfessionalMedia` API now exposes ProRes 422-family x422 frames and mono/stereo 48 kHz PCM. Pixel Deck adoption, 4:4:4 surfaces, PCM device output, MXF demux, SMPTE timecode values and DNxHR are not implemented. Read-only admission of a `tmcd` track is not SMPTE timecode extraction or preservation through export.
+PXLmpeg currently supports a narrow H.264/HEVC MOV/MP4 processing recipe. Its AVPlayer-backed playback view does not expose decoded-frame leases or PCM to Pixel Deck. The separate research `PXLProfessionalMedia` API now exposes ProRes 422-family x422 frames and mono/stereo 48 kHz PCM. The separate Pixel Deck research adapter has exercised local Metal and PCM device-clock delivery. Production adoption, 4:4:4 surfaces, MXF demux, SMPTE timecode values and DNxHR remain unimplemented. Read-only admission of a `tmcd` track is not SMPTE timecode extraction or preservation through export.
 
 ## Milestone order
 
@@ -47,7 +47,7 @@ Record measured backend, open/first-frame/seek latency, decode throughput, owned
 
 Keep capability routing explicit while each native path is proven. Pixel Deck's existing broader compatibility backend can cover unsupported assets during migration without becoming a dependency of PXLmpeg. Main-engine adoption requires an actual Pixel Deck frame/PCM adapter and real monitoring/output validation, not only format inspection.
 
-Pixel Deck currently declares macOS 14; PXLmpeg declares macOS 15. Resolve that deployment boundary before adoption rather than silently dropping supported systems.
+Pixel Deck currently declares macOS 14; PXLmpeg declares macOS 15. The current adapter uses a separate macOS 15 research bundle, preserving the normal macOS 14 target. Production adoption still needs a deployment policy.
 
 Semantic indexing can reuse the eventual native frame sampler. Further model changes, OCR, audio semantics and search-library features follow the professional media milestones unless the user explicitly reprioritizes them. Necessary search-app correctness/stability fixes remain maintenance work.
 

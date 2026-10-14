@@ -5,10 +5,24 @@ import PXLAppleMedia
 import PXLMedia
 import PXLTestSupport
 import XCTest
+import VideoToolbox
 
 @testable import PXLProfessionalMedia
 
 final class ProfessionalMediaTests: XCTestCase {
+  func testDecoderAvailabilityIsDistinctFromCorruptMedia() throws {
+    for status in [kVTCouldNotFindVideoDecoderErr, kVTVideoDecoderNotAvailableNowErr] {
+      XCTAssertThrowsError(try ProResDecoder.checkCreationStatus(status)) { error in
+        XCTAssertEqual((error as? MediaError)?.code, .hardwareUnavailable)
+      }
+    }
+    for status in [kVTVideoDecoderBadDataErr, kVTParameterErr] {
+      XCTAssertThrowsError(try ProResDecoder.checkCreationStatus(status)) { error in
+        XCTAssertEqual((error as? MediaError)?.code, .codecFailure)
+      }
+    }
+    XCTAssertNoThrow(try ProResDecoder.checkCreationStatus(noErr))
+  }
   func testHQAndLTAdmissionPreservesProfessionalContract() async throws {
     let dir = try FixtureFactory.directory()
     defer { try? FileManager.default.removeItem(at: dir) }

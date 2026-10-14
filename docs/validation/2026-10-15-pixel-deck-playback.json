@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "boundary": "Short-clip native local Metal/Core Audio research acceptance; no production, audible-sync, calibrated color, HDR, DeckLink or long-session approval",
+  "sourceCase": "real-prores-hq-pcm-01",
+  "source": {
+    "width": 1920,
+    "height": 1088,
+    "codec": "apch",
+    "colour": "Rec.709",
+    "pcm": "signed24 stereo48k"
+  },
+  "harness": {
+    "renderedFrames": 49,
+    "scheduledAudioSampleFrames": 98000,
+    "maximumSampledPresentationSkewMS": 20.66666666666661,
+    "gpuCompletions": 50,
+    "aliasLifetimePassed": true,
+    "nonblackGPUOutputPassed": true,
+    "pauseSeekAndReplacementPassed": true,
+    "originalSHA256Unchanged": true,
+    "audioMuted": true
+  },
+  "fullApp": {
+    "audioMuted": true,
+    "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+    "durationSeconds": 2.042,
+    "endPositionSeconds": 2.042,
+    "gpuCompletedDuringPlayback": 49,
+    "originalUnchanged": true,
+    "postSeekReachedEOF": true,
+    "schemaVersion": 1,
+    "seekPositionSeconds": 1.25,
+    "success": true,
+    "syncErrorMS": 5.333333333333412
+  },
+  "shortAudioDerivativeApp": {
+    "audioMuted": true,
+    "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+    "durationSeconds": 2.042,
+    "endPositionSeconds": 2.042,
+    "gpuCompletedDuringPlayback": 49,
+    "originalUnchanged": true,
+    "postSeekReachedEOF": true,
+    "schemaVersion": 1,
+    "seekPositionSeconds": 1.25,
+    "success": true,
+    "syncErrorMS": 19.805500001151888
+  },
+  "checks": {
+    "normalMacOS14Build": "passed",
+    "separateMacOS15ResearchBuild": "passed",
+    "pixelDeckMakeTest": "passed; optional unprepared Sony SDK skipped",
+    "pxlProfessionalTests": {
+      "executed": 16,
+      "failures": 0
+    },
+    "independentStaticReview": "five findings corrected; focused re-review found no remaining Important or Critical issues",
+    "pxlFullSuite": {
+      "executed": 128,
+      "passed": 113,
+      "skipped": 15,
+      "failures": 0
+    }
+  }
+}

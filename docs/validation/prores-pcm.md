@@ -81,3 +81,7 @@ PXLmpeg's macOS 15 deployment floor and Pixel Deck's macOS 14 declaration must b
 - [First implementation boundary and professional roadmap](../architecture/pixel-deck-engine-roadmap.md).
 - Apple: [Decode ProRes with AVFoundation and VideoToolbox](https://developer.apple.com/videos/play/wwdc2020/10090/).
 - Apple: [AVAssetReaderTrackOutput](https://developer.apple.com/documentation/avfoundation/avassetreadertrackoutput).
+
+## Subsequent consumer acceptance
+
+The original measurements above remain ingest-only. A later separate Pixel Deck research build exercised the real Metal renderer and Core Audio clock; see [consumer integration and verification](../integrations/pixel-deck-playback.md). Decoder creation now classifies only missing/not-currently-available decoder statuses as hardware unavailable, enabling explicit consumer fallback while retaining corrupt-data errors.

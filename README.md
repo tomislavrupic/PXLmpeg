@@ -6,7 +6,7 @@ A native Swift + Metal media engine for Apple Silicon, with **zero third-party d
 
 **Early research phase.** PXLmpeg is experimental and actively evolving; it is not yet a complete FFmpeg replacement. [Visit the project site](https://tomislavrupic.github.io/PXLmpeg/).
 
-**Current priority:** professional media support and the native frame/audio engine needed by Pixel Deck. The research branch now has a separate native ProRes 422-family MOV + PCM ingest prototype; Sony MXF/XAVC remains a roadmap target. This is not yet a production Pixel Deck integration or ProRes export path. See the [Pixel Deck engine roadmap](docs/architecture/pixel-deck-engine-roadmap.md). Semantic search remains optional.
+**Current priority:** professional media support and the native frame/audio engine needed by Pixel Deck. The research branch now has a separate native ProRes 422-family MOV + PCM ingest prototype; Sony MXF/XAVC remains a roadmap target. A separate Pixel Deck research build now connects it to the actual Metal renderer and Core Audio clock; [playback evidence and limits](docs/integrations/pixel-deck-playback.md). Production adoption and ProRes export remain future work. See the [Pixel Deck engine roadmap](docs/architecture/pixel-deck-engine-roadmap.md). Semantic search remains optional.
 
 The native pipeline reads H.264/HEVC MOV/MP4 with AVFoundation, decodes on required hardware with VideoToolbox, rotates/resizes NV12 or 10-bit P010 planes with our Metal kernels, encodes on required hardware, and writes a new MOV or MP4. AAC can be copied unchanged or explicitly dropped. Both codec sessions report actual hardware use.
 
@@ -71,7 +71,7 @@ The separate `PXLProfessionalMedia` library delivers retained ten-bit 4:2:2 `x42
 ./.build/release/pxl-prores probe /absolute/path/prores-pcm.mov
 ```
 
-A real HQ/24-bit PCM render reached EOF with 49 native video frames and 98,000 PCM frames, matching presentation ends and unchanged source SHA-256. This validates ingest, not rendered playback or Pixel Deck integration. See the [API, limits and measured evidence](docs/validation/prores-pcm.md). ProRes export, 4444/XQ/RAW, MXF, multichannel audio and sustained production transport remain future work.
+A real HQ/24-bit PCM render reached EOF with 49 native video frames and 98,000 PCM frames, matching presentation ends and unchanged source SHA-256. That original probe validates ingest. The subsequent [Pixel Deck consumer check](docs/integrations/pixel-deck-playback.md) validates a first short-clip Metal/audio-clock playback path. See the [API, limits and measured evidence](docs/validation/prores-pcm.md). ProRes export, 4444/XQ/RAW, MXF, multichannel audio and sustained production transport remain future work.
 
 ## Interactive playback
 
