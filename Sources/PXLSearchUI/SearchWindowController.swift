@@ -9,9 +9,9 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
 {
   public let workspace: SearchWorkspace
   let queryField = NSSearchField()
-  let searchButton = NSButton(title: "Search", target: nil, action: nil)
+  let searchButton = ActionButton(title: "Search", target: nil, action: nil)
   private(set) var resultButtons: [NSButton] = []
-  private let indexButton = NSButton(title: "Index Footage", target: nil, action: nil)
+  private let indexButton = ActionButton(title: "Index Footage", target: nil, action: nil)
   private let cancelButton = NSButton(title: "Cancel", target: nil, action: nil)
   private let assume = NSButton(
     checkboxWithTitle: "Assume Rec.709 for untagged SDR", target: nil, action: nil)
@@ -91,8 +91,6 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     indexButton.image = NSImage(
       systemSymbolName: "square.stack.3d.up", accessibilityDescription: nil)
     indexButton.imagePosition = .imageLeading
-    indexButton.bezelColor = SearchStyle.accent
-    indexButton.contentTintColor = SearchStyle.background
     indexButton.target = self
     indexButton.action = #selector(indexFootage)
     cancelButton.target = self
@@ -114,9 +112,6 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
     queryField.setAccessibilityLabel("Search footage by visual description")
     searchButton.target = self
     searchButton.action = #selector(runSearch)
-    searchButton.bezelStyle = .rounded
-    searchButton.bezelColor = SearchStyle.accent
-    searchButton.contentTintColor = SearchStyle.background
     searchButton.controlSize = .large
     searchButton.image = NSImage(systemSymbolName: "magnifyingglass", accessibilityDescription: nil)
     searchButton.imagePosition = .imageLeading
@@ -272,8 +267,13 @@ public final class SearchWindowController: NSWindowController, NSWindowDelegate,
   }
   private func render() {
     indexButton.isEnabled = !workspace.sources.isEmpty && !workspace.isBusy
+    indexButton.toolTip =
+      indexButton.isEnabled ? "Index the selected footage" : "Add footage before indexing"
     cancelButton.isEnabled = workspace.isBusy
     searchButton.isEnabled = workspace.canSearch
+    searchButton.toolTip =
+      workspace.canSearch
+      ? "Search the indexed footage" : "Index footage or open a saved index first"
     queryField.isEnabled = workspace.canSearch
     assume.isEnabled = !workspace.isBusy
     if !workspace.sources.isEmpty {
