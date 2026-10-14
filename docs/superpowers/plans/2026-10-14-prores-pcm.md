@@ -32,26 +32,30 @@
 
 ### Task 1: Professional source admission and native fixtures
 
-**Files:** `Sources/PXLProfessionalMedia/ProfessionalSource.swift`, `ProfessionalTypes.swift`; `Tests/Support/ProResFixtureFactory.swift`; `Tests/PXLProfessionalMediaTests/ProfessionalMediaTests.swift`; `Package.swift`.
+**Files:** `Sources/PXLProfessionalMedia/ProfessionalSource.swift`, `ProfessionalTypes.swift`; `Tests/Support/FixtureFactory.swift`; `Tests/PXLProfessionalMediaTests/ProfessionalMediaTests.swift`; `Package.swift`.
 **Interfaces:** `ProfessionalMediaSession.open(_:options:) async throws`, immutable `ProfessionalAssetDescriptor` and `ProfessionalMediaOptions`.
 
-- [ ] Write native 10-bit 4:2:2 ProRes HQ + integer PCM fixture and admission tests; observe missing feature failure.
-- [ ] Implement metadata admission separately from `AssetInput`; reject unsupported formats/layouts and preserve timing/colour/orientation.
-- [ ] Verify HQ and a second 422 variant, rejection of 4444 and existing strict processing rejection; commit.
+- [x] Write native 10-bit 4:2:2 ProRes HQ + integer PCM fixture and admission tests; observe missing feature failure.
+- [x] Implement metadata admission separately from `AssetInput`; reject unsupported formats/layouts and preserve timing/colour/orientation.
+- [x] Verify HQ and a second 422 variant, rejection of 4444 and existing strict processing rejection; commit.
 
 ### Task 2: Retained frame/PCM pull session and transport
 
 **Files:** `ProfessionalMediaSession.swift`, `ProfessionalWorker.swift`, `ProResDecoder.swift`, `PCMReader.swift`, `ProfessionalTypes.swift`; same test target.
 **Interfaces:** `nextVideoFrame()`, `nextAudioChunk(maximumFrames:)`, `seek(to:)`, `close()`, immediate `cancel()`, `isCurrent(generation:)`, metrics. All async reads return immutable leased results, timestamps and generation.
 
-- [ ] Test x422 geometry/chroma precision, PCM sample/channel content, rational PTS, split continuity, seek/EOF, retained-budget pressure/retry, invalid input, cancellation and close.
-- [ ] Implement queue-confined VT and independent reader outputs, lifetime accounting and generation fences; observe red then green.
-- [ ] Run controlled small fixtures serially, then the project suite without model variables; commit.
+- [x] Test x422 geometry/chroma precision, PCM sample/channel content, rational PTS, split continuity, seek/EOF, retained-budget pressure/retry, invalid input, cancellation and close.
+- [x] Implement queue-confined VT and independent reader outputs, lifetime accounting and generation fences; observe red then green.
+- [x] Run controlled small fixtures serially, then the project suite without model variables; commit.
 
 ### Task 3: Real-footage harness, evidence and integration contract
 
 **Files:** native professional-media validation executable/CLI, `docs/validation/prores-pcm.md`, README/dependency audit as needed.
 
-- [ ] Add a bounded validation harness using the public API; output actual hardware, pixel layout, timing, counts, memory and seek metrics without producing media.
-- [ ] Test generated HQ and second variant, and real supplied footage when available; hash originals before/after. Distinguish synthetic fixture evidence from real production footage.
-- [ ] Build release, run dependency audit, review concurrency/ownership/admission, document the Pixel Deck adapter boundary and remaining runtime limits; commit and push the research branch.
+- [x] Add a bounded validation harness using the public API; output actual hardware, pixel layout, timing, counts, memory and seek metrics without producing media.
+- [x] Test generated HQ and second variant, and real supplied footage when available; hash originals before/after. Distinguish synthetic fixture evidence from real production footage.
+- [x] Build release, run dependency audit, review concurrency/ownership/admission, document the Pixel Deck adapter boundary and remaining runtime limits; commit and push the research branch.
+
+## Execution notes
+
+Implemented inline on the existing research branch. The existing native fixture factory was extended rather than duplicated; default AAC fixtures remain covered by the full suite. The delayed PCM fixture is represented by AVAssetWriter as initial timeline silence, so tests verify that silence and independently expected sought sample content rather than claiming a nonzero source-track start. Review identified two admission mismatches (unsigned PCM and an impossible budget); both were reproduced then corrected. Final evidence: 127 tests, 112 passed, 15 skipped, zero failures; release build, five-product dependency audit and real-source probe pass. Pixel Deck adoption/output, mono/other PCM precision runtime coverage and longer transport validation remain outside the completed first slice.

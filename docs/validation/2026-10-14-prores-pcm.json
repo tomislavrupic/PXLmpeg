@@ -1,0 +1,261 @@
+{
+  "boundary": "ingest only; no rendered playback, audio device sync, calibrated HDR or Pixel Deck integration validation",
+  "case": "real-prores-hq-pcm-01",
+  "checks": {
+    "binaryTargets": 0,
+    "externalPackageDependencies": 0,
+    "releaseBuild": "passed",
+    "runtimeDependencyAuditProducts": 5,
+    "staticReview": "no remaining Critical, Important or Minor findings; two admission findings corrected with red/green tests"
+  },
+  "coverageLimit": "Native PCM fixture and real footage use signed24-bit stereo48k; mono and16/32-bit/float32 inputs are admitted but not directly fixture-validated.",
+  "finalProbe": {
+    "asset": {
+      "audioBitDepth": 24,
+      "audioChannelLayout": "AgBlAAAAAAAAAAAA",
+      "audioChannels": 2,
+      "audioDuration": {
+        "timescale": 1000,
+        "value": 2042
+      },
+      "audioSampleRate": 48000,
+      "audioStart": {
+        "timescale": 1,
+        "value": 0
+      },
+      "bitDepth": 10,
+      "chromaSubsampling": "4:2:2",
+      "codec": "apch",
+      "colourSpace": "bt709",
+      "height": 1088,
+      "rotation": 0,
+      "timecodeTracks": 0,
+      "videoDuration": {
+        "timescale": 1000,
+        "value": 2042
+      },
+      "videoStart": {
+        "timescale": 1,
+        "value": 0
+      },
+      "width": 1920
+    },
+    "audioEOF": true,
+    "audioFrames": 98000,
+    "firstAudioPTS": {
+      "timescale": 48000,
+      "value": 0
+    },
+    "firstFrameMilliseconds": 2.871166663680924,
+    "firstVideoPTS": {
+      "timescale": 12288,
+      "value": 0
+    },
+    "hardwarePolicy": "requireHardware",
+    "lastAudioEnd": {
+      "timescale": 48000,
+      "value": 98000
+    },
+    "lastVideoEnd": {
+      "timescale": 12288,
+      "value": 25088
+    },
+    "metrics": {
+      "decoderHardware": true,
+      "deliveredAudioFrames": 100121,
+      "deliveredVideoFrames": 52,
+      "ownedMemoryBytes": 1048576,
+      "ownedMemoryPeakBytes": 41975808,
+      "retainedVideoFrames": 0
+    },
+    "openMilliseconds": 144.16224999877159,
+    "operation": "professional-ingest-probe",
+    "originalUnchanged": true,
+    "pixelFormat": "x422",
+    "sampledProcessFootprintPeakBytes": 127664992,
+    "schemaVersion": 1,
+    "seeks": [
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 24503
+        },
+        "elapsedMilliseconds": 3.9958749985089526,
+        "target": {
+          "timescale": 48000,
+          "value": 24503
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 6656
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 49007
+        },
+        "elapsedMilliseconds": 4.857583335251547,
+        "target": {
+          "timescale": 48000,
+          "value": 49007
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 12800
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 73512
+        },
+        "elapsedMilliseconds": 4.133500002353685,
+        "target": {
+          "timescale": 48000,
+          "value": 73512
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 18944
+        }
+      }
+    ],
+    "sourceSHA256": "a11e93cd65523caf95d69ff8aa3e02525fd123d9b20554843bc705e4994e25fc",
+    "videoEOF": true,
+    "videoFrames": 49,
+    "videoReadMilliseconds": 30.410416664381046
+  },
+  "hardware": "Apple M3 Ultra",
+  "initialProbe": {
+    "asset": {
+      "audioBitDepth": 24,
+      "audioChannelLayout": "AgBlAAAAAAAAAAAA",
+      "audioChannels": 2,
+      "audioDuration": {
+        "timescale": 1000,
+        "value": 2042
+      },
+      "audioSampleRate": 48000,
+      "audioStart": {
+        "timescale": 1,
+        "value": 0
+      },
+      "bitDepth": 10,
+      "chromaSubsampling": "4:2:2",
+      "codec": "apch",
+      "colourSpace": "bt709",
+      "height": 1088,
+      "rotation": 0,
+      "timecodeTracks": 0,
+      "videoDuration": {
+        "timescale": 1000,
+        "value": 2042
+      },
+      "videoStart": {
+        "timescale": 1,
+        "value": 0
+      },
+      "width": 1920
+    },
+    "audioEOF": true,
+    "audioFrames": 98000,
+    "firstAudioPTS": {
+      "timescale": 48000,
+      "value": 0
+    },
+    "firstFrameMilliseconds": 2.8228750015841797,
+    "firstVideoPTS": {
+      "timescale": 12288,
+      "value": 0
+    },
+    "hardwarePolicy": "requireHardware",
+    "lastAudioEnd": {
+      "timescale": 48000,
+      "value": 98000
+    },
+    "lastVideoEnd": {
+      "timescale": 12288,
+      "value": 25088
+    },
+    "metrics": {
+      "decoderHardware": true,
+      "deliveredAudioFrames": 100121,
+      "deliveredVideoFrames": 52,
+      "ownedMemoryBytes": 1048576,
+      "ownedMemoryPeakBytes": 41975808,
+      "retainedVideoFrames": 0
+    },
+    "openMilliseconds": 129.9594583324506,
+    "operation": "professional-ingest-probe",
+    "originalUnchanged": true,
+    "pixelFormat": "x422",
+    "sampledProcessFootprintPeakBytes": 126206744,
+    "schemaVersion": 1,
+    "seeks": [
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 24503
+        },
+        "elapsedMilliseconds": 3.9688750002824236,
+        "target": {
+          "timescale": 48000,
+          "value": 24503
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 6656
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 49007
+        },
+        "elapsedMilliseconds": 4.975791667675367,
+        "target": {
+          "timescale": 48000,
+          "value": 49007
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 12800
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 73512
+        },
+        "elapsedMilliseconds": 4.337083333666669,
+        "target": {
+          "timescale": 48000,
+          "value": 73512
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 18944
+        }
+      }
+    ],
+    "sourceSHA256": "a11e93cd65523caf95d69ff8aa3e02525fd123d9b20554843bc705e4994e25fc",
+    "videoEOF": true,
+    "videoFrames": 49,
+    "videoReadMilliseconds": 29.913458332885057
+  },
+  "macOS": "27.0.1",
+  "mediaPublished": false,
+  "privatePathsPublished": false,
+  "schemaVersion": 1,
+  "sourceKind": "user-supplied real production render",
+  "tests": {
+    "executed": 127,
+    "failed": 0,
+    "modelInferencePerformed": false,
+    "passed": 112,
+    "professionalTestsPassed": 15,
+    "skipped": 15
+  },
+  "validatedCodeRevision": "e5a91d4a24731c61a765f2524c3dc7910881575b"
+}

@@ -62,6 +62,14 @@ Initial measurements: open about **130 ms**, first frame after open **2.8 ms**, 
 
 The JSON receipt includes source hash, unchanged status, native descriptor, video/audio EOF and counts, source/end timestamps, actual pixel format/hardware, open/first-frame/read/seek timings, owned-memory metrics and sampled process footprint. It produces no media or rendered preview. `maximumFrames` caps probe work, not the library's source duration.
 
+## Verification result
+
+Final project command `./Scripts/test.sh`: **127 executed, 112 passed, 15 skipped, 0 failures**, including **15 professional ingest/admission tests**. Model-dependent cases remain skipped and no inference was performed. Release build, Swift format checks, CLI invalid-cap rejection and five-product runtime/package dependency audit passed. Independent static review found no remaining Critical/Important findings; its two Minor admission mismatches were reproduced and corrected with failing/passing tests.
+
+Generated ProRes Proxy, LT, 422 and HQ fixtures all delivered hardware-decoded x422 frames on the test Mac. Additional checks cover full-height chroma, retained lower ten-bit luma precision, PCM values/channel order and chunk continuity, native timeline silence/delayed content, video edit offsets, concurrent seeks, EOF/restart, resource retry without sample loss, invalid seek/cancel/close, source changes, rejected unsigned PCM/custom layouts and impossible-budget rejection before decoder setup. Native PCM fixtures and real footage use signed **24-bit stereo**; mono and other admitted PCM precisions have not yet had direct fixture/runtime validation. HDR metadata admission is not reference-display approval.
+
+The final rebuilt probe repeated the real-source result: 49 video frames, 98,000 audio frames, x422, actual hardware true, matching end times and unchanged hash. Its open was about 144 ms, first frame 2.9 ms and video pull 30.4 ms; sampled process footprint was about 128 MB. Both receipts and the verification boundary are preserved in [sanitized evidence](2026-10-14-prores-pcm.json). No private media/path is included.
+
 ## Pixel Deck adoption boundary
 
 This supplies the buffer/audio shape its current compatibility engine consumes. Pixel Deck still needs an explicit adapter that retains video leases through Metal/DeckLink completion, preserves channel identity, coordinates both pull streams against its clock, flushes output on generation changes and routes unsupported sources to its existing compatibility backend. No Pixel Deck source or installed app was changed by this slice.
