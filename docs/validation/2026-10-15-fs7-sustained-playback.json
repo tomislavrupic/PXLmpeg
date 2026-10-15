@@ -654,5 +654,110 @@
     "Source identity/size/mtime rechecked, not a whole-file SHA-256 check.",
     "Earlier 210-second run under concurrent rendering remains interrupted partial evidence and is not this baseline."
   ],
-  "privateFullReportSHA256": "05f445e1e9b69e8dcc06181d599ffdcb11fbfb7aea63710048d8644c8b0bbd38"
+  "privateFullReportSHA256": "05f445e1e9b69e8dcc06181d599ffdcb11fbfb7aea63710048d8644c8b0bbd38",
+  "presentationFollowUp": {
+    "rootCause": "Deferred needsDisplay invalidations merged native-view updates before draw submission. All selected/published/native-updated frames arrived; missing frames had no submit event.",
+    "fix": "Paused MTKView explicit drawing: draw each changed frame immediately; initial/layout draws remain scheduled to avoid recursive drawing.",
+    "proofBoundary": "Unique sourcePTS through positive drawable.presentedTime, not physical panel/audio sync. Full corrected17-minute strict playback is unverified; user chose to stop expanding testing at this research stage.",
+    "before": {
+      "success": true,
+      "wallSeconds": 60.20682783333177,
+      "droppedFrames": 0,
+      "audioUnderruns": 0,
+      "frameTrace": {
+        "completedNotPresented": 0,
+        "completedUnique": 1497,
+        "duplicateEvents": {},
+        "missingFirst32": [
+          {
+            "flags": 3,
+            "ptsSeconds": 6.4,
+            "sequence": 159
+          },
+          {
+            "flags": 3,
+            "ptsSeconds": 10.56,
+            "sequence": 263
+          },
+          {
+            "flags": 3,
+            "ptsSeconds": 14.32,
+            "sequence": 357
+          }
+        ],
+        "noDrawableUnique": 0,
+        "presentationPTSRegressions": 0,
+        "presentedUnique": 1497,
+        "publishedUnique": 1500,
+        "selectedNotPublished": 0,
+        "selectedNotViewUpdated": 0,
+        "selectedUnique": 1500,
+        "submittedNotCompleted": 0,
+        "submittedUnique": 1497,
+        "truncated": false,
+        "viewUpdatedNotSubmitted": 3,
+        "viewUpdatedUnique": 1500,
+        "zeroPresentedTimes": 0
+      }
+    },
+    "after": {
+      "success": true,
+      "wallSeconds": 60.308736166669405,
+      "droppedFrames": 0,
+      "audioUnderruns": 0,
+      "frameTrace": {
+        "completedNotPresented": 0,
+        "completedUnique": 1505,
+        "duplicateEvents": {},
+        "missingFirst32": [],
+        "noDrawableUnique": 0,
+        "presentationPTSRegressions": 0,
+        "presentedUnique": 1505,
+        "publishedUnique": 1505,
+        "selectedNotPublished": 0,
+        "selectedNotViewUpdated": 0,
+        "selectedUnique": 1505,
+        "submittedNotCompleted": 0,
+        "submittedUnique": 1505,
+        "truncated": false,
+        "viewUpdatedNotSubmitted": 0,
+        "viewUpdatedUnique": 1505,
+        "zeroPresentedTimes": 0
+      }
+    },
+    "strictInitialAndCadencePreflight": {
+      "success": true,
+      "wallSeconds": 10.151514166675042,
+      "droppedFrames": 0,
+      "audioUnderruns": 0,
+      "frameTrace": {
+        "completedNotPresented": 0,
+        "completedUnique": 252,
+        "duplicateEvents": {
+          "completed": 1,
+          "submitted": 1,
+          "viewUpdated": 1
+        },
+        "expectedFrameIntervalSeconds": 0.04,
+        "firstPTSSeconds": 0,
+        "lastPTSSeconds": 10.040000000000001,
+        "missingFirst32": [],
+        "noDrawableUnique": 0,
+        "presentationPTSRegressions": 0,
+        "presentedUnique": 252,
+        "publishedUnique": 252,
+        "selectedNotPublished": 0,
+        "selectedNotViewUpdated": 0,
+        "selectedUnique": 252,
+        "selectionIntervalMismatchCount": 0,
+        "submittedNotCompleted": 0,
+        "submittedUnique": 252,
+        "truncated": false,
+        "viewUpdatedNotSubmitted": 0,
+        "viewUpdatedUnique": 252,
+        "zeroPresentedTimes": 1
+      }
+    },
+    "fullStrictAttempt": "Stopped at initial presentation callback wait before playback started; no full strict success claimed. The original full17-minute reliable-clock result remains historical evidence."
+  }
 }

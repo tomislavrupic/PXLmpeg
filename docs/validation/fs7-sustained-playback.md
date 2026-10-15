@@ -59,3 +59,29 @@ Reproduction uses Pixel Deck's research-only `--pxl-soak-report` command, docume
 in `Documentation/PXL_NATIVE_PLAYBACK.md`. It checks full EOF, continuous GPU
 progress, real audio clock and post-soak transport, and preserves periodic
 checkpoints on interruption.
+
+
+## Presentation-gap follow-up
+
+Timestamp tracing subsequently located the loss at deferred native-view redraws:
+all 1,500 selected frames were published and reached the native view, but only
+1,497 were submitted. Every submitted frame completed and received a positive
+Metal drawable presentation callback. The three missing PTS never reached
+submission; this was not GPU/color-processing failure.
+
+Switching the paused MTKView to explicit drawing for each changed frame produced
+**1,505/1,505** unique selected, submitted, completed and presented timestamps in
+the same one-minute source test. A stricter preflight including frame 0 and CFR
+cadence also passed 252/252. Duplicate redraws are counted separately; only positive
+presentation times count. A regression fixture ensures duplicate callbacks cannot
+conceal the first-presentation PTS order and stale callbacks cannot cross runs.
+
+The strict full-source gate now requires zero scheduler drops/late frames/audio
+underruns, continuous declared CFR PTS, full expected count/endpoints and every
+presentation stage. Its subsequent full attempt stopped while waiting for the
+initial positive presentation callback, before playback; it did not establish
+full-length frame-perfect playback. The user chose to keep this research-stage
+scope rather than expand testing further. The short corrected presentation proof
+and original full reliable-clock playback proof remain distinct. [Apple's explicit drawing API](https://developer.apple.com/documentation/metalkit/mtkview/draw%28%29)
+and [presentation time](https://developer.apple.com/documentation/metal/mtldrawable/presentedtime)
+define the software verification boundary. Follow-up counts are in the receipt.
