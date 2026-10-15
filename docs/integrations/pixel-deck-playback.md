@@ -78,3 +78,14 @@ open -n '.build/PXLApp/Build/Products/Debug/Pixel Deck PXL Research.app' \
 The separately named local build does not replace the normal installed app and
 is not a notarized public release. Original footage, private paths and runtime
 logs stay outside Git.
+
+
+## Longer color-enabled camera-source check
+
+A later full 17:16.4 FS7 4K25 MXF run validated the compatibility hardware decode
+path with PXLmpeg camera metadata, corrected Metal color and the real audio
+clock. EOF, middle/end seeks and audio-clock resume passed; no scheduling drops
+or audio underruns were reported. The small GPU-completion/selection gap remains
+unresolved. This extends camera-source playback coverage; long native ProRes,
+frame-perfect output, audible/physical sync and hour/overnight stability remain
+separate. See [sustained result and limitations](../validation/fs7-sustained-playback.md).

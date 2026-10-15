@@ -45,3 +45,17 @@ measure memory growth and thermal behavior, and use a dedicated energy/power
 instrument before making efficiency claims. Independent review corrected card
 LUT preservation, source fencing and cap-accounting issues. See Pixel Deck's
 `Scripts/benchmark_pxl_playback.sh` for reproduction.
+
+
+## Sustained color-enabled playback
+
+A subsequent full **17:16.4 FS7 4K25** GUI run reached EOF with automatic Sony
+Cine input and captured Type A look active. It reported no scheduling drops,
+late frames or audio underruns; absolute selection/audio-clock error stayed
+within 18.667 ms. GPU p95 was 0.154 ms at a 2360×890 preview texture; process CPU
+averaged about 1.10 cores. Memory rose from 250 MiB at the first minute to 270 MiB
+at EOF, below the 290 MiB startup peak. Post-EOF real-clock resume and pause checks
+passed. The 92-completion gap versus 25,909 selections remains an explicit
+presentation coverage limit. See [full method, results and qualifications](fs7-sustained-playback.md).
+This uses the compatibility VideoToolbox decoder, not native PXLmpeg MXF, and
+cannot establish native-vs-compatibility speedup.
