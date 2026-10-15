@@ -1,6 +1,7 @@
 import CoreMedia
 import Foundation
 import PXLMedia
+import PXLAppleMedia
 
 // Atomically assigns generations AND queues operations. A new-generation read cannot
 // overtake its seek. Admission is checked before advancing the working generation.
@@ -47,32 +48,45 @@ public final class ProfessionalMediaSession: @unchecked Sendable {
   private let queue = DispatchQueue(
     label: "studio.pixelrecords.pxlmpeg.professional", qos: .userInitiated)
   private let fence = SessionFence()
-  private let worker: ProfessionalWorker
-  private init(source: ProfessionalSource, options: ProfessionalMediaOptions) {
-    descriptor = source.descriptor
-    worker = ProfessionalWorker(source: source, options: options)
+  private let worker: any ProfessionalSessionWorker
+  private init(descriptor: ProfessionalAssetDescriptor, worker: any ProfessionalSessionWorker) {
+    self.descriptor = descriptor
+    self.worker = worker
   }
   public static func open(
     _ url: URL, options: ProfessionalMediaOptions = ProfessionalMediaOptions()
   ) async throws -> ProfessionalMediaSession {
     try options.validate()
     try Task.checkCancellation()
-    let source = try await ProfessionalSource.open(url)
+    let descriptor: ProfessionalAssetDescriptor
+    let worker: any ProfessionalSessionWorker
+    let extraBytes: Int
+    if url.isFileURL, url.pathExtension.lowercased() == "mxf" {
+      guard options.memoryBudgetBytes >= 82*1024*1024 else {
+        throw MediaError(.invalidRequest,stage:"professional-options","Native MXF admission requires at least 82 MiB for bounded metadata and picture conversion")
+      }
+      let budget = MediaBudget(limit:options.memoryBudgetBytes,frameLimit:options.maximumRetainedVideoFrames)
+      let source = try MXFSource(url,budget:budget)
+      descriptor = source.descriptor
+      worker = MXFWorker(source: source, options: options, budget: budget)
+      extraBytes = source.storageBytes + ProfessionalLimits.packetBytes + 1024*1024
+    } else {
+      let source = try await ProfessionalSource.open(url)
+      descriptor = source.descriptor
+      worker = ProfessionalWorker(source: source, options: options)
+      extraBytes = 0
+    }
     try Task.checkCancellation()
-    let audioBytes =
-      source.descriptor.audioChannels.map {
-        ProfessionalLimits.pendingPCMBytes + ProfessionalLimits.maximumAudioFrames * $0 * 4
-      } ?? 0
-    let minimum =
-      ProResDecoder.frameReservationBytes(
-        width: source.descriptor.width, height: source.descriptor.height)
-      + ProfessionalLimits.packetBytes + audioBytes
+    let audioBytes = descriptor.audioChannels.map {
+      ProfessionalLimits.pendingPCMBytes + ProfessionalLimits.maximumAudioFrames * $0 * 4
+    } ?? 0
+    let minimum = ProResDecoder.frameReservationBytes(width: descriptor.width, height: descriptor.height)
+      + ProfessionalLimits.packetBytes + audioBytes + extraBytes
     guard options.memoryBudgetBytes >= minimum else {
-      throw MediaError(
-        .invalidRequest, stage: "professional-options",
+      throw MediaError(.invalidRequest, stage: "professional-options",
         "Configured budget cannot deliver this source; requires at least \(minimum) owned bytes")
     }
-    let session = ProfessionalMediaSession(source: source, options: options)
+    let session = ProfessionalMediaSession(descriptor: descriptor, worker: worker)
     try await session.perform { worker, _ in try worker.start(at: .zero) }
     return session
   }
@@ -127,7 +141,7 @@ public final class ProfessionalMediaSession: @unchecked Sendable {
   }
   private func perform<T: Sendable>(
     advancingGeneration: Bool = false,
-    _ operation: @escaping @Sendable (ProfessionalWorker, UInt64) throws -> T
+    _ operation: @escaping @Sendable (any ProfessionalSessionWorker, UInt64) throws -> T
   ) async throws -> T {
     try await withTaskCancellationHandler {
       if Task.isCancelled { cancel() }

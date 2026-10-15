@@ -10,7 +10,9 @@ public struct ProfessionalAssetDescriptor: Codable, Sendable {
   public let codec: String
   public let bitDepth: Int
   public let chromaSubsampling: String
-  public let colourSpace: VideoColourSpace
+  /// Nil when the coded primaries/matrix/transfer triplet is not fully declared.
+  /// Camera acquisition metadata remains separate from coded color declarations.
+  public let colourSpace: VideoColourSpace?
   public let sourceChromaLocation: String?
   public let rotation: DisplayRotation
   public let videoStart: MediaTime
@@ -27,7 +29,8 @@ public struct ProfessionalAssetDescriptor: Codable, Sendable {
 public enum ProfessionalMedia {
   /// Metadata only. Does not create a decoder or change any source track.
   public static func inspect(_ url: URL) async throws -> ProfessionalAssetDescriptor {
-    try await ProfessionalSource.open(url).descriptor
+    if url.isFileURL, url.pathExtension.lowercased() == "mxf" { return try MXFSource(url).descriptor }
+    return try await ProfessionalSource.open(url).descriptor
   }
 }
 

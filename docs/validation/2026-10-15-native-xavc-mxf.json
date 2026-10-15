@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "scope": "guarded-disposable-media-native-xavc-research",
+  "sourceDurationSeconds": 125.32,
+  "originalsOpenedReadOnlyOnlyForStaging": true,
+  "safetyTests": 8,
+  "coreSuite": {
+    "executed": 146,
+    "passed": 130,
+    "skipped": 16,
+    "failed": 0
+  },
+  "nativeIngest": {
+    "asset": {
+      "audioBitDepth": 24,
+      "audioChannels": 8,
+      "audioDuration": {
+        "timescale": 25,
+        "value": 3133
+      },
+      "audioSampleRate": 48000,
+      "audioStart": {
+        "timescale": 48000,
+        "value": 0
+      },
+      "bitDepth": 10,
+      "chromaSubsampling": "4:2:2",
+      "codec": "XAVC Intra",
+      "height": 2160,
+      "rotation": 0,
+      "timecodeTracks": 1,
+      "videoDuration": {
+        "timescale": 25,
+        "value": 3133
+      },
+      "videoStart": {
+        "timescale": 25,
+        "value": 0
+      },
+      "width": 3840
+    },
+    "audioEOF": false,
+    "audioFrames": 1440000,
+    "firstAudioPTS": {
+      "timescale": 48000,
+      "value": 0
+    },
+    "firstFrameMilliseconds": 12.648749994696118,
+    "firstVideoPTS": {
+      "timescale": 25,
+      "value": 0
+    },
+    "hardwarePolicy": "requireHardware",
+    "lastAudioEnd": {
+      "timescale": 48000,
+      "value": 1440000
+    },
+    "lastVideoEnd": {
+      "timescale": 25,
+      "value": 3133
+    },
+    "metrics": {
+      "decoderHardware": true,
+      "deliveredAudioFrames": 1442464,
+      "deliveredVideoFrames": 3136,
+      "ownedMemoryBytes": 246736,
+      "ownedMemoryPeakBytes": 101647312,
+      "retainedVideoFrames": 0
+    },
+    "openMilliseconds": 64.73591666144785,
+    "operation": "professional-ingest-probe",
+    "pixelFormat": "x422",
+    "sampledProcessFootprintPeakBytes": 55919432,
+    "schemaVersion": 1,
+    "seeks": [
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 1503840
+        },
+        "elapsedMilliseconds": 8.817708323476836,
+        "target": {
+          "timescale": 48000,
+          "value": 1503840
+        },
+        "videoPTS": {
+          "timescale": 25,
+          "value": 784
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 3007680
+        },
+        "elapsedMilliseconds": 9.088666658499278,
+        "target": {
+          "timescale": 48000,
+          "value": 3007680
+        },
+        "videoPTS": {
+          "timescale": 25,
+          "value": 1567
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 4511520
+        },
+        "elapsedMilliseconds": 9.316166673670523,
+        "target": {
+          "timescale": 48000,
+          "value": 4511520
+        },
+        "videoPTS": {
+          "timescale": 25,
+          "value": 2350
+        }
+      }
+    ],
+    "sourceSHA256": "bbf574424337fc025dc71a6cfb366aa8d96ebbe1fbd225dbbcd6e2e14e818d3a",
+    "videoEOF": true,
+    "videoFrames": 3133,
+    "videoReadMilliseconds": 32466.44104165898,
+    "disposableInputUnchanged": true,
+    "boundary": "Video decode to EOF, not realtime onscreen playback; PCM probe capped at 30 seconds"
+  },
+  "pixelDeckClock": {
+    "audioFrames": 2880000,
+    "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+    "boundary": "Offscreen Pixel Deck Metal + muted real Core Audio clock; no physical latency, audible sync or GUI presentation claim",
+    "frames": 1500,
+    "hardwareFrames": 1500,
+    "look": "Sony LC-709 Type A",
+    "maxClockSelectionErrorMS": 18.666666666668164,
+    "monitorAudio": "source channel 1 duplicated to stereo",
+    "ownedMemoryPeakBytes": 101647312,
+    "seconds": 60,
+    "seeks": [
+      {
+        "elapsedMS": 17.32879166956991,
+        "frameSeconds": 62.68,
+        "targetSeconds": 62.66
+      },
+      {
+        "elapsedMS": 14.545750003890134,
+        "frameSeconds": 121.6,
+        "targetSeconds": 121.56039999999999
+      }
+    ],
+    "success": true,
+    "transform": "sonySLog3SGamut3CineToRec709"
+  },
+  "proResRegression": {
+    "asset": {
+      "audioBitDepth": 24,
+      "audioChannelLayout": "AgBlAAAAAAAAAAAA",
+      "audioChannels": 2,
+      "audioDuration": {
+        "timescale": 1000,
+        "value": 2042
+      },
+      "audioSampleRate": 48000,
+      "audioStart": {
+        "timescale": 1,
+        "value": 0
+      },
+      "bitDepth": 10,
+      "chromaSubsampling": "4:2:2",
+      "codec": "apch",
+      "colourSpace": "bt709",
+      "height": 1088,
+      "rotation": 0,
+      "timecodeTracks": 0,
+      "videoDuration": {
+        "timescale": 1000,
+        "value": 2042
+      },
+      "videoStart": {
+        "timescale": 1,
+        "value": 0
+      },
+      "width": 1920
+    },
+    "audioEOF": true,
+    "audioFrames": 98000,
+    "firstAudioPTS": {
+      "timescale": 48000,
+      "value": 0
+    },
+    "firstFrameMilliseconds": 3.082833325606771,
+    "firstVideoPTS": {
+      "timescale": 12288,
+      "value": 0
+    },
+    "hardwarePolicy": "requireHardware",
+    "lastAudioEnd": {
+      "timescale": 48000,
+      "value": 98000
+    },
+    "lastVideoEnd": {
+      "timescale": 12288,
+      "value": 25088
+    },
+    "metrics": {
+      "decoderHardware": true,
+      "deliveredAudioFrames": 100121,
+      "deliveredVideoFrames": 52,
+      "ownedMemoryBytes": 1048576,
+      "ownedMemoryPeakBytes": 41975808,
+      "retainedVideoFrames": 0
+    },
+    "openMilliseconds": 194.39629167027306,
+    "operation": "professional-ingest-probe",
+    "pixelFormat": "x422",
+    "sampledProcessFootprintPeakBytes": 124060488,
+    "schemaVersion": 1,
+    "seeks": [
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 24503
+        },
+        "elapsedMilliseconds": 4.528499994194135,
+        "target": {
+          "timescale": 48000,
+          "value": 24503
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 6656
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 49007
+        },
+        "elapsedMilliseconds": 4.304624992073514,
+        "target": {
+          "timescale": 48000,
+          "value": 49007
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 12800
+        }
+      },
+      {
+        "audioPTS": {
+          "timescale": 48000,
+          "value": 73512
+        },
+        "elapsedMilliseconds": 4.066541659994982,
+        "target": {
+          "timescale": 48000,
+          "value": 73512
+        },
+        "videoPTS": {
+          "timescale": 12288,
+          "value": 18944
+        }
+      }
+    ],
+    "sourceSHA256": "a11e93cd65523caf95d69ff8aa3e02525fd123d9b20554843bc705e4994e25fc",
+    "videoEOF": true,
+    "videoFrames": 49,
+    "videoReadMilliseconds": 33.46641665848438,
+    "disposableInputUnchanged": true
+  },
+  "guiPresentation": {
+    "verified": false,
+    "initialFrameGPUCompleted": true,
+    "positivePresentationTimestamps": false,
+    "activeVisibleUnoccludedWindow": true,
+    "playbackStarted": false
+  },
+  "boundaries": [
+    "No physical audio latency or audible-sync claim",
+    "No full-clip GUI frame-perfect claim",
+    "No installation or notarized release",
+    "No general MXF/XAVC support or FFmpeg speed comparison"
+  ],
+  "realMXFSuite": {
+    "executed": 10,
+    "passed": 10,
+    "skipped": 0,
+    "failed": 0,
+    "referenceSamplesMatched": true
+  },
+  "probeHashing": {
+    "chunkBytes": 1048576,
+    "autoreleasePoolPerChunk": true,
+    "priorFullVideoProbeFootprintBytes": 3988966976,
+    "correctedFullVideoProbeFootprintBytes": 55919432,
+    "boundary": "Individual process samples include decoder/system allocations; engine owned-memory reservation is a separate metric"
+  }
+}

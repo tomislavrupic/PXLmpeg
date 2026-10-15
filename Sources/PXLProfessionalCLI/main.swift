@@ -184,8 +184,17 @@ struct ProbeEvidence: Encodable {
     let handle = try FileHandle(forReadingFrom: url)
     defer { try? handle.close() }
     var digest = SHA256()
-    while let bytes = try handle.read(upToCount: 1024 * 1024), !bytes.isEmpty {
-      digest.update(data: bytes)
+    // FileHandle bridges through autoreleased NSData on macOS. Drain each read
+    // so hashing a camera-sized input never retains one buffer per file chunk.
+    while true {
+      let hasBytes = try autoreleasepool {
+        guard let bytes = try handle.read(upToCount: 1024 * 1024), !bytes.isEmpty else {
+          return false
+        }
+        digest.update(data: bytes)
+        return true
+      }
+      if !hasBytes { break }
     }
     return digest.finalize().map { String(format: "%02x", $0) }.joined()
   }

@@ -62,16 +62,20 @@ The narrow Dolby input subset is single-layer profile 8 with an HLG/PQ-compatibl
 
 ALi files with missing colour tags require an explicit `"inputColourPolicy": "assumeBT709Limited"` in the job request. The default is `requireTagged`. This interpretation is recorded in receipts; conflicting tagged colour is rejected. `plan` applies the request policy, while `inspect` remains strict.
 
-## Professional ProRes + PCM ingest (research)
+## Professional ProRes / XAVC Intra + PCM ingest (research)
 
 The separate `PXLProfessionalMedia` library delivers retained ten-bit 4:2:2 `x422` CVPixelBuffers and timestamped mono/stereo 48 kHz float32 PCM chunks from ProRes Proxy/LT/422/HQ MOV. Pull delivery, owned-memory reservations, generation-fenced seeks, cancellation and actual VideoToolbox hardware reporting form the first engine boundary intended for Pixel Deck. Default decode requires hardware; unsupported formats reject explicitly. Existing transcode/remux recipes remain unchanged.
 
 ```sh
 ./Scripts/build.sh -c release
-./.build/release/pxl-prores probe /absolute/path/prores-pcm.mov
+# Use a fixture staged by Scripts/safe-dev.py; never a camera original.
+python3 Scripts/safe-dev.py probe --fixture /absolute/disposable/fixture -- \
+  /bin/bash -c '.build/release/pxl-prores probe "$PXL_DISPOSABLE_SOURCE" > "$PXL_DISPOSABLE_OUTPUT/probe.json"'
 ```
 
-A real HQ/24-bit PCM render reached EOF with 49 native video frames and 98,000 PCM frames, matching presentation ends and unchanged source SHA-256. That original probe validates ingest. The subsequent [Pixel Deck consumer check](docs/integrations/pixel-deck-playback.md) validates a first short-clip Metal/audio-clock playback path. See the [API, limits and measured evidence](docs/validation/prores-pcm.md). ProRes export, 4444/XQ/RAW, MXF, multichannel audio and sustained production transport remain future work.
+A real HQ/24-bit PCM render reached EOF with 49 native video frames and 98,000 PCM frames, matching presentation ends and unchanged source SHA-256. That original probe validates ingest. The subsequent [Pixel Deck consumer check](docs/integrations/pixel-deck-playback.md) validates a first short-clip Metal/audio-clock playback path. See the [API, limits and measured evidence](docs/validation/prores-pcm.md). The professional library now also reads a narrow indexed 25p XAVC Intra MXF profile in Swift and delivers eight-channel PCM; see [native MXF evidence and limits](docs/validation/native-xavc-mxf.md). Pixel Deck research keeps the source-bound Sony monitoring transform. Broader MXF/XAVC, ProRes export, 4444/XQ/RAW and production transport certification remain future work.
+
+Development media tests must use [guarded disposable copies](docs/development-media-safety.md); originals are never development output destinations.
 
 ## Interactive playback
 

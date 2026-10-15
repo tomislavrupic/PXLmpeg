@@ -19,9 +19,13 @@ final class ProResDecoder {
   let reservedFrameBytes: Int
   private let width: Int, height: Int
 
-  init(source: ProfessionalSource, policy: ProfessionalHardwarePolicy) throws {
-    width = source.descriptor.width
-    height = source.descriptor.height
+  convenience init(source: ProfessionalSource, policy: ProfessionalHardwarePolicy) throws {
+    try self.init(format: source.format, width: source.descriptor.width,
+                  height: source.descriptor.height, policy: policy)
+  }
+  init(format: CMVideoFormatDescription, width: Int, height: Int, policy: ProfessionalHardwarePolicy) throws {
+    self.width = width
+    self.height = height
     // Conservative aligned storage allowance for two full-height 16-bit planes.
     reservedFrameBytes = Self.frameReservationBytes(width: width, height: height)
     var callback = VTDecompressionOutputCallbackRecord(
@@ -40,7 +44,7 @@ final class ProResDecoder {
       ? [kVTVideoDecoderSpecification_RequireHardwareAcceleratedVideoDecoder as String: true]
       : [kVTVideoDecoderSpecification_EnableHardwareAcceleratedVideoDecoder as String: true]
     let status = VTDecompressionSessionCreate(
-      allocator: nil, formatDescription: source.format,
+      allocator: nil, formatDescription: format,
       decoderSpecification: specification as CFDictionary,
       imageBufferAttributes: [
         kCVPixelBufferPixelFormatTypeKey as String:
@@ -77,7 +81,7 @@ final class ProResDecoder {
   static func checkCreationStatus(_ status: OSStatus) throws {
     if status == kVTCouldNotFindVideoDecoderErr || status == kVTVideoDecoderNotAvailableNowErr {
       throw MediaError(.hardwareUnavailable, stage: "prores-decode-create",
-                       "ProRes decoder unavailable (VideoToolbox status \(status))")
+                       "Professional decoder unavailable (VideoToolbox status \(status))")
     }
     try checkVT(status, stage: "prores-decode-create")
   }
