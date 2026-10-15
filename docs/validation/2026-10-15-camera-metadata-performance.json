@@ -1,0 +1,1232 @@
+{
+  "schemaVersion": 1,
+  "boundary": "Short source, optimized arm64 app, bounded serial offscreen throughput. No power/energy, long-session or calibrated-color acceptance.",
+  "method": {
+    "trialsPerBackend": 5,
+    "order": "alternating",
+    "outputTexture": [
+      1920,
+      1088,
+      "BGRA8"
+    ],
+    "frames": 49,
+    "audioSampleFrames": 98000,
+    "hardwareFramesPerRun": 49,
+    "build": "Release arm64",
+    "sameExecutableWithinEachBatch": true
+  },
+  "medians": {
+    "native": {
+      "openFirstFrameMS": 120.72166666621342,
+      "videoWallMS": 199.352124996949,
+      "videoCPUSeconds": 0.055405999999999955,
+      "peakSampledRSSBytes": 222543872,
+      "serialFramesPerSecond": 245.79622615384676,
+      "audioPullMS": 5.39254166505998,
+      "videoPullTotalMS": 48.84949999541277,
+      "pooledMedianSeekMS": 4.700708333984949
+    },
+    "compat": {
+      "openFirstFrameMS": 206.24704166402807,
+      "videoWallMS": 267.09445832966594,
+      "videoCPUSeconds": 0.048285999999999996,
+      "peakSampledRSSBytes": 165806080,
+      "serialFramesPerSecond": 183.45569693370766,
+      "audioPullMS": 5.0835833317250945,
+      "videoPullTotalMS": 98.11012499267235,
+      "pooledMedianSeekMS": 1.8614583314047195
+    }
+  },
+  "trials": {
+    "native": [
+      {
+        "audioPullMS": 5.39254166505998,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222494720,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 3.3159999948111363,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.35487500281305984,
+          "p95": 5.883416662982199,
+          "total": 64.45024997810833
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 120.67350000143051,
+        "peakSampledRSSBytes": 222691328,
+        "processCPUSecondsSinceOpen": 0.36879400000000007,
+        "renderWaitMS": {
+          "median": 1.5311250026570633,
+          "p95": 7.435541665472556,
+          "total": 140.4572500177892
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          4.526625001744833,
+          5.066124998847954,
+          4.289583332138136
+        ],
+        "serialFramesPerSecond": 262.92161359469543,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.05117499999999997,
+        "videoPullMS": {
+          "median": 0.8737083335290663,
+          "p95": 1.4069583339733072,
+          "total": 45.39166665927041
+        },
+        "videoWallMS": 186.36733332823496
+      },
+      {
+        "audioPullMS": 4.077874997165054,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222494720,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.9533750053378753,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.6336250007734634,
+          "p95": 7.303875005163718,
+          "total": 85.72025002649752
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 122.6991666626418,
+        "peakSampledRSSBytes": 222543872,
+        "processCPUSecondsSinceOpen": 0.37983,
+        "renderWaitMS": {
+          "median": 1.4782083308091387,
+          "p95": 9.824083332205191,
+          "total": 142.77083330671303
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          4.721999997855164,
+          4.506458339164965,
+          4.426291663548909
+        ],
+        "serialFramesPerSecond": 257.5450178147171,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.05137899999999995,
+        "videoPullMS": {
+          "median": 0.8914166610338725,
+          "p95": 1.5582499981974252,
+          "total": 46.97800000576535
+        },
+        "videoWallMS": 190.25800000235904
+      },
+      {
+        "audioPullMS": 5.580958328209817,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222380032,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 1.075874999514781,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.7565000050817616,
+          "p95": 5.830291673191823,
+          "total": 89.51308334508212
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 120.72166666621342,
+        "peakSampledRSSBytes": 222511104,
+        "processCPUSecondsSinceOpen": 0.383174,
+        "renderWaitMS": {
+          "median": 1.724124995234888,
+          "p95": 10.421916660561692,
+          "total": 149.936333327787
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          3.976874999352731,
+          5.663583331624977,
+          4.936124998494051
+        ],
+        "serialFramesPerSecond": 245.79622615384676,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.055405999999999955,
+        "videoPullMS": {
+          "median": 0.9483750036451966,
+          "p95": 1.6522500009159558,
+          "total": 48.84949999541277
+        },
+        "videoWallMS": 199.352124996949
+      },
+      {
+        "audioPullMS": 4.899291670881212,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222085120,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 4.170374995737802,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.6568749959114939,
+          "p95": 8.69954167137621,
+          "total": 114.55104170454433
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 102.96141666913172,
+        "peakSampledRSSBytes": 222986240,
+        "processCPUSecondsSinceOpen": 0.3723019999999999,
+        "renderWaitMS": {
+          "median": 1.9819583321805112,
+          "p95": 10.459041666763369,
+          "total": 179.81499998859363
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          4.194499997538514,
+          4.700708333984949,
+          4.639416663849261
+        ],
+        "serialFramesPerSecond": 213.50413664196734,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.05890000000000006,
+        "videoPullMS": {
+          "median": 0.9715833293739706,
+          "p95": 1.5247499977704138,
+          "total": 49.13970835332293
+        },
+        "videoWallMS": 229.5037500007311
+      },
+      {
+        "audioPullMS": 5.4012916662031785,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 221511680,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.7875416631577536,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.6190416679601185,
+          "p95": 8.245750002970453,
+          "total": 102.34362501068972
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 133.4519166703103,
+        "peakSampledRSSBytes": 222183424,
+        "processCPUSecondsSinceOpen": 0.395614,
+        "renderWaitMS": {
+          "median": 2.279166663356591,
+          "p95": 9.290958332712762,
+          "total": 168.3174583449727
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          4.852208330703434,
+          5.7942916682804935,
+          5.416500003775582
+        ],
+        "serialFramesPerSecond": 222.68454934688552,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.06008199999999997,
+        "videoPullMS": {
+          "median": 1.0070416683447547,
+          "p95": 1.8138333325623535,
+          "total": 51.1276666802587
+        },
+        "videoWallMS": 220.0422083333251
+      }
+    ],
+    "compat": [
+      {
+        "audioPullMS": 6.914249999681488,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 119947264,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 3.667249999125488,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.9694583350210451,
+          "p95": 8.97587499639485,
+          "total": 122.24800000694813
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 206.24704166402807,
+        "peakSampledRSSBytes": 147800064,
+        "processCPUSecondsSinceOpen": 0.26470699999999997,
+        "renderWaitMS": {
+          "median": 3.4569583367556334,
+          "p95": 12.236499998834915,
+          "total": 245.7057500287192
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          1.8763333355309442,
+          1.6146250054589473,
+          1.6422083353972994
+        ],
+        "serialFramesPerSecond": 138.06780678927288,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.055823999999999985,
+        "videoPullMS": {
+          "median": 2.114083334163297,
+          "p95": 3.087541670538485,
+          "total": 108.73629165871534
+        },
+        "videoWallMS": 354.8980833365931
+      },
+      {
+        "audioPullMS": 4.686416665208526,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 119439360,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 10.308833334420342,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.7966250050230883,
+          "p95": 5.978749999485444,
+          "total": 88.32104167231591
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 203.52354166243458,
+        "peakSampledRSSBytes": 165806080,
+        "processCPUSecondsSinceOpen": 0.24692600000000003,
+        "renderWaitMS": {
+          "median": 1.6983333334792405,
+          "p95": 9.243125001376029,
+          "total": 168.79887502000201
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          2.0073749983566813,
+          1.8614583314047195,
+          1.8182083367719315
+        ],
+        "serialFramesPerSecond": 185.33233270283975,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.04270200000000002,
+        "videoPullMS": {
+          "median": 1.8987499934155494,
+          "p95": 2.520875001209788,
+          "total": 95.24529163900297
+        },
+        "videoWallMS": 264.3899166723713
+      },
+      {
+        "audioPullMS": 4.520041671639774,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 119685120,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 1.1748750039259903,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.8032500045374036,
+          "p95": 6.777583330404013,
+          "total": 89.1354583291104
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 210.32337499491405,
+        "peakSampledRSSBytes": 167149568,
+        "processCPUSecondsSinceOpen": 0.258309,
+        "renderWaitMS": {
+          "median": 1.9225416690460406,
+          "p95": 10.900458335527219,
+          "total": 162.33275003469316
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          1.9115833347314037,
+          1.7095000002882443,
+          1.6826666687848046
+        ],
+        "serialFramesPerSecond": 183.45569693370766,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.05367899999999998,
+        "videoPullMS": {
+          "median": 2.140999997209292,
+          "p95": 2.5594999970053323,
+          "total": 104.30633332725847
+        },
+        "videoWallMS": 267.09445832966594
+      },
+      {
+        "audioPullMS": 5.434999999124557,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 119619584,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 5.410749996372033,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.5699999965145253,
+          "p95": 6.383624997397419,
+          "total": 100.50116667844122
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 202.84133333188947,
+        "peakSampledRSSBytes": 165986304,
+        "processCPUSecondsSinceOpen": 0.25220200000000004,
+        "renderWaitMS": {
+          "median": 2.08425000164425,
+          "p95": 8.52195833431324,
+          "total": 166.38837501523085
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          2.22958333324641,
+          1.78237500222167,
+          1.7590416682651266
+        ],
+        "serialFramesPerSecond": 185.23132967432116,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.04602200000000001,
+        "videoPullMS": {
+          "median": 1.965666662727017,
+          "p95": 2.595791665953584,
+          "total": 97.7927499989164
+        },
+        "videoWallMS": 264.5340833332739
+      },
+      {
+        "audioPullMS": 5.0835833317250945,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 119357440,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 1.5807916643097997,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.593958335230127,
+          "p95": 7.396291664917953,
+          "total": 114.71791665098863
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 209.75120833463734,
+        "peakSampledRSSBytes": 152076288,
+        "processCPUSecondsSinceOpen": 0.253578,
+        "renderWaitMS": {
+          "median": 3.814249997958541,
+          "p95": 12.390833333483897,
+          "total": 220.55158330476843
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          1.8988333322340623,
+          1.8751250026980415,
+          2.0602916629286483
+        ],
+        "serialFramesPerSecond": 153.57769424743705,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.048285999999999996,
+        "videoPullMS": {
+          "median": 1.9925000015064143,
+          "p95": 2.6837499972316436,
+          "total": 98.11012499267235
+        },
+        "videoWallMS": 319.0567500059842
+      }
+    ]
+  },
+  "fs7": {
+    "metadata": {
+      "bytesRead": 6958,
+      "captureGamma": "s-log3-cine",
+      "captureGamut": "s-gamut3-cine",
+      "evidence": [
+        {
+          "field": "CaptureGammaEquation",
+          "location": "MXF/ST436/RDD18/camera/0x3210@2300928",
+          "rawValue": "060e2b34040101060e06040101010605"
+        },
+        {
+          "derivation": "S-Log3.Cine label pairing defined by RDD18 section5.4.25",
+          "field": "CaptureColorPrimaries",
+          "location": "MXF/ST436/RDD18/camera/0x3210@2300928",
+          "rawValue": "060e2b34040101060e06040101010605"
+        },
+        {
+          "field": "ExposureIndexOfPhotoMeter",
+          "location": "MXF/ST436/RDD18/camera/0x8115@2300928",
+          "rawValue": "800"
+        },
+        {
+          "field": "ISOSensitivity",
+          "location": "MXF/ST436/RDD18/camera/0x810b@2300928",
+          "rawValue": "2000"
+        },
+        {
+          "field": "CapturedMonitoringLook",
+          "location": "MXF/ST436/RDD18/SonyUDAM/0xe109@2300928",
+          "rawValue": "SonyProf2:LC-709typA"
+        }
+      ],
+      "exposureIndex": 800,
+      "isoSensitivity": 2000,
+      "labelNamespace": "Sony",
+      "monitoringLookName": "SonyProf2:LC-709typA",
+      "samplingScope": "first supported camera acquisition record; not whole-clip verification"
+    },
+    "automaticAppSelection": {
+      "backend": "VideoToolbox hardware",
+      "metadataOrigin": "MXF",
+      "selectedLUT": "2_SGamut3CineSLog3_To_LC-709TypeA.cube",
+      "sourceColour": "SONY S-LOG3-CINE \u00b7 S-GAMUT3-CINE",
+      "success": true,
+      "transform": "sonySLog3SGamut3CineToRec709"
+    },
+    "bounded4KRender": {
+      "audioPullMS": 868.6519583352492,
+      "audioSampleFramesIncludingFinalChunk": 1440000,
+      "backend": "VideoToolbox hardware",
+      "baselineRSSBytes": 304562176,
+      "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+      "firstTransformRenderMS": 19.538458334864117,
+      "frames": 120,
+      "gpuMS": {
+        "median": 1.549374996102415,
+        "p95": 8.33812500059139,
+        "total": 317.19000005250564
+      },
+      "hardwareFrames": 120,
+      "look": "none",
+      "openFirstFrameMS": 409.51279166620225,
+      "peakSampledRSSBytes": 326926336,
+      "processCPUSecondsSinceOpen": 1.9084299999999996,
+      "renderWaitMS": {
+        "median": 4.434624999703374,
+        "p95": 14.778583332372364,
+        "total": 682.7645416851738
+      },
+      "requestedBackend": "compatibility",
+      "schemaVersion": 1,
+      "seekMS": [
+        12.12370832945453,
+        11.50762500037672,
+        11.76379167009145
+      ],
+      "serialFramesPerSecond": 54.51447215382093,
+      "sourcePixelFormat": "78343232",
+      "sourceSizeAndMtimeUnchanged": true,
+      "success": true,
+      "transform": "sonySLog3SGamut3CineToRec709",
+      "transformMeanAbsoluteByteDifference": 39.44891800491898,
+      "videoCPUSeconds": 0.6347929999999999,
+      "videoPullMS": {
+        "median": 12.753583330777474,
+        "p95": 13.992833337397315,
+        "total": 1516.8859166587936
+      },
+      "videoWallMS": 2201.2503333317,
+      "historicalBoundary": "Before range/OETF corrections; pixel difference proves selection only, not accurate color."
+    },
+    "colorCorrection": {
+      "previousErrors": [
+        "Display ICC transfer instead of explicit Rec709 OETF",
+        "Preserved full-code values in decoder x422 buffer normalized as video-range",
+        "Automatic mode ignored recorded Sony UDAM viewing look"
+      ],
+      "swatches": [
+        {
+          "slog3Code": 95,
+          "referenceRec7098Bit": 0,
+          "actual": 0
+        },
+        {
+          "slog3Code": 420,
+          "referenceRec7098Bit": 104,
+          "actual": 104,
+          "previous": 125
+        },
+        {
+          "slog3Code": 598,
+          "referenceRec7098Bit": 242,
+          "actual": 241
+        }
+      ],
+      "swatchBoundary": "Actual Metal render; full-range and monitoring-view x422 agree, originals retain attachments.",
+      "rangePolicy": "Explicit RDD18 range2 full;6/unknown/reserved no undo. Absent tag on embedded Sony SLog uses documented full-scaled default with derived-policy UI label. No XML/manual inference.",
+      "exposurePolicy": "EI/ISO exposed as first-record facts; no automatic exposure compensation.",
+      "frameProbe": {
+        "clippedPixelFraction": {
+          "current-builtin": 0.7214139660493827,
+          "full-builtin": 0.38820408950617286,
+          "full-type-a": 0
+        },
+        "matrix": "none",
+        "pixelFormat": "78343232",
+        "pts": 594.12,
+        "success": true,
+        "YCodes": [
+          {
+            "code": 623,
+            "x": 1000,
+            "y": 500
+          },
+          {
+            "code": 449,
+            "x": 2000,
+            "y": 1000
+          },
+          {
+            "code": 613,
+            "x": 1000,
+            "y": 1000
+          },
+          {
+            "code": 490,
+            "x": 2200,
+            "y": 800
+          },
+          {
+            "code": 668,
+            "x": 100,
+            "y": 100
+          }
+        ]
+      },
+      "independentReference": {
+        "framePTSSeconds": 594.12,
+        "dimensions": [
+          960,
+          540
+        ],
+        "method": "Metal full-code BT709 decode + Sony LC709 TypeA versus independent software decode forced full BT709 + trilinear same Sony LUT; upper-row image coordinates",
+        "meanAbsolute8BitCodeError": 0.6116313014403292,
+        "p95Absolute8BitCodeError": 1.0,
+        "p99Absolute8BitCodeError": 2.0,
+        "maximum8BitCodeError": 25.0,
+        "fractionPixelsAllChannelsWithin3": 0.9930362654320988,
+        "boundary": "One frame, differing resampling paths. Not calibrated display or whole-clip acceptance."
+      }
+    }
+  },
+  "optionalLookSmoke": {
+    "native": {
+      "audioPullMS": 3.9841250036261044,
+      "audioSampleFramesIncludingFinalChunk": 98000,
+      "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+      "baselineRSSBytes": 170409984,
+      "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+      "firstTransformRenderMS": 92.08341666817432,
+      "frames": 49,
+      "gpuMS": {
+        "median": 0.9475833358010277,
+        "p95": 5.9481249991222285,
+        "total": 88.71933332557091
+      },
+      "hardwareFrames": 49,
+      "look": "quirkyBlackAndWhite",
+      "openFirstFrameMS": 102.56562499853317,
+      "peakSampledRSSBytes": 171851776,
+      "processCPUSecondsSinceOpen": 0.504443,
+      "renderWaitMS": {
+        "median": 2.4496666665072553,
+        "p95": 10.365499998442829,
+        "total": 176.8160833453294
+      },
+      "requestedBackend": "native",
+      "schemaVersion": 1,
+      "seekMS": [
+        3.880333337292541,
+        4.9661250013741665,
+        4.399333338369615
+      ],
+      "serialFramesPerSecond": 215.42103179571666,
+      "sourcePixelFormat": "78343232",
+      "sourceSizeAndMtimeUnchanged": true,
+      "success": true,
+      "transform": "bypass",
+      "transformMeanAbsoluteByteDifference": 56.06906068091299,
+      "videoCPUSeconds": 0.15762900000000002,
+      "videoPullMS": {
+        "median": 0.9770416654646397,
+        "p95": 1.444708337658085,
+        "total": 50.202083330077585
+      },
+      "videoWallMS": 227.46154166816268
+    },
+    "compat": {
+      "audioPullMS": 4.376208329631481,
+      "audioSampleFramesIncludingFinalChunk": 98000,
+      "backend": "VideoToolbox hardware",
+      "baselineRSSBytes": 184254464,
+      "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+      "firstTransformRenderMS": 92.5204999948619,
+      "frames": 49,
+      "gpuMS": {
+        "median": 0.4747916682390496,
+        "p95": 6.1488749997806735,
+        "total": 71.19691665138816
+      },
+      "hardwareFrames": 49,
+      "look": "quirkyBlackAndWhite",
+      "openFirstFrameMS": 237.31920833233744,
+      "peakSampledRSSBytes": 229490688,
+      "processCPUSecondsSinceOpen": 0.553446,
+      "renderWaitMS": {
+        "median": 2.3395000025629997,
+        "p95": 10.8592916658381,
+        "total": 183.45062495063758
+      },
+      "requestedBackend": "compatibility",
+      "schemaVersion": 1,
+      "seekMS": [
+        1.9919583355658688,
+        1.9794583349721506,
+        1.9793333267443813
+      ],
+      "serialFramesPerSecond": 171.21143739155428,
+      "sourcePixelFormat": "78343232",
+      "sourceSizeAndMtimeUnchanged": true,
+      "success": true,
+      "transform": "bypass",
+      "transformMeanAbsoluteByteDifference": 56.069060920266544,
+      "videoCPUSeconds": 0.17185600000000012,
+      "videoPullMS": {
+        "median": 2.1013749937992543,
+        "p95": 2.5492500062682666,
+        "total": 102.24899998866022
+      },
+      "videoWallMS": 286.19583333056653
+    }
+  },
+  "reproductionTrials": {
+    "native": [
+      {
+        "audioPullMS": 5.776833328127395,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222248960,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 11.691375002556015,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.045416665670927614,
+          "p95": 0.166041667398531,
+          "total": 3.3219166652997956
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 128.30266666423995,
+        "peakSampledRSSBytes": 222969856,
+        "processCPUSecondsSinceOpen": 0.39258300000000007,
+        "renderWaitMS": {
+          "median": 0.5194166660658084,
+          "p95": 1.5680416618124582,
+          "total": 34.547374947578646
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          3.7295833317330107,
+          4.826749995118007,
+          3.8745833371649496
+        ],
+        "serialFramesPerSecond": 645.1004184601361,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.04733300000000007,
+        "videoPullMS": {
+          "median": 0.7794166667736135,
+          "p95": 1.4008750003995374,
+          "total": 40.96337500959635
+        },
+        "videoWallMS": 75.95716666401131
+      },
+      {
+        "audioPullMS": 4.905249996227212,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222445568,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.5784166714875028,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.02579166175564751,
+          "p95": 0.026833331503439695,
+          "total": 1.2717916979454458
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 98.63649999897461,
+        "peakSampledRSSBytes": 223150080,
+        "processCPUSecondsSinceOpen": 0.34327799999999997,
+        "renderWaitMS": {
+          "median": 0.3993333302787505,
+          "p95": 0.7301666628336534,
+          "total": 23.34900001733331
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          4.090166672540363,
+          5.053791668615304,
+          4.576500003167894
+        ],
+        "serialFramesPerSecond": 804.7738968638173,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.03759999999999997,
+        "videoPullMS": {
+          "median": 0.6995833391556516,
+          "p95": 1.264291669940576,
+          "total": 37.16566669027088
+        },
+        "videoWallMS": 60.88666666619247
+      },
+      {
+        "audioPullMS": 4.664541665988509,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222576640,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.9280416707042605,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.026041663659270853,
+          "p95": 0.03537500015227124,
+          "total": 1.32208333525341
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 125.03116666630376,
+        "peakSampledRSSBytes": 222806016,
+        "processCPUSecondsSinceOpen": 0.353262,
+        "renderWaitMS": {
+          "median": 0.42062500142492354,
+          "p95": 1.3527500050258823,
+          "total": 25.66400005889591
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          3.8673750023008324,
+          4.308833333197981,
+          4.337458332884125
+        ],
+        "serialFramesPerSecond": 778.9374260427371,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.03577999999999992,
+        "videoPullMS": {
+          "median": 0.7057916664052755,
+          "p95": 1.3214166683610529,
+          "total": 36.84866667026654
+        },
+        "videoWallMS": 62.90620833169669
+      },
+      {
+        "audioPullMS": 4.373166666482575,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 222789632,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.6423333325074054,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.025958339392673224,
+          "p95": 0.030083334422670305,
+          "total": 1.3240833504823968
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 135.93158333242172,
+        "peakSampledRSSBytes": 222855168,
+        "processCPUSecondsSinceOpen": 0.349926,
+        "renderWaitMS": {
+          "median": 0.41520833474351093,
+          "p95": 1.1927916639251634,
+          "total": 24.428791672107764
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          3.688666671223473,
+          4.242666669597384,
+          4.0919166640378535
+        ],
+        "serialFramesPerSecond": 786.1193778738606,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.036679999999999935,
+        "videoPullMS": {
+          "median": 0.7181249966379255,
+          "p95": 1.1250833340454847,
+          "total": 37.52154166431865
+        },
+        "videoWallMS": 62.33149999752641
+      },
+      {
+        "audioPullMS": 4.686541666160338,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "PXLmpeg \u00b7 VideoToolbox hardware",
+        "baselineRSSBytes": 221347840,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.5754166704718955,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.026041670935228467,
+          "p95": 0.4338750004535541,
+          "total": 4.940208367770538
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 101.38770833873423,
+        "peakSampledRSSBytes": 222052352,
+        "processCPUSecondsSinceOpen": 0.35056399999999993,
+        "renderWaitMS": {
+          "median": 0.4266250034561381,
+          "p95": 1.7387083353241906,
+          "total": 34.9220416683238
+        },
+        "requestedBackend": "native",
+        "schemaVersion": 1,
+        "seekMS": [
+          4.419750002853107,
+          4.758666662382893,
+          4.2450416658539325
+        ],
+        "serialFramesPerSecond": 665.8332427379455,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.04012299999999991,
+        "videoPullMS": {
+          "median": 0.7292916634469293,
+          "p95": 1.3405833378783427,
+          "total": 38.26995833514957
+        },
+        "videoWallMS": 73.59200000064448
+      }
+    ],
+    "compatibility": [
+      {
+        "audioPullMS": 4.662500003178138,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 178438144,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 1.6579166695009917,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.03287500294391066,
+          "p95": 0.054333337175194174,
+          "total": 1.8269583597430028
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 216.37099999497877,
+        "peakSampledRSSBytes": 216432640,
+        "processCPUSecondsSinceOpen": 0.321929,
+        "renderWaitMS": {
+          "median": 0.4850416662520729,
+          "p95": 1.2735833297483623,
+          "total": 29.581833310658112
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          1.9013333294424228,
+          1.76274999830639,
+          1.7520833353046328
+        ],
+        "serialFramesPerSecond": 396.4124671747269,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.046394000000000046,
+        "videoPullMS": {
+          "median": 1.887041660666,
+          "p95": 2.2770833311369643,
+          "total": 93.6374583397992
+        },
+        "videoWallMS": 123.60862499917857
+      },
+      {
+        "audioPullMS": 4.494749999139458,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 178831360,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.5411249949247576,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.02612500247778371,
+          "p95": 0.0731249965610914,
+          "total": 3.719958280271385
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 201.83695833111415,
+        "peakSampledRSSBytes": 225181696,
+        "processCPUSecondsSinceOpen": 0.31783000000000006,
+        "renderWaitMS": {
+          "median": 0.43591667053988203,
+          "p95": 1.1047916632378474,
+          "total": 27.40979170630453
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          1.9572083328966983,
+          1.709833333734423,
+          1.7877083373605274
+        ],
+        "serialFramesPerSecond": 437.3673904578617,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.04282799999999998,
+        "videoPullMS": {
+          "median": 1.6971250006463379,
+          "p95": 2.2269999972195365,
+          "total": 84.27945832227124
+        },
+        "videoWallMS": 112.03395833581453
+      },
+      {
+        "audioPullMS": 4.429958331456874,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 178552832,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 0.9255833356291987,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.026500005333218724,
+          "p95": 3.1769999986863695,
+          "total": 20.277666648325976
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 197.8065416624304,
+        "peakSampledRSSBytes": 224804864,
+        "processCPUSecondsSinceOpen": 0.310287,
+        "renderWaitMS": {
+          "median": 0.46516666043316945,
+          "p95": 4.120041667192709,
+          "total": 46.61212502833223
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          1.9958750053774565,
+          1.776000004610978,
+          1.7580833300598897
+        ],
+        "serialFramesPerSecond": 349.3570167303893,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.043682,
+        "videoPullMS": {
+          "median": 1.8788750021485612,
+          "p95": 2.208958328992594,
+          "total": 93.28525004093535
+        },
+        "videoWallMS": 140.25766666600248
+      },
+      {
+        "audioPullMS": 4.397208329464775,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 178503680,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 3.578374999051448,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.02600000152597204,
+          "p95": 0.035916673368774354,
+          "total": 1.3223332935012877
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 199.32124999468215,
+        "peakSampledRSSBytes": 224788480,
+        "processCPUSecondsSinceOpen": 0.316143,
+        "renderWaitMS": {
+          "median": 0.4588750016409904,
+          "p95": 1.1832500022137538,
+          "total": 27.292749982734676
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          1.8612083295010962,
+          1.6761666629463434,
+          1.6595833367318846
+        ],
+        "serialFramesPerSecond": 434.74499766246544,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.04172599999999993,
+        "videoPullMS": {
+          "median": 1.7290416726609692,
+          "p95": 2.0943749987054616,
+          "total": 85.04191666725092
+        },
+        "videoWallMS": 112.70974999933969
+      },
+      {
+        "audioPullMS": 5.246958331554197,
+        "audioSampleFramesIncludingFinalChunk": 98000,
+        "backend": "VideoToolbox hardware",
+        "baselineRSSBytes": 178372608,
+        "boundary": "bounded serial decode/render throughput; not playback FPS or power measurement",
+        "firstTransformRenderMS": 1.4517083327518776,
+        "frames": 49,
+        "gpuMS": {
+          "median": 0.02662499900907278,
+          "p95": 3.0808749943389557,
+          "total": 22.957458335440606
+        },
+        "hardwareFrames": 49,
+        "look": "none",
+        "openFirstFrameMS": 191.74587500310736,
+        "peakSampledRSSBytes": 224559104,
+        "processCPUSecondsSinceOpen": 0.31708699999999995,
+        "renderWaitMS": {
+          "median": 0.47545832785544917,
+          "p95": 3.714708327606786,
+          "total": 52.4286666259286
+        },
+        "requestedBackend": "compatibility",
+        "schemaVersion": 1,
+        "seekMS": [
+          2.4268333363579586,
+          1.9804583353106864,
+          1.9537500047590584
+        ],
+        "serialFramesPerSecond": 329.57683007505176,
+        "sourcePixelFormat": "78343232",
+        "sourceSizeAndMtimeUnchanged": true,
+        "success": true,
+        "transform": "bypass",
+        "transformMeanAbsoluteByteDifference": 0,
+        "videoCPUSeconds": 0.04575699999999994,
+        "videoPullMS": {
+          "median": 1.9349166614119895,
+          "p95": 2.4469166673952714,
+          "total": 95.8519583218731
+        },
+        "videoWallMS": 148.67550000053598
+      }
+    ]
+  },
+  "reproductionMedians": {
+    "native": {
+      "openFirstFrameMS": 125.03116666630376,
+      "videoWallMS": 62.90620833169669,
+      "videoCPUSeconds": 0.03759999999999997,
+      "peakSampledRSSBytes": 222855168,
+      "serialFramesPerSecond": 778.9374260427371,
+      "audioPullMS": 4.686541666160338,
+      "videoPullTotalMS": 37.52154166431865,
+      "pooledMedianSeekMS": 4.2450416658539325
+    },
+    "compatibility": {
+      "openFirstFrameMS": 199.32124999468215,
+      "videoWallMS": 123.60862499917857,
+      "videoCPUSeconds": 0.043682,
+      "peakSampledRSSBytes": 224788480,
+      "serialFramesPerSecond": 396.4124671747269,
+      "audioPullMS": 4.494749999139458,
+      "videoPullTotalMS": 93.28525004093535,
+      "pooledMedianSeekMS": 1.7877083373605274
+    }
+  },
+  "interpretation": "Elapsed-time advantage in both batches; materially different render timing and mixed CPU/RSS. Not a controlled energy or memory-efficiency result.",
+  "checks": {
+    "coreTestsExecuted": 136,
+    "coreTestsPassed": 121,
+    "coreTestsSkipped": 15,
+    "coreTestFailures": 0,
+    "pixelDeckMakeTest": "pass; optional Sony Camera Remote SDK unavailable/skipped",
+    "researchReleaseArm64Build": "pass",
+    "normalDebugArm64Build": "pass",
+    "cameraCardAndRangeFixture": "pass",
+    "sonyMetalLevelsAndOriginalAttachments": "pass",
+    "proresRealTimeRegression": "49 frames, 98000 audio sample frames, 50 GPU completions, max sampled skew20.67ms",
+    "focusedReview": "No remaining Important/Critical issues after range-policy revision",
+    "boundary": "Ad hoc research build, not notarized release, calibrated display acceptance or sustained long-clip test."
+  }
+}

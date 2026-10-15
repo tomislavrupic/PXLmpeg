@@ -45,10 +45,18 @@ struct ProbeEvidence: Encodable {
   }
   static func run() async throws {
     let args = Array(CommandLine.arguments.dropFirst())
+    if args.count == 2, args[0] == "metadata", !args[1].hasPrefix("--") {
+      let metadata = try CameraMetadataInspector.inspect(URL(fileURLWithPath: args[1]))
+      let encoder = JSONEncoder()
+      encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+      FileHandle.standardOutput.write(try encoder.encode(metadata))
+      FileHandle.standardOutput.write(Data("\n".utf8))
+      return
+    }
     guard args.count >= 2, args[0] == "probe", !args[1].hasPrefix("--") else {
       throw MediaError(
         .invalidRequest, stage: "usage",
-        "pxl-prores probe /path/source.mov [--max-frames 120] [--allow-software]")
+        "pxl-prores metadata /path/source.mxf OR probe /path/source.mov [--max-frames 120] [--allow-software]")
     }
     var maximum = 120
     var policy: ProfessionalHardwarePolicy = .requireHardware
