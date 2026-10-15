@@ -8,7 +8,7 @@ import XCTest
 final class SourceAndResultTests: XCTestCase {
   // Removing the comparison would accept changed media and break timestamp identity.
   func testSourceVerificationRejectsChangedAndMissingContent() async throws {
-    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let root = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
     try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
     defer { try? FileManager.default.removeItem(at: root) }
     let file = root.appendingPathComponent("source.mov")

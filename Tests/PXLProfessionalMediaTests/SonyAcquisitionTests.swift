@@ -16,7 +16,7 @@ final class SonyAcquisitionTests: XCTestCase {
     return [0,11,4,4,0,UInt8(count),0,0,0,UInt8(count),0,0,0,1,0x43,5,UInt8(bytes.count+1),sequence] + bytes
   }
   private func withFile(_ bytes: [UInt8], _ body: (URL) throws -> Void) throws {
-    let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("mxf")
+    let url = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString).appendingPathExtension("mxf")
     defer { try? FileManager.default.removeItem(at: url) }
     try Data(bytes).write(to: url)
     try body(url)
@@ -88,13 +88,13 @@ final class SonyAcquisitionTests: XCTestCase {
     }
   }
   func testRejectsNonRegularSourceBeforeOpening() throws {
-    let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("mxf")
+    let url = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString).appendingPathExtension("mxf")
     try FileManager.default.createDirectory(at: url, withIntermediateDirectories: false)
     defer { try? FileManager.default.removeItem(at: url) }
     XCTAssertThrowsError(try SonyMXFAcquisition.inspect(url))
   }
   func testRejectsFIFOWithoutBlocking() throws {
-    let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("mxf")
+    let url = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString).appendingPathExtension("mxf")
     XCTAssertEqual(mkfifo(url.path, 0o600), 0)
     defer { try? FileManager.default.removeItem(at: url) }
     XCTAssertThrowsError(try SonyMXFAcquisition.inspect(url))

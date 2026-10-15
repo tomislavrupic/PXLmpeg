@@ -19,7 +19,7 @@ final class CompiledModelPoolTests: XCTestCase {
     }
   }
   func testRepeatedIdentityReusesCompilerOwnedArtifacts() throws {
-    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let root = FileManager.default.temporaryDirectory.appendingPathComponent("PXLmpeg-compiler-tests-" + UUID().uuidString)
     defer { try? FileManager.default.removeItem(at: root) }
     let pool = CompiledModelPool(capacity: 2)
     let first = try pool.lease(identity: "a", build: factory(root))
@@ -31,7 +31,7 @@ final class CompiledModelPoolTests: XCTestCase {
       2)
   }
   func testEvictionPreservesActiveLeaseAndRemovesReleasedOwnedFiles() throws {
-    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let root = FileManager.default.temporaryDirectory.appendingPathComponent("PXLmpeg-compiler-tests-" + UUID().uuidString)
     defer { try? FileManager.default.removeItem(at: root) }
     let pool = CompiledModelPool(capacity: 1)
     var first: CompiledModelArtifacts? = try pool.lease(identity: "a", build: factory(root))
@@ -47,7 +47,7 @@ final class CompiledModelPoolTests: XCTestCase {
     XCTAssertFalse(FileManager.default.fileExists(atPath: other))
   }
   func testFailedSecondCompilationCleansFirstOwnedArtifact() throws {
-    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let root = FileManager.default.temporaryDirectory.appendingPathComponent("PXLmpeg-compiler-tests-" + UUID().uuidString)
     try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
     defer { try? FileManager.default.removeItem(at: root) }
     let output = root.appendingPathComponent("first.mlmodelc")
@@ -63,7 +63,7 @@ final class CompiledModelPoolTests: XCTestCase {
     XCTAssertFalse(FileManager.default.fileExists(atPath: output.path))
   }
   func testFailedValidationCannotPublishOrReuseCompiledArtifacts() throws {
-    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let root = FileManager.default.temporaryDirectory.appendingPathComponent("PXLmpeg-compiler-tests-" + UUID().uuidString)
     defer { try? FileManager.default.removeItem(at: root) }
     let pool = CompiledModelPool(capacity: 1)
     var first: CompiledModelArtifacts? = try pool.lease(identity: "a", build: factory(root))
@@ -87,7 +87,7 @@ final class CompiledModelPoolTests: XCTestCase {
         }))
   }
   func testShutdownDoesNotWaitForStalledCompilation() async throws {
-    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let root = FileManager.default.temporaryDirectory.appendingPathComponent("PXLmpeg-compiler-tests-" + UUID().uuidString)
     defer { try? FileManager.default.removeItem(at: root) }
     let pool = CompiledModelPool(capacity: 1)
     let entered = DispatchSemaphore(value: 0)

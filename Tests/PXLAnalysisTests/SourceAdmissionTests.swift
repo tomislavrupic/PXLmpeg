@@ -63,7 +63,7 @@ final class SourceAdmissionTests: XCTestCase {
   }
 
   func testInvalidFootageFailsWithFilenameBeforeModelLoading() async throws {
-    let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let directory = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
     try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
     defer { try? FileManager.default.removeItem(at: directory) }
     let source = directory.appendingPathComponent("broken-editor-export.mov")

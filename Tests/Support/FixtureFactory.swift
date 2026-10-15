@@ -235,7 +235,7 @@ public enum FixtureFactory {
     return sample
   }
   public static func directory() throws -> URL {
-    let url = FileManager.default.temporaryDirectory.appendingPathComponent(
+    let url = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(
       "PXL-test-\(UUID())", isDirectory: true)
     try FileManager.default.createDirectory(at: url, withIntermediateDirectories: false)
     return url

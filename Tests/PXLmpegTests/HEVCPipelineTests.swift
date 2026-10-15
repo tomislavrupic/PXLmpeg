@@ -76,7 +76,7 @@ final class HEVCPipelineTests: XCTestCase {
     }
   }
   func testRotationSurfaceIsIncludedInMinimumBudget() throws {
-    let source = FileManager.default.temporaryDirectory.appendingPathComponent(
+    let source = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(
       "budget-\(UUID()).mov")
     try Data([0]).write(to: source)
     defer { try? FileManager.default.removeItem(at: source) }

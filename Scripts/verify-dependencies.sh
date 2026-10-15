@@ -3,9 +3,13 @@ set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$root"
 mkdir -p .work
-swift package dump-package > .work/package-audit.json
+guarded_flags=()
+if [[ "${PXL_SAFE_DEV_ACTIVE:-}" == "edit" ]]; then
+  guarded_flags=(--disable-sandbox --cache-path "$root/.build/SafeCache" --config-path "$root/.build/SafeConfig" --security-path "$root/.build/SafeSecurity")
+fi
+swift package "${guarded_flags[@]}" dump-package > .work/package-audit.json
 xcrun swift Scripts/audit-manifest.swift .work/package-audit.json
-binary_dir="$(swift build --build-system native -c release --show-bin-path)"
+binary_dir="$(swift build "${guarded_flags[@]}" --build-system native -c release --show-bin-path)"
 for product in pxlmpeg pxl-player pxl-search pxl-search-app pxl-prores; do
   report=".work/$product-runtime-dependencies.txt"
   otool -L "$binary_dir/$product" > "$report"

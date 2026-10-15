@@ -58,7 +58,7 @@ import XCTest
   // A valid sidecar with a missing current source cannot be searched or played.
   func testMissingIndexedSourceFailsBeforeResults() async throws {
     let (models, source) = try fixture()
-    let scratch = FileManager.default.temporaryDirectory.appendingPathComponent(
+    let scratch = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(
       UUID().uuidString + ".json")
     defer { try? FileManager.default.removeItem(at: scratch) }
     var json = try XCTUnwrap(
@@ -81,7 +81,7 @@ import XCTest
   // Saving a new sidecar must preserve a pre-existing destination even on failure.
   func testSaveRefusesExistingFileAndKeepsLoadedIndex() async throws {
     let (models, source) = try fixture()
-    let scratch = FileManager.default.temporaryDirectory.appendingPathComponent(
+    let scratch = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(
       UUID().uuidString + ".json")
     defer { try? FileManager.default.removeItem(at: scratch) }
     let original = Data("preserve this file".utf8)
@@ -99,7 +99,7 @@ import XCTest
   func testIndexChosenRealFootageAndSaveNewSidecar() async throws {
     let (models, source) = try fixture()
     let existing = try SemanticIndex.read(from: source)
-    let output = FileManager.default.temporaryDirectory.appendingPathComponent(
+    let output = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(
       UUID().uuidString + ".json")
     defer { try? FileManager.default.removeItem(at: output) }
     let w = SearchWorkspace(models: models)
@@ -156,7 +156,7 @@ import XCTest
   }
   func testChangedSourceAfterSearchCannotBeginPlayback() async throws {
     let (models, source) = try fixture()
-    let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    let root = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
     try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
     defer { try? FileManager.default.removeItem(at: root) }
     let original = try SemanticIndex.read(from: source)

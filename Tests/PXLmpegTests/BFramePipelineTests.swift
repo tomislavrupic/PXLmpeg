@@ -179,7 +179,7 @@ final class BFramePipelineTests: XCTestCase {
     let asset = AssetDescriptor(
       width: 3840, height: 2160, codec: "h264",
       duration: try MediaTime(value: 1, timescale: 1), hasAudio: false, maxReorderFrames: 16)
-    let source = FileManager.default.temporaryDirectory.appendingPathComponent("plan-\(UUID()).mov")
+    let source = URL(fileURLWithPath: ProcessInfo.processInfo.environment["TMPDIR"] ?? NSTemporaryDirectory()).appendingPathComponent("plan-\(UUID()).mov")
     defer { try? FileManager.default.removeItem(at: source) }
     try Data([0]).write(to: source)
     let request = try JobRequest(
